@@ -367,7 +367,9 @@ namespace giri {
                     Integral,
                     Boolean
                 };
-
+                /**
+                 * @brief Provides iterators to iterate over objects/arrays.
+                 */
                 template <typename Container>
                 class JSONWrapper {
                     Container *object;
@@ -381,7 +383,9 @@ namespace giri {
                         typename Container::const_iterator begin() const { return object ? object->begin() : typename Container::iterator(); }
                         typename Container::const_iterator end() const { return object ? object->end() : typename Container::iterator(); }
                 };
-
+                /**
+                 * @brief Provides const iterators to iterate over objects/arrays.
+                 */
                 template <typename Container>
                 class JSONConstWrapper {
                     const Container *object;
