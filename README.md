@@ -1,7 +1,7 @@
 Giri's C++ Support Library
 ==========================
 
-Lightweight C++ library prividing everything you need to quickly create awesome applications.
+Lightweight C++ library providing everything you need to quickly create awesome applications.
 
 This library includes:
 * Websocket server/client based on boost beast
