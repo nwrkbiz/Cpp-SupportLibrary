@@ -40,3 +40,9 @@ this stuff is worth it, you can buy me a beer in return Daniel Giritzer
 To compile your programs following parameters are needed.
 
 g++ main.cpp -std=c++17 -lboost_system -lboost_iostreams -pthread -lssl -lcrypto -lstdc++fs
+
+## About
+
+2020, Daniel Giritzer
+
+https://page.nwrk.biz/giri
