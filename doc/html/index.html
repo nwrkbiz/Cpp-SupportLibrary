@@ -64,10 +64,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Lightweight C++ library prividing everything you need to quickly create awesome applications.</p>
+<p>This library includes:</p><ul>
+<li>Websocket server/client based on boost beast</li>
+<li>HTTP server/client based on boost beast</li>
+<li>Blob class to handle files</li>
+<li>Generic implementations of sommon design patterns and idioms (Singleton, Observer, Passkey)</li>
+</ul>
+<h2>Documentation</h2>
+<p>The API is well documented and equipt with code snippets to quickly get started.</p>
 <h2>License</h2>
 <p>"THE BEER-WARE LICENSE" (Revision 42): <a href="#" onclick="location.href='mai'+'lto:'+'gir'+'i@'+'nwr'+'k.'+'biz'; return false;">giri@<span style="display: none;">.nosp@m.</span>nwrk<span style="display: none;">.nosp@m.</span>.biz</a> extended and modified this file. As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return Daniel Giritzer</p>
 <h2>Compile</h2>
-<p>g++ ./main.cpp -std=c++17 -lboost_system -lboost_iostreams -pthread -lssl -lcrypto -lstdc++fs </p>
+<p>To compile your programs following parameters are needed.</p>
+<p>g++ main.cpp -std=c++17 -lboost_system -lboost_iostreams -pthread -lssl -lcrypto -lstdc++fs </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
