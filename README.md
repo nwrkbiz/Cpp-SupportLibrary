@@ -3,6 +3,16 @@ Giri's C++ Support Library
 
 Lightweight C++ library prividing everything you need to quickly create awesome applications.
 
+This library includes:
+* Websocket server/client based on boost beast
+* HTTP server/client based on boost beast
+* Blob class to handle files
+* Generic implementations of sommon design patterns and idioms (Singleton, Observer, Passkey)
+
+## Documentation
+
+The API is well documented and equipt with code snippets to quickly get started.
+
 ## License
 
 "THE BEER-WARE LICENSE" (Revision 42):
@@ -12,4 +22,6 @@ this stuff is worth it, you can buy me a beer in return Daniel Giritzer
 
 ## Compile
 
-g++ ./main.cpp -std=c++17 -lboost_system -lboost_iostreams -pthread -lssl -lcrypto -lstdc++fs
+To compile your programs following parameters are needed.
+
+g++ main.cpp -std=c++17 -lboost_system -lboost_iostreams -pthread -lssl -lcrypto -lstdc++fs
