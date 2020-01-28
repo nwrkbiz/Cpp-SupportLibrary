@@ -14,6 +14,16 @@ This library includes:
 The API is well documented and equipt with code snippets to quickly get started.
 Check it out: https://nwrkbiz.github.io/Cpp-SupportLibrary/html/index.html
 
+## Example Code Snippets
+
+* [Websocket client](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1WebSocketClient.html#details)
+* [Websocket server](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1WebsocketServer.html#details)
+* [HTTP server](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1HTTPServer.html#details)
+* [PassKey idiom](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Key.html#details)
+* Observer Pattern: [Observer](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Observable.html#details), [Observable](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Observer.html#details)
+
+For more please check the documentation :)
+
 ## Dependencies
 
 This library depends on Boost (tested with version 67) and OpenSSL and requires an C++17 compliant compiler.
