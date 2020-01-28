@@ -13,6 +13,10 @@ This library includes:
 
 The API is well documented and equipt with code snippets to quickly get started.
 
+## Dependencies
+
+This library depends on Boost (tested with version 67) and OpenSSL and requires an C++17 compliant compiler.
+
 ## License
 
 "THE BEER-WARE LICENSE" (Revision 42):
