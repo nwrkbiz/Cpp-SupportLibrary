@@ -50,14 +50,16 @@ namespace giri {
      *  #include <WebSocketClient.h>
      *  #include <iostream>
      *  #include <string>
+     * 
+     *   using namespace giri;
      *  
      *  // observer to receive async answers.
      *  // use std::lock_guard + std::mutex if resources of this class are 
      *  // accessed by multiple threads
-     *  class WSCObserver : public giri::Observer<giri::WebSocketClient>
+     *  class WSCObserver : public Observer<WebSocketClient>
      *  {
      *  protected:
-     *      void update(giri::WebSocketClient::SPtr ptr)
+     *      void update(WebSocketClient::SPtr ptr)
      *      {
      *          std::cout << "async receive: " << ptr->getMessage() << std::endl;
      *      }
@@ -65,7 +67,7 @@ namespace giri {
      *  
      *  int main() {
      *      // Create client and async observer
-     *      giri::WebSocketClient::SPtr wsc = std::make_shared<giri::WebSocketClient>("echo.websocket.org", "80");
+     *      WebSocketClient::SPtr wsc = std::make_shared<WebSocketClient>("echo.websocket.org", "80");
      *      WSCObserver::SPtr obs = std::make_shared<WSCObserver>();
      *  
      *      // -- asynchronous write and read --

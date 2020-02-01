@@ -233,10 +233,10 @@ namespace giri {
      *  
      *  int main()
      *  {
-     *      std::shared_ptr<WebSocketServer> sptr = std::make_shared<WebSocketServer>("0.0.0.0", "1204");
+     *      WebSocketServer::SPtr srv = std::make_shared<WebSocketServer>("0.0.0.0", "1204");
      *      WebSocketServerObserver::SPtr obs = std::make_shared<WebSocketServerObserver>();
-     *      sptr->subscribe(obs);
-     *      sptr->run();
+     *      srv->subscribe(obs);
+     *      srv->run();
      *      while(true){}; // block until ctrl + c is pressed.
      *      return EXIT_SUCCESS;
      *  }

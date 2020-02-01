@@ -18,38 +18,58 @@ namespace giri {
      *  --------------
      *  @code{.cpp}
      *  #include <Singleton.h>
-     * 
+     *  #include <iostream>
+     *  
+     *  using namespace giri;
+     *  
      *  // Class Implementation
-     *  class MyClass : public giri::Singleton<MyClass> 
+     *  class MyClass : public Singleton<MyClass> 
      *  {
+     *  public:
      *      // Class implementation belongs here
+     *      void identify(){
+     *          std::cout << "Hi, i am " << this << std::endl;
+     *      }
+     *      using UPtr = std::unique_ptr<MyClass>;
+     *      ~MyClass(){
+     *          std::cout << "Destroyed!" << std::endl;
+     *      }
      *  protected:
-     *	    MyClass(); // disallow creating MyClass objects
-    *	    friend class giri::Singleton<MyClass>;
-    *  };
-    * 
-    *  // use singleton
-    *  int main(int argc, char *argv[]){
-    *      MyClass::UPtr ptr = MyClass::GetInstance(); // returns pointer to the only instance
-    *      return EXIT_SUCCESS;
-    *  }
-    *  @endcode
-    */
+     *      // protect ctor, only Singleton may call it
+     *      MyClass(){
+     *          std::cout << "Created!" << std::endl;
+     *      }
+     *      friend class Singleton<MyClass>;
+     *  };
+     *  // use Singleton
+     *  int main(int argc, char *argv[]){
+     *      MyClass::getInstance()->identify(); // Created!
+     *      MyClass::getInstance()->identify();
+     *      MyClass::destroy(); // Destroyed!
+     *      MyClass::getInstance()->identify(); // Created!
+     *      return EXIT_SUCCESS;
+     *  }
+     *  @endcode
+     */
     template <typename T> class Singleton : public Object<T> {
     public:
 
         /**
          * @brief Generates a static Variable which can only be instanced once. 
          * Parameters depend on the inheriting class.
-         * @returns Shared pointer to the only existing instance.
+         * @returns Pointer to the only existing instance.
          */
-        template<typename... Args> static std::unique_ptr<T> GetInstance(Args... args){
-            static std::unique_ptr<T> m_Instance;
+        template<typename... Args> static T*getInstance(Args... args){
             if(m_Instance==nullptr)
-            mInstance.reset(new T{ std::forward<Args>(args)... });
-            return m_Instance;
+                m_Instance.reset(new T{ std::forward<Args>(args)... });
+            return m_Instance.get();
         }
-
+        /**
+         * @brief Destroys the Object held by the Singleton.
+         */
+        static void destroy(){
+            m_Instance = nullptr;
+        }
         virtual ~Singleton() = default;
     protected:
         //No Object of Singleton can be created
@@ -59,57 +79,7 @@ namespace giri {
         //Delete the Copyconstructor and the Assignmentoperator
         Singleton(Singleton const& s) = delete;
         Singleton& operator= (Singleton const& s) = delete;
-    };
-
-    /**
-     * \brief Singleton Template Class (using bare pointer).
-     * 
-     *  Example Usage:
-     *  --------------
-     * 
-     *  @code{.cpp}
-     *  #include <Singleton.h>
-     * 
-     *  // Class Implementation
-     *  class MyClass : public giri::SingletonBarePtr<MyClass> 
-     *  {
-     *      // Class implementation belongs here
-     *  protected:
-     *	    MyClass(); // disallow creating MyClass objects
-    *	    friend class giri::SingletonBarePtr<MyClass>;
-    *  };
-    * 
-    *  // use singleton
-    *  int main(int argc, char *argv[]){
-    *      MyClass* ptr = MyClass::GetInstance(); // returns pointer to the only instance
-    *      return EXIT_SUCCESS;
-    *  }
-    *  @endcode
-    */
-    template <typename T> class SingletonBarePtr : public Object<T> {
-    public:
-
-        /**
-         * @brief Generates a static Variable which can only be instanced once. 
-         * Parameters depend on the inheriting class.
-         * @returns Shared pointer to the only existing instance.
-         */
-        template<typename... Args> static T* GetInstance(Args... args){
-            static T* m_Instance;
-            if(m_Instance == nullptr)
-            m_Instance = (new T{ std::forward<Args>(args)... });
-            return m_Instance;
-        }
-
-        virtual ~SingletonBarePtr() = default;
-    protected:
-        //No Object of Singleton can be created
-        SingletonBarePtr() = default;
-
-    private:
-        //Delete the Copyconstructor and the Assignmentoperator
-        SingletonBarePtr(SingletonBarePtr const& s) = delete;
-        SingletonBarePtr& operator= (SingletonBarePtr const& s) = delete;
+        inline static std::unique_ptr<T> m_Instance;
     };
 }
 #endif //SUPPORTLIB_SINGLETON_H

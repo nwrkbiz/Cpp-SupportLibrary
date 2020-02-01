@@ -21,6 +21,9 @@ Check it out: https://nwrkbiz.github.io/Cpp-SupportLibrary/html/index.html
 * [HTTP server](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1HTTPServer.html#details)
 * [PassKey idiom](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Key.html#details)
 * Observer Pattern: [Observer](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Observable.html#details), [Observable](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Observer.html#details)
+* [Singleton Pattern](https://nwrkbiz.github.io/Cpp-SupportLibrary/html/classgiri_1_1Singleton.html#details)
+
+
 
 For more please check the documentation :)
 

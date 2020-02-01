@@ -12,7 +12,6 @@ var searchData=
   ['setversion',['setVersion',['../classgiri_1_1HTTPClient.html#aa04c57606fc10afc8f6c28bf1a02e1b9',1,'giri::HTTPClient']]],
   ['singleton',['Singleton',['../classgiri_1_1Singleton.html',1,'giri']]],
   ['singleton_2eh',['Singleton.h',['../Singleton_8h.html',1,'']]],
-  ['singletonbareptr',['SingletonBarePtr',['../classgiri_1_1SingletonBarePtr.html',1,'giri']]],
   ['size',['size',['../classgiri_1_1json_1_1JSON.html#a888d673859be2b133d9de7d489af86b8',1,'giri::json::JSON']]],
   ['subscribe',['subscribe',['../classgiri_1_1Observable.html#a40a54f74ef39fc100f3891c022b22661',1,'giri::Observable']]]
 ];

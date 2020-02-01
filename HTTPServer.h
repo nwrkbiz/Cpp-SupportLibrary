@@ -418,7 +418,7 @@ namespace giri {
      *  };
      *  int main()
      *  {
-     *      std::shared_ptr<HTTPServer> sptr = std::make_shared<HTTPServer>("0.0.0.0", "8808", "/home/giri");
+     *      HTTPServer::SPtr sptr = std::make_shared<HTTPServer>("0.0.0.0", "8808", "/home/giri");
      *      HTTPServerObserver::SPtr obs = std::make_shared<HTTPServerObserver>();
      *      sptr->subscribe(obs);
      *      sptr->run();
