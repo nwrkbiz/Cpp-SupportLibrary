@@ -211,12 +211,12 @@ namespace giri {
      *  // use std::lock_guard + std::mutex if resources of this class are 
      *  // accessed by multiple threads
      *  class WebSocketServerObserver : 
-     *      public Observer<WebsocketServer>, 
+     *      public Observer<WebSocketServer>, 
      *      public Observer<WebSocketSession>, 
      *      public std::enable_shared_from_this<WebSocketServerObserver>
      *  {
      *      public:
-     *          void update(WebsocketServer::SPtr serv){
+     *          void update(WebSocketServer::SPtr serv){
      *              std::cout << "Connected... " << serv->getSession()->getClientIP() << ":" << serv->getSession()->getClientPort() << std::endl;
      *  
      *              // subscribe to session to receive notifications on message
@@ -233,7 +233,7 @@ namespace giri {
      *  
      *  int main()
      *  {
-     *      std::shared_ptr<WebsocketServer> sptr = std::make_shared<WebsocketServer>("0.0.0.0", "1204");
+     *      std::shared_ptr<WebSocketServer> sptr = std::make_shared<WebSocketServer>("0.0.0.0", "1204");
      *      WebSocketServerObserver::SPtr obs = std::make_shared<WebSocketServerObserver>();
      *      sptr->subscribe(obs);
      *      sptr->run();
@@ -242,7 +242,7 @@ namespace giri {
      *  }
      *  @endcode
      */
-    class WebsocketServer : public Observable<WebsocketServer>
+    class WebSocketServer : public Observable<WebSocketServer>
     {
     public:
 
@@ -256,7 +256,7 @@ namespace giri {
          * @param cert If ssl is true path to certificate *.pem file needs to be passed.
          * @param key If ssl is true path to private key *.pem file needs to be passed.
          */
-        WebsocketServer(const std::string& address = "0.0.0.0", const std::string& port = "80", bool ssl = false, const size_t numThreads = 1, const std::filesystem::path& cert = "", const std::filesystem::path& key = "") : 
+        WebSocketServer(const std::string& address = "0.0.0.0", const std::string& port = "80", bool ssl = false, const size_t numThreads = 1, const std::filesystem::path& cert = "", const std::filesystem::path& key = "") : 
             m_Endpoint(boost::asio::ip::make_address(address), 
                        std::atoi(port.c_str())),
             m_SSL(ssl),
@@ -318,12 +318,12 @@ namespace giri {
         std::filesystem::path getKey() const {
             return m_Key;
         }
-        using SPtr = std::shared_ptr<WebsocketServer>;
-        using UPtr = std::unique_ptr<WebsocketServer>;
-        using WPtr = std::weak_ptr<WebsocketServer>;
+        using SPtr = std::shared_ptr<WebSocketServer>;
+        using UPtr = std::unique_ptr<WebSocketServer>;
+        using WPtr = std::weak_ptr<WebSocketServer>;
     private:
         void do_accept() {
-            m_Acceptor.async_accept(m_Socket, std::bind(&WebsocketServer::on_accept, this->shared_from_this(), std::placeholders::_1));
+            m_Acceptor.async_accept(m_Socket, std::bind(&WebSocketServer::on_accept, this->shared_from_this(), std::placeholders::_1));
         }
         void on_accept(boost::system::error_code ec) {
             if(ec)

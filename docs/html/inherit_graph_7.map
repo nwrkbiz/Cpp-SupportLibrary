@@ -3,17 +3,17 @@
 <area shape="rect" id="node3" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; HTTPServer \&gt;" alt="" coords="231,83,441,110"/>
 <area shape="rect" id="node5" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; HTTPSession \&gt;" alt="" coords="227,170,445,197"/>
 <area shape="rect" id="node7" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; WebSocket\lClient \&gt;" alt="" coords="239,231,433,272"/>
-<area shape="rect" id="node9" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; Websocket\lServer \&gt;" alt="" coords="241,315,431,356"/>
+<area shape="rect" id="node9" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; WebSocket\lServer \&gt;" alt="" coords="239,315,433,356"/>
 <area shape="rect" id="node11" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; WebSocket\lSession \&gt;" alt="" coords="239,380,433,421"/>
 <area shape="rect" id="node4" href="$classgiri_1_1HTTPServer.html" title="Class representing a HTTP Server. " alt="" coords="515,83,635,110"/>
 <area shape="rect" id="node6" href="$classgiri_1_1HTTPSession.html" title="Class representing one session/connection. " alt="" coords="510,170,639,197"/>
 <area shape="rect" id="node8" href="$classgiri_1_1WebSocketClient.html" title="Simple Websocket Client. " alt="" coords="500,238,649,265"/>
-<area shape="rect" id="node10" href="$classgiri_1_1WebsocketServer.html" title="Class representing a WebSocket Server. " alt="" coords="499,322,650,349"/>
+<area shape="rect" id="node10" href="$classgiri_1_1WebSocketServer.html" title="Class representing a WebSocket Server. " alt="" coords="498,322,651,349"/>
 <area shape="rect" id="node12" href="$classgiri_1_1WebSocketSession.html" title="Class representing one session/connection. " alt="" coords="493,387,656,414"/>
 <area shape="rect" id="node13" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; HTTPServer \&gt; \&gt;" alt="" coords="11,71,173,112"/>
 <area shape="rect" id="node14" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; HTTPSession \&gt; \&gt;" alt="" coords="11,136,173,177"/>
 <area shape="rect" id="node15" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; T \&gt; \&gt;" alt="" coords="11,5,173,47"/>
 <area shape="rect" id="node16" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; WebSocketClient \&gt; \&gt;" alt="" coords="11,253,173,295"/>
-<area shape="rect" id="node17" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; WebsocketServer \&gt; \&gt;" alt="" coords="11,319,173,360"/>
+<area shape="rect" id="node17" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; WebSocketServer \&gt; \&gt;" alt="" coords="10,319,174,360"/>
 <area shape="rect" id="node18" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; WebSocketSession \&gt; \&gt;" alt="" coords="5,384,179,425"/>
 </map>
