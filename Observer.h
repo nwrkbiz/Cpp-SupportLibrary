@@ -24,7 +24,10 @@ namespace giri {
      *  #include <Observer.h>
      *  #include <string>
      *  #include <iostream>
-     *  class MyObservable : public giri::Observable<MyObservable>
+     * 
+     *  using namespace giri;
+     * 
+     *  class MyObservable : public Observable<MyObservable>
      *  {
      *  public:
      *      std::string GetObservable() const {return "Observable ;)"; };
@@ -56,7 +59,7 @@ namespace giri {
      *  --------------
      *  @code{.cpp}
      *  // .... example starts at Observer class documentation
-     *  class MyObserver : public giri::Observer<MyObservable>
+     *  class MyObserver : public Observer<MyObservable>
      *  {
      *  public:
      *      MyObserver(const std::string & name) : m_Name(name){}
