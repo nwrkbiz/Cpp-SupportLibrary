@@ -39,7 +39,7 @@ namespace giri {
          * on error.
          * @param file Filepath to load data from.
          */
-        std::vector<char> LoadFile(const std::filesystem::path& file) {
+        inline std::vector<char> LoadFile(const std::filesystem::path& file) {
             if(!std::filesystem::exists(file))
                 throw FileSystemException("File does not exist: " + file.string());
 
@@ -63,7 +63,7 @@ namespace giri {
          * @param data Data to write.
          * @returns true on success, false on failure.
          */
-        bool WriteFile(const std::filesystem::path& file, const std::vector<char>& data)
+        inline bool WriteFile(const std::filesystem::path& file, const std::vector<char>& data)
         {
             std::ofstream out;
             out.open(file, std::ios::out | std::ios::binary);

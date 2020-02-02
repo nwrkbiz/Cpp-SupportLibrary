@@ -57,7 +57,7 @@ namespace giri {
      * @param binaryData Vector containing binray data.
      * @returns Data represented as Base64 string.
      */
-    std::string Encode(const std::vector<char>& data) {
+    inline std::string Encode(const std::vector<char>& data) {
       static constexpr char sEncodingTable[] = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -101,7 +101,7 @@ namespace giri {
      * @param base64Data Data represented as Base64 string.
      * @returns vector containing binray data.
      */
-    std::vector<char> Decode(const std::string& base64Data) {
+    inline std::vector<char> Decode(const std::string& base64Data) {
       static constexpr unsigned char kDecodingTable[] = {
         64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64,
         64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64,
