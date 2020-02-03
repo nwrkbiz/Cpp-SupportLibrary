@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notify',['notify',['../classgiri_1_1Observable.html#a979fbcabf5babd6a8c452044b3c87ef6',1,'giri::Observable']]]
+  ['make',['Make',['../classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f',1,'giri::json::JSON']]]
 ];

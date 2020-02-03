@@ -73,6 +73,34 @@ namespace giri {
             out.close();
             return true;
         }
+        /**
+         * Searches for an executable within PATH.
+         * @param executable Name of executable to search for.
+         * @returns Path to executable if existent, emtpty string if not existent.
+         */
+        inline std::filesystem::path FindExecutableInPath(const std::string &executable)
+        {
+            std::string path = getenv("PATH");
+        #if defined(_WIN32)
+            char delim = ';';
+        #else
+            char delim = ':';
+        #endif
+            std::vector<std::string> tokens;
+            std::string token;
+            std::istringstream tokenStream(path);
+            while (std::getline(tokenStream, token, delim))
+            {
+                std::filesystem::path exec(token);
+                exec.append(executable);
+                if(std::filesystem::exists(exec))
+                    return exec;
+                exec.replace_extension(".exe");
+                if(std::filesystem::exists(exec))
+                    return exec;
+            }
+            return "";
+        }
     }
 }
 #endif //SUPPORTLIB_FILESYSTEM_H

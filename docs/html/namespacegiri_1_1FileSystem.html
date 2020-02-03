@@ -86,15 +86,53 @@ Functions</h2></td></tr>
 <tr class="separator:a4ef3f62c0424be19ff4bc9fc36e7b226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a951e7c5d706bb8b06d101382eadb832f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1FileSystem.html#a951e7c5d706bb8b06d101382eadb832f">WriteFile</a> (const std::filesystem::path &amp;file, const std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:a951e7c5d706bb8b06d101382eadb832f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af02acfb09c2359f6fded9cb998f2f662"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1FileSystem.html#af02acfb09c2359f6fded9cb998f2f662">FindExecutableInPath</a> (const std::string &amp;executable)</td></tr>
+<tr class="separator:af02acfb09c2359f6fded9cb998f2f662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace containing <a class="el" href="namespacegiri_1_1FileSystem.html" title="Namespace containing FileSystem I/O commands. ">FileSystem</a> I/O commands. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="af02acfb09c2359f6fded9cb998f2f662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af02acfb09c2359f6fded9cb998f2f662">&#9670;&nbsp;</a></span>FindExecutableInPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::filesystem::path giri::FileSystem::FindExecutableInPath </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>executable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Searches for an executable within PATH. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">executable</td><td>Name of executable to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Path to executable if existent, emtpty string if not existent. </dd></dl>
+
+</div>
+</div>
 <a id="a4ef3f62c0424be19ff4bc9fc36e7b226"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ef3f62c0424be19ff4bc9fc36e7b226">&#9670;&nbsp;</a></span>LoadFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;char&gt; giri::FileSystem::LoadFile </td>
@@ -104,6 +142,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Loads blob data from the harddisk. Throws <a class="el" href="classgiri_1_1FileSystem_1_1FileSystemException.html" title="Exception to be thrown on FileSystem errors. ">FileSystemException</a> on error. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -119,6 +162,9 @@ Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool giri::FileSystem::WriteFile </td>
@@ -138,6 +184,11 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Writes data to the harddisk. If given file does not exist it will be created. If file does already exist it will be overridden. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

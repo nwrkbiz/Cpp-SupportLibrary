@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['isarray',['IsArray',['../classgiri_1_1json_1_1JSON.html#a6f833e1b195e322a501d69a8916e8b79',1,'giri::json::JSON']]],
-  ['isboolean',['IsBoolean',['../classgiri_1_1json_1_1JSON.html#a8e23ae6a20fa9d412225b1f1b23120f6',1,'giri::json::JSON']]],
-  ['isfloating',['IsFloating',['../classgiri_1_1json_1_1JSON.html#aa2b7352cf55b72061941a812892b9e4e',1,'giri::json::JSON']]],
-  ['isintegral',['IsIntegral',['../classgiri_1_1json_1_1JSON.html#afbb31137c1a8f883669a6c9f09831cf5',1,'giri::json::JSON']]],
-  ['isnull',['IsNull',['../classgiri_1_1json_1_1JSON.html#a7f6859c473ef7b77df79bd5bdbe39642',1,'giri::json::JSON']]],
-  ['isobject',['IsObject',['../classgiri_1_1json_1_1JSON.html#a0644e215cc1da0d4a5dad2e1db42a555',1,'giri::json::JSON']]],
-  ['isstring',['IsString',['../classgiri_1_1json_1_1JSON.html#a0fe89e8853d28f589ff35436e52a8b44',1,'giri::json::JSON']]]
+  ['haskey',['hasKey',['../classgiri_1_1json_1_1JSON.html#a141dbddbfb1e88f0c6ece645cb5d29b9',1,'giri::json::JSON']]],
+  ['httpclient',['HTTPClient',['../classgiri_1_1HTTPClient.html#ae046f2a7bf387763924e18238a55acf6',1,'giri::HTTPClient']]],
+  ['httpget',['HTTPGet',['../classgiri_1_1HTTPClient.html#a3157cd344d45a574304fd1d2b0750745',1,'giri::HTTPClient']]],
+  ['httppost',['HTTPPost',['../classgiri_1_1HTTPClient.html#a385b92c6239217435e1e636d55218f1d',1,'giri::HTTPClient']]],
+  ['httpput',['HTTPPut',['../classgiri_1_1HTTPClient.html#a7641db61f3a73ab33eb18bb16244ac15',1,'giri::HTTPClient']]],
+  ['httpserver',['HTTPServer',['../classgiri_1_1HTTPServer.html#a849e540ba24de74645dca69097b818a6',1,'giri::HTTPServer']]],
+  ['httpsession',['HTTPSession',['../classgiri_1_1HTTPSession.html#ad8f9ab4f8abee02d26f33ab7a7a48fab',1,'giri::HTTPSession']]]
 ];

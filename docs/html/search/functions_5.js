@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['haskey',['hasKey',['../classgiri_1_1json_1_1JSON.html#a141dbddbfb1e88f0c6ece645cb5d29b9',1,'giri::json::JSON']]],
-  ['httpclient',['HTTPClient',['../classgiri_1_1HTTPClient.html#ae046f2a7bf387763924e18238a55acf6',1,'giri::HTTPClient']]],
-  ['httpget',['HTTPGet',['../classgiri_1_1HTTPClient.html#a3157cd344d45a574304fd1d2b0750745',1,'giri::HTTPClient']]],
-  ['httppost',['HTTPPost',['../classgiri_1_1HTTPClient.html#a385b92c6239217435e1e636d55218f1d',1,'giri::HTTPClient']]],
-  ['httpput',['HTTPPut',['../classgiri_1_1HTTPClient.html#a7641db61f3a73ab33eb18bb16244ac15',1,'giri::HTTPClient']]],
-  ['httpserver',['HTTPServer',['../classgiri_1_1HTTPServer.html#a849e540ba24de74645dca69097b818a6',1,'giri::HTTPServer']]],
-  ['httpsession',['HTTPSession',['../classgiri_1_1HTTPSession.html#ad8f9ab4f8abee02d26f33ab7a7a48fab',1,'giri::HTTPSession']]]
+  ['generateuuid',['generateUUID',['../namespacegiri.html#af881a8d0c40773e3ccb589a473f109ad',1,'giri']]],
+  ['getcert',['getCert',['../classgiri_1_1HTTPServer.html#aa7a5b739cc2952222b49ad88759c3910',1,'giri::HTTPServer::getCert()'],['../classgiri_1_1WebSocketServer.html#a72f36f405e9c84efdb14aa26ea8121c6',1,'giri::WebSocketServer::getCert()']]],
+  ['getclientip',['getClientIP',['../classgiri_1_1HTTPSession.html#a52cc623f639a085728da1b2449b1f2ec',1,'giri::HTTPSession::getClientIP()'],['../classgiri_1_1WebSocketSession.html#a9486504680c0c65da16947fb0dab43e1',1,'giri::WebSocketSession::getClientIP()']]],
+  ['getclientport',['getClientPort',['../classgiri_1_1HTTPSession.html#a9c7e3f9650359a7a49bf71799730b3ef',1,'giri::HTTPSession::getClientPort()'],['../classgiri_1_1WebSocketSession.html#a940e8e9aed87ea708a90a895fc8b37f6',1,'giri::WebSocketSession::getClientPort()']]],
+  ['getcontenttype',['getContentType',['../classgiri_1_1HTTPClient.html#a47dc77df1cde545d4fc396f7c354bf30',1,'giri::HTTPClient']]],
+  ['getdocroot',['getDocRoot',['../classgiri_1_1HTTPSession.html#ae44a5475a0f9353bb8be0d68636fcb82',1,'giri::HTTPSession::getDocRoot()'],['../classgiri_1_1HTTPServer.html#a0e0f0f0e830dd262f9d19bb8507daac4',1,'giri::HTTPServer::getDocRoot()']]],
+  ['geterror',['getError',['../classgiri_1_1HTTPClient.html#a4fdca7eb21cfc5b8a8a123222fdc5408',1,'giri::HTTPClient::getError()'],['../classgiri_1_1HTTPSession.html#a6a138a0057a3847b616833d6801ec27f',1,'giri::HTTPSession::getError()'],['../classgiri_1_1WebSocketClient.html#aab6217ec858e66ce4edbebb7b6207a01',1,'giri::WebSocketClient::getError()'],['../classgiri_1_1WebSocketSession.html#a55ef7ed3e1f51f1a5d9a93876dd08169',1,'giri::WebSocketSession::getError()']]],
+  ['gethost',['getHost',['../classgiri_1_1WebSocketClient.html#a3d2187ed65e6ac6a4e13d6c011702ef6',1,'giri::WebSocketClient']]],
+  ['getindexfile',['getIndexFile',['../classgiri_1_1HTTPSession.html#aa4d350787442e53d916bbd4828f16df4',1,'giri::HTTPSession::getIndexFile()'],['../classgiri_1_1HTTPServer.html#a7ced0f199b2e9ed224cc1697e6aa3b55',1,'giri::HTTPServer::getIndexFile()']]],
+  ['getinstance',['getInstance',['../classgiri_1_1Singleton.html#ac3039d92eaab108d92078e614cc84de1',1,'giri::Singleton']]],
+  ['getkey',['getKey',['../classgiri_1_1HTTPServer.html#a7162db0796cba7b84aad29bc2affad33',1,'giri::HTTPServer::getKey()'],['../classgiri_1_1WebSocketServer.html#a5eaeebfffc90a8ddccc38c9ecc5d0566',1,'giri::WebSocketServer::getKey()']]],
+  ['getmessage',['getMessage',['../classgiri_1_1ExceptionBase.html#a104e77bd4c08ba164b82ce3736422002',1,'giri::ExceptionBase::getMessage()'],['../classgiri_1_1WebSocketClient.html#a5528d489e56ff6bd2462cb7567b99b96',1,'giri::WebSocketClient::getMessage()'],['../classgiri_1_1WebSocketSession.html#afca96c900c5a2b3ef147cf6b8c320b94',1,'giri::WebSocketSession::getMessage()']]],
+  ['getmimetypes',['getMimeTypes',['../classgiri_1_1HTTPSession.html#ab6a857d0d789ece917fc94fe2a999278',1,'giri::HTTPSession::getMimeTypes()'],['../classgiri_1_1HTTPServer.html#ab5c416ba3dbf4a508775d76754b4b873',1,'giri::HTTPServer::getMimeTypes()']]],
+  ['getport',['getPort',['../classgiri_1_1WebSocketClient.html#af221f3be85c3921eb4315b0a06fd055f',1,'giri::WebSocketClient']]],
+  ['getrequest',['getRequest',['../classgiri_1_1HTTPSession.html#abd8a03a952549cfc0633a577f8ac0f8e',1,'giri::HTTPSession']]],
+  ['getresult',['getResult',['../classgiri_1_1HTTPSession.html#a807763e842422552fe900843cac397b7',1,'giri::HTTPSession']]],
+  ['getserverstring',['getServerString',['../classgiri_1_1HTTPSession.html#ae3b6be2cfffce5877bcda800a6024970',1,'giri::HTTPSession::getServerString()'],['../classgiri_1_1HTTPServer.html#a434d853dc2be850c4e2237da108c66bb',1,'giri::HTTPServer::getServerString()']]],
+  ['getsession',['getSession',['../classgiri_1_1HTTPServer.html#a4ee5a2ecac49d629a9bb4eb3347f732e',1,'giri::HTTPServer::getSession()'],['../classgiri_1_1WebSocketServer.html#abdd7a57ec1ad19c6d7f0f340cebf5890',1,'giri::WebSocketServer::getSession()']]],
+  ['getssl',['getSSL',['../classgiri_1_1HTTPClient.html#aedd6e4a915de5150f11c07d8c2f4aa19',1,'giri::HTTPClient::getSSL()'],['../classgiri_1_1HTTPSession.html#a917d05c4e2819b94b10728e1b0fc4892',1,'giri::HTTPSession::getSSL()'],['../classgiri_1_1HTTPServer.html#a8a4c0865a216a4fcf52e2174fa890b6a',1,'giri::HTTPServer::getSSL()'],['../classgiri_1_1WebSocketClient.html#a64de6df6d003643a7bcc28891ab23ab0',1,'giri::WebSocketClient::getSSL()'],['../classgiri_1_1WebSocketSession.html#ac4b6397acff7fddf03a34c845327d2e5',1,'giri::WebSocketSession::getSSL()'],['../classgiri_1_1WebSocketServer.html#a4f26f195b9ac215c23ba6b240e5fd3b2',1,'giri::WebSocketServer::getSSL()']]],
+  ['getuseragentstring',['getUserAgentString',['../classgiri_1_1HTTPClient.html#a0e560e99a293146fb81767cb937f6096',1,'giri::HTTPClient']]],
+  ['getversion',['getVersion',['../classgiri_1_1HTTPClient.html#a3c35985aba760b9ae1749a6bac313f5e',1,'giri::HTTPClient']]]
 ];
