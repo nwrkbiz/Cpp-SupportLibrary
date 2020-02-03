@@ -90,10 +90,56 @@ Functions</h2></td></tr>
 <tr class="separator:af02acfb09c2359f6fded9cb998f2f662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c8718235df6900917aa6be65f4a92c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1FileSystem.html#a59c8718235df6900917aa6be65f4a92c">ExecuteSync</a> (const std::string &amp;cmd)</td></tr>
 <tr class="separator:a59c8718235df6900917aa6be65f4a92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2f839d037e43f21e084764c74d413e"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1FileSystem.html#a6f2f839d037e43f21e084764c74d413e">ExecuteAsync</a> (const std::string &amp;cmd, std::ostream &amp;ostr=std::cout)</td></tr>
+<tr class="separator:a6f2f839d037e43f21e084764c74d413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace containing <a class="el" href="namespacegiri_1_1FileSystem.html" title="Namespace containing FileSystem I/O commands. ">FileSystem</a> I/O commands. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6f2f839d037e43f21e084764c74d413e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2f839d037e43f21e084764c74d413e">&#9670;&nbsp;</a></span>ExecuteAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt;void&gt; giri::FileSystem::ExecuteAsync </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Executes a command asynchronously. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>Command to execute. </td></tr>
+    <tr><td class="paramname">ostr</td><td>Stream to write command output to. (defaults to std::cout) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Future object which can be used for synchronization. </dd></dl>
+
+</div>
+</div>
 <a id="a59c8718235df6900917aa6be65f4a92c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59c8718235df6900917aa6be65f4a92c">&#9670;&nbsp;</a></span>ExecuteSync()</h2>
 

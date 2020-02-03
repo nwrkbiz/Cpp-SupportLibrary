@@ -14,6 +14,8 @@
 #include <vector>
 #include <fstream>
 #include <filesystem>
+#include <future>
+#include <iostream>
 
 namespace giri {
 
@@ -121,6 +123,30 @@ namespace giri {
                 result += buffer.data();
             }
             return result;
+        }
+        /**
+         * Executes a command asynchronously.
+         * @param cmd Command to execute.
+         * @param ostr Stream to write command output to. (defaults to std::cout) 
+         * @returns Future object which can be used for synchronization.
+         */
+        inline std::future<void> ExecuteAsync(const std::string& cmd, std::ostream& ostr = std::cout) {
+            auto hdl = std::async(std::launch::async, [&] { 
+            #if defined(_WIN32)
+                std::unique_ptr<FILE, decltype(&_pclose)> pipe(_popen(cmd.c_str(), "r"), _pclose);
+            #else
+                std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd.c_str(), "r"), pclose);
+            #endif
+                if (!pipe) {
+                    throw FileSystemException("popen() failed!");
+                }
+                std::array<char, 128> buffer;
+                while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+                    ostr << buffer.data();
+                }
+                return;
+            });
+            return hdl;
         }
     }
 }
