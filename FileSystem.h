@@ -106,7 +106,7 @@ namespace giri {
          * @param cmd Command to execute.
          * @returns The output of the command after finishing execution.
          */
-        std::string ExecuteSync(const std::string& cmd) {
+        inline std::string ExecuteSync(const std::string& cmd) {
             std::array<char, 128> buffer;
             std::string result;
         #if defined(WIN32)
