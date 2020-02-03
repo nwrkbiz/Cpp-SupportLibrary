@@ -109,7 +109,7 @@ namespace giri {
         inline std::string ExecuteSync(const std::string& cmd) {
             std::array<char, 128> buffer;
             std::string result;
-        #if defined(WIN32)
+        #if defined(_WIN32)
             std::unique_ptr<FILE, decltype(&_pclose)> pipe(_popen(cmd.c_str(), "r"), _pclose);
         #else
             std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd.c_str(), "r"), pclose);
