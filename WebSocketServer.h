@@ -11,7 +11,6 @@
 #define SUPPORTLIB_WEBSOCKETSERVER_H
 #include "Observer.h"
 #include "Exception.h"
-#include <cstddef>
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
