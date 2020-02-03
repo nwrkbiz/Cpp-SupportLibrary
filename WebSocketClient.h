@@ -11,11 +11,11 @@
 #define SUPPORTLIB_WEBSOCKETCLIENT_H
 #include "Observer.h"
 #include "Exception.h"
+#include <boost/asio/ip/tcp.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <boost/beast/websocket/ssl.hpp>
 #include <boost/asio/connect.hpp>
-#include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/ssl/stream.hpp>
 #include <cstdlib>
 #include <iostream>

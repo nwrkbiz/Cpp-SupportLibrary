@@ -11,12 +11,13 @@
 #define SUPPORTLIB_WEBSOCKETSERVER_H
 #include "Observer.h"
 #include "Exception.h"
+#include <cstddef>
+#include <boost/asio/ip/tcp.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <boost/beast/websocket/ssl.hpp>
 #include <boost/asio/bind_executor.hpp>
 #include <boost/asio/strand.hpp>
-#include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/ssl/stream.hpp>
 #include <filesystem>
 #include <algorithm>
@@ -72,8 +73,8 @@ namespace giri {
                                 boost::asio::ssl::context::no_sslv3 |
                                 boost::asio::ssl::context::no_tlsv1 |
                                 boost::asio::ssl::context::single_dh_use);
-                m_Ctx.use_certificate_chain_file(cert);
-                m_Ctx.use_private_key_file(key, boost::asio::ssl::context::file_format::pem);
+                m_Ctx.use_certificate_chain_file(cert.string());
+                m_Ctx.use_private_key_file(key.string(), boost::asio::ssl::context::file_format::pem);
                 m_Wss = std::make_shared<websocket::stream<ssl::stream<tcp::socket&> >>(m_Socket, m_Ctx);
                 m_Wss->next_layer().set_verify_mode(ssl::verify_none);
                 m_Strand = std::make_shared<boost::asio::strand<boost::asio::io_context::executor_type> >(m_Wss->get_executor());

@@ -13,11 +13,11 @@
 #include "Observer.h"
 #include "Exception.h"
 #include "FileSystem.h"
+#include <boost/asio/ip/tcp.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/version.hpp>
 #include <boost/asio/bind_executor.hpp>
-#include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/ssl/stream.hpp>
 #include <boost/asio/strand.hpp>
 #include <boost/config.hpp>
@@ -83,8 +83,8 @@ namespace giri {
                                 boost::asio::ssl::context::no_sslv3 |
                                 boost::asio::ssl::context::no_tlsv1 |
                                 boost::asio::ssl::context::single_dh_use);
-                m_Ctx.use_certificate_chain_file(cert);
-                m_Ctx.use_private_key_file(key, boost::asio::ssl::context::file_format::pem);
+                m_Ctx.use_certificate_chain_file(cert.string());
+                m_Ctx.use_private_key_file(key.string(), boost::asio::ssl::context::file_format::pem);
                 m_Stream = std::make_shared< ssl::stream<tcp::socket&> >(m_Socket, m_Ctx);
                 m_Stream->set_verify_mode(ssl::verify_none);
             }
@@ -269,9 +269,9 @@ namespace giri {
                                 m_Result = {http::status::ok, m_Request.version()};
                                 m_Result.body() = sfile;
                             }
-                            m_MimeTypes.try_emplace(path.extension(), "application/text");
+                            m_MimeTypes.try_emplace(path.extension().string(), "application/text");
                             m_Result.set(http::field::server, m_ServerString);
-                            m_Result.set(http::field::content_type, m_MimeTypes[path.extension()]);
+                            m_Result.set(http::field::content_type, m_MimeTypes[path.extension().string()]);
                             m_Result.keep_alive(m_Request.keep_alive());
                             m_Result.prepare_payload();
                         }
