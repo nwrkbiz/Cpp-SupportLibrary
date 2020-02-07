@@ -20,13 +20,35 @@ namespace giri {
     /**
      * @brief Binary large object.
      */
-    class Blob : public std::vector<char>, public Object<Blob>
+    class Blob : private std::vector<char>, public Object<Blob>
     {
     public:
+        using std::vector<char>::push_back;
+        using std::vector<char>::pop_back;
+        using std::vector<char>::emplace_back;
+        using std::vector<char>::front;
+        using std::vector<char>::back;
+        using std::vector<char>::operator[];
+        using std::vector<char>::operator=;
+        using std::vector<char>::begin;
+        using std::vector<char>::end;
+        using std::vector<char>::cbegin;
+        using std::vector<char>::cend;
+        using std::vector<char>::crbegin;
+        using std::vector<char>::crend;
+        using std::vector<char>::assign;
+        using std::vector<char>::size;
+        using std::vector<char>::at;
+        using std::vector<char>::clear;
+        using std::vector<char>::empty;
+        using std::vector<char>::erase;
+        using std::vector<char>::insert;
+        using std::vector<char>::resize;
+        using std::vector<char>::reserve;
+        using std::vector<char>::iterator;
+        using std::vector<char>::const_iterator;
         using std::vector<char>::vector;
-        Blob(const std::vector<char>& d) : ::std::vector<char>(d){};
-        Blob& operator= (const std::vector<char>& d) { assign(d.begin(), d.end()); return *this; };
-
+        
         /**
          * @returns The stored data as string.
          */
