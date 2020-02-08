@@ -1,3 +1,7 @@
 <map id="HTTPClient.h" name="HTTPClient.h">
-<area shape="rect" id="node2" href="$Object_8h.html" title="Base class of all classes. " alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node2" href="$Object_8h.html" title="Base class of all classes. " alt="" coords="5,319,76,345"/>
+<area shape="rect" id="node4" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;. " alt="" coords="307,80,366,107"/>
+<area shape="rect" id="node5" href="$Base64_8h.html" title="Contains Base64 encoding/decoding algorithms. " alt="" coords="179,162,257,189"/>
+<area shape="rect" id="node8" href="$FileSystem_8h.html" title="Contains FileSystem I/O functions. " alt="" coords="331,162,430,189"/>
+<area shape="rect" id="node9" href="$Exception_8h.html" title="Base exception to inherit custom exceptions from. " alt="" coords="313,244,403,271"/>
 </map>

@@ -10,6 +10,7 @@
 #ifndef SUPPORTLIB_HTTPCLIENT_H
 #define SUPPORTLIB_HTTPCLIENT_H
 #include "Object.h"
+#include "Blob.h"
 #include <boost/beast/core.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/asio/connect.hpp>
@@ -179,6 +180,22 @@ namespace giri {
         }
 
         /**
+         * Performs a HTTPPost request.
+         * 
+         * @param host Hostname or IP of server.
+         * @param port Port of server.
+         * @param target Targeted resource.
+         * @param data Data to send via post request.
+         */
+        std::vector<char> HTTPPost(const std::string & host, const std::string& port, const std::string &target, const Blob& data)
+        {
+            std::vector<char> dat;
+            dat.reserve(data.size());
+            dat.assign(data.begin(), data.end());
+            HTTPPost(host, port, target, dat);
+        }
+
+        /**
          * Performs a HTTPPut request.
          * 
          * @param host Hostname or IP of server.
@@ -198,6 +215,22 @@ namespace giri {
             std::ostringstream ostr;
             ostr << boost::beast::buffers_to_string(m_Res.body().data()); std::string s = ostr.str();
             return std::vector<char>(s.begin(), s.end());
+        }
+
+        /**
+         * Performs a HTTPPut request.
+         * 
+         * @param host Hostname or IP of server.
+         * @param port Port of server.
+         * @param target Targeted resource.
+         * @param data Data to send via put request.
+         */
+        std::vector<char> HTTPPut(const std::string & host, const std::string& port, const std::string &target, const Blob& data)
+        {
+            std::vector<char> dat;
+            dat.reserve(data.size());
+            dat.assign(data.begin(), data.end());
+            HTTPPut(host, port, target, dat);
         }
 
     private:

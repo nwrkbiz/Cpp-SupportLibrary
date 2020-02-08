@@ -136,8 +136,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3157cd344d45a574304fd1d2b0750745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a385b92c6239217435e1e636d55218f1d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a385b92c6239217435e1e636d55218f1d">HTTPPost</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:a385b92c6239217435e1e636d55218f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af536af950894d35b5a85a2e01b983044"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#af536af950894d35b5a85a2e01b983044">HTTPPost</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const <a class="el" href="classgiri_1_1Blob.html">Blob</a> &amp;data)</td></tr>
+<tr class="separator:af536af950894d35b5a85a2e01b983044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7641db61f3a73ab33eb18bb16244ac15"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a7641db61f3a73ab33eb18bb16244ac15">HTTPPut</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:a7641db61f3a73ab33eb18bb16244ac15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01f8810f857e1a33c90a7f0a77409da"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#ae01f8810f857e1a33c90a7f0a77409da">HTTPPut</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const <a class="el" href="classgiri_1_1Blob.html">Blob</a> &amp;data)</td></tr>
+<tr class="separator:ae01f8810f857e1a33c90a7f0a77409da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple HTTP Client. </p>
@@ -384,7 +388,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a385b92c6239217435e1e636d55218f1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a385b92c6239217435e1e636d55218f1d">&#9670;&nbsp;</a></span>HTTPPost()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a385b92c6239217435e1e636d55218f1d">&#9670;&nbsp;</a></span>HTTPPost() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -441,8 +445,66 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af536af950894d35b5a85a2e01b983044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af536af950894d35b5a85a2e01b983044">&#9670;&nbsp;</a></span>HTTPPost() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; giri::HTTPClient::HTTPPost </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgiri_1_1Blob.html">Blob</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs a HTTPPost request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Hostname or IP of server. </td></tr>
+    <tr><td class="paramname">port</td><td>Port of server. </td></tr>
+    <tr><td class="paramname">target</td><td>Targeted resource. </td></tr>
+    <tr><td class="paramname">data</td><td>Data to send via post request. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7641db61f3a73ab33eb18bb16244ac15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7641db61f3a73ab33eb18bb16244ac15">&#9670;&nbsp;</a></span>HTTPPut()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7641db61f3a73ab33eb18bb16244ac15">&#9670;&nbsp;</a></span>HTTPPut() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,6 +534,64 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs a HTTPPut request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Hostname or IP of server. </td></tr>
+    <tr><td class="paramname">port</td><td>Port of server. </td></tr>
+    <tr><td class="paramname">target</td><td>Targeted resource. </td></tr>
+    <tr><td class="paramname">data</td><td>Data to send via put request. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae01f8810f857e1a33c90a7f0a77409da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01f8810f857e1a33c90a7f0a77409da">&#9670;&nbsp;</a></span>HTTPPut() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; giri::HTTPClient::HTTPPut </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgiri_1_1Blob.html">Blob</a> &amp;&#160;</td>
           <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>

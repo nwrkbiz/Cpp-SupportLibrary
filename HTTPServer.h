@@ -407,7 +407,7 @@ namespace giri {
      *                  myCustomResult.set(http::field::server, sess->getServerString());
      *                  myCustomResult.set(http::field::content_type, "text/html");
      *                  myCustomResult.keep_alive(sess->getRequest().keep_alive());
-     *                  myCustomResult.body() = data;
+     *                  myCustomResult.body().assign(data.begin(), data.end());
      *                  myCustomResult.prepare_payload();
      *                  sess->setResult(myCustomResult);
      *              }
