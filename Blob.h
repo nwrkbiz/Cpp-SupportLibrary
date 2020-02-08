@@ -47,6 +47,7 @@ namespace giri {
         using std::vector<char>::reserve;
         using std::vector<char>::iterator;
         using std::vector<char>::const_iterator;
+        using std::vector<char>::data;
         using std::vector<char>::vector;
         
         /**
