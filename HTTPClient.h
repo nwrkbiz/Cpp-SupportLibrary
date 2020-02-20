@@ -18,6 +18,8 @@
 #include <boost/asio/ssl/stream.hpp>
 #include <iostream>
 #include <string>
+#include <map>
+
 namespace giri {
     namespace ssl = boost::asio::ssl;
     namespace http = boost::beast::http;
@@ -67,16 +69,19 @@ namespace giri {
          * @param version HTTP version to use (10 or 11). (defaults to 11)
          * @param userAgent Useragent string to be used for all requests. (defaults to "giris_supportlib_http_client")
          * @param contentType Content type to be used for all HTTPPost requests. (defaults to "application/x-www-form-urlencoded")
+         * @param customHead Mapping containing custom fields to be added to the head of the HTTP requests. (useful for some REST APIs, defaults to empty)
          */
         HTTPClient(bool ssl = false, 
                    HTTPClient::Version version = HTTPClient::Version::v_11,
                    const std::string& userAgent = "giris_supportlib_http_client",
-                   const std::string& contentType = "application/x-www-form-urlencoded"
+                   const std::string& contentType = "application/x-www-form-urlencoded",
+                   const std::map<std::string, std::string>& customHead = {}
                    ) : 
                    m_SSL(ssl), 
                    m_Version(version),
                    m_UserAgent(userAgent),
-                   m_ContentType(contentType){}
+                   m_ContentType(contentType),
+                   m_CustomHead(customHead){}
         
         /**
          * @param userAgent Useragent string to be used for all requests.
@@ -84,26 +89,29 @@ namespace giri {
         void setUserAgentString(const std::string & userAgent) {
             m_UserAgent = userAgent;
         }
-
         /**
          * @param contentType Content type to be used for all HTTPPost requests.
          */
         void setContentType(const std::string & contentType) {
             m_ContentType = contentType;
         }
-
         /**
          * @param v HTTP version to use (10 or 11)
          */
         void setVersion(const HTTPClient::Version v) {
             m_Version = v;
         }
-
         /**
          * @param ssl Configure wether to use ssl or not.
          */
         void setSSL(bool ssl){
             m_SSL = ssl;
+        }
+        /**
+         * @param customHead Mapping containing custom fields to be added to the head of the HTTP requests. (useful for some REST APIs)
+         */
+        void setCustomHead(std::map<std::string, std::string> customHead){
+            m_CustomHead = customHead;
         }
 
         /**
@@ -112,7 +120,6 @@ namespace giri {
         std::string getUserAgentString() const {
             return m_UserAgent;
         }
-
         /**
          * @returns Content type used for HTTPPost requests.
          */
@@ -125,7 +132,6 @@ namespace giri {
         HTTPClient::Version getVersion() const {
             return m_Version;
         }
-
         /**
          * @returns true if ssl is used, false otherwise.
          */
@@ -138,6 +144,12 @@ namespace giri {
         boost::system::error_code getError() const {
             return m_Ec;
         }
+        /**
+         * @returns Mapping containing custom fields which are added to the head of the HTTP requests.
+         */
+        std::map<std::string, std::string> getCustomHead() const {
+            return m_CustomHead;
+        }
 
         /**
          * Performs a HTTPGet request.
@@ -145,12 +157,40 @@ namespace giri {
          * @param host Hostname or IP of server.
          * @param port Port of server.
          * @param target Targeted resource. (defaults to "/")
+         * @returns The result of the request.
          */
         std::vector<char> HTTPGet(const std::string & host, const std::string& port, const std::string &target = "/")
         {
             http::request<http::string_body> req{http::verb::get, target, (size_t)m_Version};
             req.set(http::field::host, host);
             req.set(http::field::user_agent, m_UserAgent);
+
+            for(const auto& curHead : m_CustomHead)
+                req.set(curHead.first, curHead.second);
+
+            performRequest(host, port, req);
+            std::ostringstream ostr;
+            ostr << boost::beast::buffers_to_string(m_Res.body().data()); std::string s = ostr.str();
+            return std::vector<char>(s.begin(), s.end());
+        }
+
+        /**
+         * Performs a HTTPDelete request.
+         * 
+         * @param host Hostname or IP of server.
+         * @param port Port of server.
+         * @param target Targeted resource. (defaults to "/")
+         * @returns The result of the request.
+         */
+        std::vector<char> HTTPDelete(const std::string & host, const std::string& port, const std::string &target = "/")
+        {
+            http::request<http::string_body> req{http::verb::delete_, target, (size_t)m_Version};
+            req.set(http::field::host, host);
+            req.set(http::field::user_agent, m_UserAgent);
+
+            for(const auto& curHead : m_CustomHead)
+                req.set(curHead.first, curHead.second);
+
             performRequest(host, port, req);
             std::ostringstream ostr;
             ostr << boost::beast::buffers_to_string(m_Res.body().data()); std::string s = ostr.str();
@@ -164,6 +204,7 @@ namespace giri {
          * @param port Port of server.
          * @param target Targeted resource.
          * @param data Data to send via post request.
+         * @returns The result of the request.
          */
         std::vector<char> HTTPPost(const std::string & host, const std::string& port, const std::string &target, const std::vector<char>& data)
         {
@@ -171,6 +212,10 @@ namespace giri {
             req.set(http::field::host, host);
             req.set(http::field::user_agent, m_UserAgent);
             req.set(http::field::content_type, m_ContentType);
+
+            for(const auto& curHead : m_CustomHead)
+                req.set(curHead.first, curHead.second);
+
             req.body() = std::string(data.begin(), data.end());
             req.prepare_payload();
             performRequest(host, port, req);
@@ -186,6 +231,7 @@ namespace giri {
          * @param port Port of server.
          * @param target Targeted resource.
          * @param data Data to send via post request.
+         * @returns The result of the request.
          */
         std::vector<char> HTTPPost(const std::string & host, const std::string& port, const std::string &target, const Blob& data)
         {
@@ -202,6 +248,7 @@ namespace giri {
          * @param port Port of server.
          * @param target Targeted resource.
          * @param data Data to send via put request.
+         * @returns The result of the request.
          */
         std::vector<char> HTTPPut(const std::string & host, const std::string& port, const std::string &target, const std::vector<char>& data)
         {
@@ -209,6 +256,10 @@ namespace giri {
             req.set(http::field::host, host);
             req.set(http::field::user_agent, m_UserAgent);
             req.set(http::field::content_type, m_ContentType);
+
+            for(const auto& curHead : m_CustomHead)
+                req.set(curHead.first, curHead.second);
+
             req.body() = std::string(data.begin(), data.end());
             req.prepare_payload();
             performRequest(host, port, req);
@@ -224,6 +275,7 @@ namespace giri {
          * @param port Port of server.
          * @param target Targeted resource.
          * @param data Data to send via put request.
+         * @returns The result of the request.
          */
         std::vector<char> HTTPPut(const std::string & host, const std::string& port, const std::string &target, const Blob& data)
         {
@@ -263,6 +315,7 @@ namespace giri {
         boost::system::error_code m_Ec;
         boost::beast::flat_buffer m_Buffer;
         http::response<http::dynamic_body> m_Res;
+        std::map<std::string, std::string> m_CustomHead;
     };
 }
 #endif //SUPPORTLIB_HTTPCLIENT_H

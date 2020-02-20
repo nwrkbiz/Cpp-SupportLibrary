@@ -112,8 +112,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>WPtr</b> = std::weak
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae046f2a7bf387763924e18238a55acf6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#ae046f2a7bf387763924e18238a55acf6">HTTPClient</a> (bool ssl=false, HTTPClient::Version version=HTTPClient::Version::v_11, const std::string &amp;userAgent=&quot;giris_supportlib_http_client&quot;, const std::string &amp;contentType=&quot;application/x-www-form-urlencoded&quot;)</td></tr>
-<tr class="separator:ae046f2a7bf387763924e18238a55acf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02ff886a5dc5dc35a42de78bc325151"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#ac02ff886a5dc5dc35a42de78bc325151">HTTPClient</a> (bool ssl=false, HTTPClient::Version version=HTTPClient::Version::v_11, const std::string &amp;userAgent=&quot;giris_supportlib_http_client&quot;, const std::string &amp;contentType=&quot;application/x-www-form-urlencoded&quot;, const std::map&lt; std::string, std::string &gt; &amp;customHead={})</td></tr>
+<tr class="separator:ac02ff886a5dc5dc35a42de78bc325151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e66ae53456c35238ad9bbe381e95a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a3e66ae53456c35238ad9bbe381e95a9c">setUserAgentString</a> (const std::string &amp;userAgent)</td></tr>
 <tr class="separator:a3e66ae53456c35238ad9bbe381e95a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8cc7d29b0b048175bf5ca85dfee133f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#ac8cc7d29b0b048175bf5ca85dfee133f">setContentType</a> (const std::string &amp;contentType)</td></tr>
@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa04c57606fc10afc8f6c28bf1a02e1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a288583544ac4a92b18ee055f31d963ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a288583544ac4a92b18ee055f31d963ba">setSSL</a> (bool ssl)</td></tr>
 <tr class="separator:a288583544ac4a92b18ee055f31d963ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fae3f443dc3be2e1bcd609f588e350"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#ac6fae3f443dc3be2e1bcd609f588e350">setCustomHead</a> (std::map&lt; std::string, std::string &gt; customHead)</td></tr>
+<tr class="separator:ac6fae3f443dc3be2e1bcd609f588e350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e560e99a293146fb81767cb937f6096"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a0e560e99a293146fb81767cb937f6096">getUserAgentString</a> () const</td></tr>
 <tr class="separator:a0e560e99a293146fb81767cb937f6096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47dc77df1cde545d4fc396f7c354bf30"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a47dc77df1cde545d4fc396f7c354bf30">getContentType</a> () const</td></tr>
@@ -132,8 +134,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aedd6e4a915de5150f11c07d8c2f4aa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fdca7eb21cfc5b8a8a123222fdc5408"><td class="memItemLeft" align="right" valign="top">boost::system::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a4fdca7eb21cfc5b8a8a123222fdc5408">getError</a> () const</td></tr>
 <tr class="separator:a4fdca7eb21cfc5b8a8a123222fdc5408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b44afd266d637a5ea7a32a86c8b32d8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a8b44afd266d637a5ea7a32a86c8b32d8">getCustomHead</a> () const</td></tr>
+<tr class="separator:a8b44afd266d637a5ea7a32a86c8b32d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3157cd344d45a574304fd1d2b0750745"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a3157cd344d45a574304fd1d2b0750745">HTTPGet</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target=&quot;/&quot;)</td></tr>
 <tr class="separator:a3157cd344d45a574304fd1d2b0750745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5709e21020d44441203f22bc466d37f6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a5709e21020d44441203f22bc466d37f6">HTTPDelete</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target=&quot;/&quot;)</td></tr>
+<tr class="separator:a5709e21020d44441203f22bc466d37f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a385b92c6239217435e1e636d55218f1d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#a385b92c6239217435e1e636d55218f1d">HTTPPost</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const std::vector&lt; char &gt; &amp;data)</td></tr>
 <tr class="separator:a385b92c6239217435e1e636d55218f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af536af950894d35b5a85a2e01b983044"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1HTTPClient.html#af536af950894d35b5a85a2e01b983044">HTTPPost</a> (const std::string &amp;host, const std::string &amp;port, const std::string &amp;target, const <a class="el" href="classgiri_1_1Blob.html">Blob</a> &amp;data)</td></tr>
@@ -147,8 +153,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Simple HTTP Client. </p>
 <h2>Example Usage: </h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="HTTPClient_8h.html">HTTPClient.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="Blob_8h.html">Blob.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacegiri.html">giri</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    HTTPClient::SPtr httpc = std::make_shared&lt;HTTPClient&gt;(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">    <a class="code" href="classgiri_1_1Blob.html">Blob</a> b;</div><div class="line">    b = httpc-&gt;HTTPGet(<span class="stringliteral">&quot;www.google.at&quot;</span>, <span class="stringliteral">&quot;443&quot;</span>);</div><div class="line">    std::cout &lt;&lt; b.<a class="code" href="classgiri_1_1Blob.html#a5e8acd486f00f747cd15e5227f5ddddc">toString</a>() &lt;&lt; std::endl;</div><div class="line"></div><div class="line">    <a class="code" href="classgiri_1_1Blob.html">Blob</a> postData;</div><div class="line">    postData.<a class="code" href="classgiri_1_1Blob.html#a104b091bee389b787210c46ff82be32a">loadString</a>(<span class="stringliteral">&quot;&amp;Hello=World&quot;</span>);</div><div class="line">    httpc-&gt;setSSL(<span class="keyword">false</span>);</div><div class="line">    b = httpc-&gt;HTTPPost(<span class="stringliteral">&quot;ptsv2.com&quot;</span>, <span class="stringliteral">&quot;80&quot;</span>, <span class="stringliteral">&quot;/t/cu0dm-1579047674/post&quot;</span>, postData);</div><div class="line">    std::cout &lt;&lt; b.toString() &lt;&lt; std::endl;</div><div class="line"></div><div class="line">    <span class="keywordflow">return</span> EXIT_SUCCESS;</div><div class="line">}</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae046f2a7bf387763924e18238a55acf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae046f2a7bf387763924e18238a55acf6">&#9670;&nbsp;</a></span>HTTPClient()</h2>
+<a id="ac02ff886a5dc5dc35a42de78bc325151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02ff886a5dc5dc35a42de78bc325151">&#9670;&nbsp;</a></span>HTTPClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +184,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>contentType</em> = <code>&quot;application/x-www-form-urlencoded&quot;</code>&#160;</td>
+          <td class="paramname"><em>contentType</em> = <code>&quot;application/x-www-form-urlencoded&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>customHead</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -199,6 +211,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">version</td><td>HTTP version to use (10 or 11). (defaults to 11) </td></tr>
     <tr><td class="paramname">userAgent</td><td>Useragent string to be used for all requests. (defaults to "giris_supportlib_http_client") </td></tr>
     <tr><td class="paramname">contentType</td><td>Content type to be used for all HTTPPost requests. (defaults to "application/x-www-form-urlencoded") </td></tr>
+    <tr><td class="paramname">customHead</td><td>Mapping containing custom fields to be added to the head of the HTTP requests. (useful for some REST APIs, defaults to empty) </td></tr>
   </table>
   </dd>
 </dl>
@@ -229,6 +242,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Content type used for HTTPPost requests. </dd></dl>
+
+</div>
+</div>
+<a id="a8b44afd266d637a5ea7a32a86c8b32d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b44afd266d637a5ea7a32a86c8b32d8">&#9670;&nbsp;</a></span>getCustomHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::string&gt; giri::HTTPClient::getCustomHead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Mapping containing custom fields which are added to the head of the HTTP requests. </dd></dl>
 
 </div>
 </div>
@@ -336,6 +375,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5709e21020d44441203f22bc466d37f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5709e21020d44441203f22bc466d37f6">&#9670;&nbsp;</a></span>HTTPDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; giri::HTTPClient::HTTPDelete </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target</em> = <code>&quot;/&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs a HTTPDelete request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Hostname or IP of server. </td></tr>
+    <tr><td class="paramname">port</td><td>Port of server. </td></tr>
+    <tr><td class="paramname">target</td><td>Targeted resource. (defaults to "/") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
+
+</div>
+</div>
 <a id="a3157cd344d45a574304fd1d2b0750745"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3157cd344d45a574304fd1d2b0750745">&#9670;&nbsp;</a></span>HTTPGet()</h2>
 
@@ -384,6 +475,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
 
 </div>
 </div>
@@ -442,6 +534,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
 
 </div>
 </div>
@@ -500,6 +593,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
 
 </div>
 </div>
@@ -558,6 +652,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
 
 </div>
 </div>
@@ -616,6 +711,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the request. </dd></dl>
 
 </div>
 </div>
@@ -645,6 +741,38 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">contentType</td><td>Content type to be used for all HTTPPost requests. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6fae3f443dc3be2e1bcd609f588e350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6fae3f443dc3be2e1bcd609f588e350">&#9670;&nbsp;</a></span>setCustomHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void giri::HTTPClient::setCustomHead </td>
+          <td>(</td>
+          <td class="paramtype">std::map&lt; std::string, std::string &gt;&#160;</td>
+          <td class="paramname"><em>customHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">customHead</td><td>Mapping containing custom fields to be added to the head of the HTTP requests. (useful for some REST APIs) </td></tr>
   </table>
   </dd>
 </dl>

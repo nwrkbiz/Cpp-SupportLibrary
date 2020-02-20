@@ -35,7 +35,7 @@ namespace giri {
      *      using UPtr = std::unique_ptr<MyObservable>;
      *      using WPtr = std::weak_ptr<MyObservable>;
      *  };
-     *  // ... example to be cuntinued at Observable class documentation
+     *  // ... example to be continued at Observable class documentation
      *  @endcode
      */
     template <typename U>

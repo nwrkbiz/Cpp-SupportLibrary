@@ -2,6 +2,7 @@ var searchData=
 [
   ['send',['send',['../classgiri_1_1WebSocketClient.html#a91c2c32c8d8551b3619f03c33adf315c',1,'giri::WebSocketClient::send()'],['../classgiri_1_1WebSocketSession.html#abbc1c64c18c59f59d41d06cd8bc02d1f',1,'giri::WebSocketSession::send()']]],
   ['setcontenttype',['setContentType',['../classgiri_1_1HTTPClient.html#ac8cc7d29b0b048175bf5ca85dfee133f',1,'giri::HTTPClient']]],
+  ['setcustomhead',['setCustomHead',['../classgiri_1_1HTTPClient.html#ac6fae3f443dc3be2e1bcd609f588e350',1,'giri::HTTPClient']]],
   ['setdocroot',['setDocRoot',['../classgiri_1_1HTTPSession.html#a33eaf1414f9faa01b3c0ee6bf201fb7f',1,'giri::HTTPSession::setDocRoot()'],['../classgiri_1_1HTTPServer.html#acaf4b3c95aad4740332e4232332ce86d',1,'giri::HTTPServer::setDocRoot()']]],
   ['setindexfile',['setIndexFile',['../classgiri_1_1HTTPSession.html#aa0d0a1817cee6d233e5eb1e22e9c7a55',1,'giri::HTTPSession::setIndexFile()'],['../classgiri_1_1HTTPServer.html#a6e46982c6b847deacb325e25737e7723',1,'giri::HTTPServer::setIndexFile()']]],
   ['setmessage',['setMessage',['../classgiri_1_1ExceptionBase.html#a230f80699c1f2f2f2dd2103cbc38d2ab',1,'giri::ExceptionBase']]],
