@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,7 +30,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Giri&#39;s C++ Support Library
    </div>
-   <div id="projectbrief">Lightweight C++ library providing everything you need to quickly create awesome applications.</div>
+   <div id="projectbrief">C++ library providing everything you need to quickly create awesome applications.</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,20 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Utilities_8h_source.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -66,11 +87,15 @@ $(function() {
 <a href="Utilities_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SUPPORTLIB_UTILITIES_H</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define SUPPORTLIB_UTILITIES_H</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid.hpp&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_generators.hpp&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;boost/lexical_cast.hpp&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegiri.html">giri</a> {</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacegiri.html#af881a8d0c40773e3ccb589a473f109ad">   22</a></span>&#160;  std::string <a class="code" href="namespacegiri.html#af881a8d0c40773e3ccb589a473f109ad">generateUUID</a>(){</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    boost::uuids::random_generator gen;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    boost::uuids::uuid <span class="keywordtype">id</span> = gen();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> boost::lexical_cast&lt;std::string&gt;(id);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif //SUPPORTLIB_UTILITIES_H</span></div><div class="ttc" id="namespacegiri_html"><div class="ttname"><a href="namespacegiri.html">giri</a></div><div class="ttdoc">Namespace for giri&amp;#39;s C++ support library. </div><div class="ttdef"><b>Definition:</b> Base64.h:47</div></div>
 <div class="ttc" id="namespacegiri_html_af881a8d0c40773e3ccb589a473f109ad"><div class="ttname"><a href="namespacegiri.html#af881a8d0c40773e3ccb589a473f109ad">giri::generateUUID</a></div><div class="ttdeci">std::string generateUUID()</div><div class="ttdef"><b>Definition:</b> Utilities.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="Utilities_8h.html">Utilities.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

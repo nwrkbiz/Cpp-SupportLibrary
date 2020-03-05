@@ -1,13 +1,13 @@
 Giri's C++ Support Library
 ==========================
 
-Lightweight C++ library providing everything you need to quickly create awesome applications.
+C++ library providing everything you need to quickly create awesome applications.
 
 This library includes:
 * Websocket server/client based on boost beast
 * HTTP server/client based on boost beast
 * Blob class to handle files
-* Generic implementations of sommon design patterns and idioms (Singleton, Observer, Passkey)
+* Generic implementations of common design patterns and idioms (Singleton, Observer, Passkey)
 
 ## Documentation
 
