@@ -602,7 +602,7 @@ namespace giri {
                 JSON( std::nullptr_t ) : Internal(), Type( Class::Null ){}
 
                 /**
-                 * Creates a new JSON Object.
+                 * Creates a new JSON object.
                  * @param type Class type to create.
                  * @returns JSON object of given class type.
                  */
@@ -799,7 +799,7 @@ namespace giri {
 
                 /**
                  * @returns If class type is String, the stored value. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. 
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. 
                  * Comma of a converted Floating value depends on the users locale setting. Throws std::error_code
                  * on conversion error.
                  */
@@ -808,7 +808,7 @@ namespace giri {
                 /**
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. 
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. 
                  * Comma of a converted Floating value depends on the users locale setting.
                  * Returns empty string otherwise or on conversion error.
                  */
@@ -841,7 +841,7 @@ namespace giri {
                 /**
                  * Useful if json objects are stored within the json as string.
                  * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
                  * converted Floating value depends on the users locale setting. Throws std::error_code on conversion error.
                  */
                 std::string ToUnescapedString() const { std::error_code ec; return ToUnescapedString( ec ); if(ec) throw ec; }
@@ -850,7 +850,7 @@ namespace giri {
                  * Useful if json objects are stored within the json as string.
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
                  * converted Floating value depends on the users locale setting. Returns empty string otherwise or on conversion error.
                  */
                 std::string ToUnescapedString( std::error_code &ec ) const noexcept {
@@ -992,8 +992,8 @@ namespace giri {
                 }
 
                 /**
-                 * Returns Object range which allows iterating over the object items.
-                 * @returns Object range which allows iterating over the object items.
+                 * Returns ObjectRange which allows iterating over the object items.
+                 * @returns ObjectRange which allows iterating over the object items.
                  */
                 JSONWrapper<std::map<std::string,JSON>> ObjectRange() {
                     if( Type == Class::Object )
@@ -1012,8 +1012,8 @@ namespace giri {
                 }
 
                 /**
-                 * Returns Object range which allows iterating over the object items.
-                 * @returns Object range which allows iterating over the object items.
+                 * Returns ObjectRange which allows iterating over the object items.
+                 * @returns ObjectRange which allows iterating over the object items.
                  */
                 JSONConstWrapper<std::map<std::string,JSON>> ObjectRange() const {
                     if( Type == Class::Object )
@@ -1022,8 +1022,8 @@ namespace giri {
                 }
 
                 /**
-                 * Returns Array range which allows iterating over the array items.
-                 * @returns Array range which allows iterating over the array items.
+                 * Returns ArrayRange which allows iterating over the array items.
+                 * @returns ArrayRange which allows iterating over the array items.
                  */
                 JSONConstWrapper<std::deque<JSON>> ArrayRange() const { 
                     if( Type == Class::Array )
