@@ -798,14 +798,6 @@ namespace giri {
                 bool IsObject() const { return Type == Class::Object; }
 
                 /**
-                 * @returns If class type is String, the stored value. If class type is
-                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. 
-                 * Comma of a converted Floating value depends on the users locale setting. Throws std::error_code
-                 * on conversion error.
-                 */
-                std::string ToString() const { std::error_code ec; return ToString( ec ); if(ec) throw ec; }
-
-                /**
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value. If class type is
                  * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. 
@@ -839,12 +831,18 @@ namespace giri {
                 }
 
                 /**
-                 * Useful if json objects are stored within the json as string.
-                 * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
-                 * converted Floating value depends on the users locale setting. Throws std::error_code on conversion error.
+                 * @returns If class type is String, the stored value. If class type is
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. 
+                 * Comma of a converted Floating value depends on the users locale setting. Throws std::error_code
+                 * on conversion error.
                  */
-                std::string ToUnescapedString() const { std::error_code ec; return ToUnescapedString( ec ); if(ec) throw ec; }
+                std::string ToString() const { 
+                    std::error_code ec; 
+                    std::string ret = ToString( ec ); 
+                    if(ec) 
+                        throw ec;
+                    return ret;
+                }
 
                 /**
                  * Useful if json objects are stored within the json as string.
@@ -880,11 +878,18 @@ namespace giri {
                 }
 
                 /**
-                 * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
-                 * String, an conversion will be tried. Throws std::error_code on conversion error.
+                 * Useful if json objects are stored within the json as string.
+                 * @returns If class type is String, the stored value without escaping. If class type is
+                 * Null, JSONObject, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
+                 * converted Floating value depends on the users locale setting. Throws std::error_code on conversion error.
                  */
-                double ToFloat() const { std::error_code ec; return ToFloat( ec ); if(ec) throw ec; }
-
+                std::string ToUnescapedString() const { 
+                    std::error_code ec; 
+                    std::string ret = ToUnescapedString( ec ); 
+                    if(ec) 
+                        throw ec;
+                    return ret;
+                }
 
                 /**
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
@@ -925,7 +930,13 @@ namespace giri {
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
                  * String, an conversion will be tried. Throws std::error_code on conversion error.
                  */
-                long long ToInt() const { std::error_code ec; return ToInt( ec ); if(ec) throw ec; }
+                double ToFloat() const { 
+                    std::error_code ec; 
+                    double ret = ToFloat( ec ); 
+                    if(ec) 
+                        throw ec;
+                    return ret;
+                }
 
                 /**
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
@@ -958,7 +969,13 @@ namespace giri {
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
                  * String, an conversion will be tried. Throws std::error_code on conversion error.
                  */
-                bool ToBool() const { std::error_code ec; return ToBool( ec ); if(ec) throw ec; }
+                long long ToInt() const { 
+                    std::error_code ec; 
+                    long long ret = ToInt( ec ); 
+                    if(ec) 
+                        throw ec;
+                    return ret;
+                }
 
                 /**
                  * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
@@ -989,6 +1006,18 @@ namespace giri {
 
                     ec = error::bool_conversion_failed;
                     return false;
+                }
+
+                /**
+                 * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
+                 * String, an conversion will be tried. Throws std::error_code on conversion error.
+                 */
+                bool ToBool() const { 
+                    std::error_code ec; 
+                    bool ret = ToBool( ec ); 
+                    if(ec) 
+                        throw ec;
+                    return ret;
                 }
 
                 /**
