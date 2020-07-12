@@ -4,7 +4,6 @@ var searchData=
   ['object_3c_20blob_20_3e',['Object&lt; Blob &gt;',['../classgiri_1_1Object.html',1,'giri']]],
   ['object_3c_20exceptionbase_20_3e',['Object&lt; ExceptionBase &gt;',['../classgiri_1_1Object.html',1,'giri']]],
   ['object_3c_20httpclient_20_3e',['Object&lt; HTTPClient &gt;',['../classgiri_1_1Object.html',1,'giri']]],
-  ['object_3c_20json_20_3e',['Object&lt; JSON &gt;',['../classgiri_1_1Object.html',1,'giri']]],
   ['object_3c_20key_3c_20t_20_3e_20_3e',['Object&lt; Key&lt; T &gt; &gt;',['../classgiri_1_1Object.html',1,'giri']]],
   ['object_3c_20observable_3c_20httpserver_20_3e_20_3e',['Object&lt; Observable&lt; HTTPServer &gt; &gt;',['../classgiri_1_1Object.html',1,'giri']]],
   ['object_3c_20observable_3c_20httpsession_20_3e_20_3e',['Object&lt; Observable&lt; HTTPSession &gt; &gt;',['../classgiri_1_1Object.html',1,'giri']]],

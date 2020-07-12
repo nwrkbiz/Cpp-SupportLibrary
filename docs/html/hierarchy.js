@@ -29,6 +29,7 @@ var hierarchy =
         [ "giri::WebSocketServerException", "classgiri_1_1WebSocketServerException.html", null ]
       ] ]
     ] ],
+    [ "giri::json::JSON", "classgiri_1_1json_1_1JSON.html", null ],
     [ "giri::json::JSON::JSONConstWrapper< Container >", "classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html", null ],
     [ "giri::json::JSON::JSONWrapper< Container >", "classgiri_1_1json_1_1JSON_1_1JSONWrapper.html", null ],
     [ "giri::Object< T >", "classgiri_1_1Object.html", [
@@ -42,9 +43,6 @@ var hierarchy =
     ] ],
     [ "giri::Object< HTTPClient >", "classgiri_1_1Object.html", [
       [ "giri::HTTPClient", "classgiri_1_1HTTPClient.html", null ]
-    ] ],
-    [ "giri::Object< JSON >", "classgiri_1_1Object.html", [
-      [ "giri::json::JSON", "classgiri_1_1json_1_1JSON.html", null ]
     ] ],
     [ "giri::Object< Key< T > >", "classgiri_1_1Object.html", [
       [ "giri::Key< T >", "classgiri_1_1Key.html", null ]
