@@ -1,6 +1,7 @@
 /**
  * @file JSON.h
- * @brief Lightweight JSON library for exporting/importing data in JSON format from/to C++.
+ * @brief Lightweight JSON library for exporting/importing data in JSON format from/to C++. 
+ * Can be used standalone with any C++17 compiler.
  * @author nbsdx (Neil)
  * @author Daniel Giritzer
  * @copyright "THE BEER-WARE LICENSE" (Revision 42):
@@ -798,7 +799,8 @@ namespace giri {
 
                 /**
                  * @returns If class type is String, the stored value. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Throws std::error_code
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. 
+                 * Comma of a converted Floating value depends on the users locale setting. Throws std::error_code
                  * on conversion error.
                  */
                 std::string ToString() const { std::error_code ec; return ToString( ec ); if(ec) throw ec; }
@@ -806,8 +808,9 @@ namespace giri {
                 /**
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
-                 * or on conversion error.
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. 
+                 * Comma of a converted Floating value depends on the users locale setting.
+                 * Returns empty string otherwise or on conversion error.
                  */
                 std::string ToString( std::error_code &ec ) const noexcept {
                     if(Type == Class::String)
@@ -838,8 +841,8 @@ namespace giri {
                 /**
                  * Useful if json objects are stored within the json as string.
                  * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Throws 
-                 * std::error_code on conversion error.
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
+                 * converted Floating value depends on the users locale setting. Throws std::error_code on conversion error.
                  */
                 std::string ToUnescapedString() const { std::error_code ec; return ToUnescapedString( ec ); if(ec) throw ec; }
 
@@ -847,8 +850,8 @@ namespace giri {
                  * Useful if json objects are stored within the json as string.
                  * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
-                 * or on conversion error.
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Comma of a 
+                 * converted Floating value depends on the users locale setting. Returns empty string otherwise or on conversion error.
                  */
                 std::string ToUnescapedString( std::error_code &ec ) const noexcept {
                     if(Type == Class::String)
