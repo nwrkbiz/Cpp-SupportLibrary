@@ -32,7 +32,9 @@
 #include <ostream>
 #include <charconv>
 
-#include "Object.h"
+#if __has_include("Object.h")
+# include "Object.h"
+#endif
 
 namespace giri {
 
@@ -434,7 +436,11 @@ namespace giri {
          * }
          * @endcode
          */
+#if __has_include("Object.h")
         class JSON final : public Object<JSON>
+#else
+        class JSON final
+#endif
         {
             union BackingData {
                 BackingData( double d ) : Float( d ){}
