@@ -81,24 +81,67 @@ $(document).ready(function(){initNavTree('namespacegiri_1_1json.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">giri::json Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> related stuff.  
+<p>Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> related stuff.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacegiri_1_1json_1_1parsers"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1parsers.html">parsers</a></td></tr>
+<tr class="memdesc:namespacegiri_1_1json_1_1parsers"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of functions used to parse json strings and json substrings. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacegiri_1_1json_1_1utility"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1utility.html">utility</a></td></tr>
+<tr class="memdesc:namespacegiri_1_1json_1_1utility"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of helper functions and objects. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> objects.  <a href="classgiri_1_1json_1_1JSON.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgiri_1_1json_1_1error__category.html">error_category</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error category object used to convert the error code to a understandable message via std::error_code.  <a href="structgiri_1_1json_1_1error__category.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> objects. Class may throw exceptions of type std::error_code on error.  <a href="classgiri_1_1json_1_1JSON.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ae2230ef58baeb6055b5435a22ad6b52e"><td class="memItemLeft" align="right" valign="top"><a id="ae2230ef58baeb6055b5435a22ad6b52e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e">error</a> { <br />
+&#160;&#160;<b>float_conversion_failed_invalid_arg</b> = 42, 
+<b>float_conversion_failed_out_of_range</b>, 
+<b>float_conversion_failed</b>, 
+<b>object_missing_colon</b>, 
+<br />
+&#160;&#160;<b>object_missing_comma</b>, 
+<b>array_missing_comma_or_bracket</b>, 
+<b>string_missing_hex_char</b>, 
+<b>string_conversion_failed</b>, 
+<br />
+&#160;&#160;<b>string_unescaped_conversion_failed</b>, 
+<b>number_missing_exponent</b>, 
+<b>number_unexpected_char</b>, 
+<b>number_conversion_failed</b>, 
+<br />
+&#160;&#160;<b>bool_wrong_text</b>, 
+<b>bool_conversion_failed</b>, 
+<b>null_wrong_text</b>, 
+<b>unknown_starting_char</b>
+<br />
+ }<tr class="memdesc:ae2230ef58baeb6055b5435a22ad6b52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum class to identify parsing and conversion errors. <br /></td></tr>
+</td></tr>
+<tr class="separator:ae2230ef58baeb6055b5435a22ad6b52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8670b0377373b2078d08ba1ac9a2d92f"><td class="memItemLeft" align="right" valign="top">std::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json.html#a8670b0377373b2078d08ba1ac9a2d92f">make_error_code</a> (<a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e">json::error</a> e) noexcept</td></tr>
+<tr class="separator:a8670b0377373b2078d08ba1ac9a2d92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3da5344af22d9b3d0a2008c9df386785"><td class="memItemLeft" align="right" valign="top"><a id="a3da5344af22d9b3d0a2008c9df386785"></a>
 <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Array</b> ()</td></tr>
 <tr class="separator:a3da5344af22d9b3d0a2008c9df386785"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,8 +157,42 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <tr class="separator:a4e569c1ac0acba4423c1547721acf671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> related stuff. </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> related stuff. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a8670b0377373b2078d08ba1ac9a2d92f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8670b0377373b2078d08ba1ac9a2d92f">&#9670;&nbsp;</a></span>make_error_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::error_code giri::json::make_error_code </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e">json::error</a>&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This overload makes <a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e" title="Enum class to identify parsing and conversion errors. ">giri::json::error</a> assignable to std::error_code </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e" title="Enum class to identify parsing and conversion errors. ">giri::json::error</a> to construct a std::error_code for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::error_code constructed from <a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e" title="Enum class to identify parsing and conversion errors. ">giri::json::error</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

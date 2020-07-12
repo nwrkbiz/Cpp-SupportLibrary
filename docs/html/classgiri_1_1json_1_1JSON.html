@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classgiri_1_1json_1_1JSON.html','');})
 </div><!--header-->
 <div class="contents">
 
-<p>Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> objects.  
+<p>Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> objects. Class may throw exceptions of type std::error_code on error.  
  <a href="classgiri_1_1json_1_1JSON.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="JSON_8h_source.html">JSON.h</a>&gt;</code></p>
@@ -152,9 +152,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc37e5b0b1d9eb3b597da04c691a7249"><td class="memItemLeft" align="right" valign="top"><a id="abc37e5b0b1d9eb3b597da04c691a7249"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>JSON</b> (Class type)</td></tr>
 <tr class="separator:abc37e5b0b1d9eb3b597da04c691a7249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d04ea116e93eebfcbb31dfc492cd4bc"><td class="memItemLeft" align="right" valign="top"><a id="a1d04ea116e93eebfcbb31dfc492cd4bc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>JSON</b> (initializer_list&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; list)</td></tr>
-<tr class="separator:a1d04ea116e93eebfcbb31dfc492cd4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7569b74d7e14a8272fa0654efd62eea8"><td class="memItemLeft" align="right" valign="top"><a id="a7569b74d7e14a8272fa0654efd62eea8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>JSON</b> (std::initializer_list&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; list)</td></tr>
+<tr class="separator:a7569b74d7e14a8272fa0654efd62eea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d9e39272b701c0183c7b46071d8902b"><td class="memItemLeft" align="right" valign="top"><a id="a6d9e39272b701c0183c7b46071d8902b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>JSON</b> (<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&amp;other)</td></tr>
 <tr class="separator:a6d9e39272b701c0183c7b46071d8902b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,22 +167,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b9f03f5a5d7cf93020b2de7dc7edf84"><td class="memItemLeft" align="right" valign="top"><a id="a2b9f03f5a5d7cf93020b2de7dc7edf84"></a>
 <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;other)</td></tr>
 <tr class="separator:a2b9f03f5a5d7cf93020b2de7dc7edf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac65ee345b3e26320b5358aeb9ca7bb45"><td class="memTemplParams" colspan="2"><a id="ac65ee345b3e26320b5358aeb9ca7bb45"></a>
+<tr class="memitem:a1720362f5258a9b5d6c17c76432c233b"><td class="memTemplParams" colspan="2"><a id="a1720362f5258a9b5d6c17c76432c233b"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac65ee345b3e26320b5358aeb9ca7bb45"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T b, typename enable_if&lt; is_same&lt; T, bool &gt;::value &gt;::type *=0)</td></tr>
-<tr class="separator:ac65ee345b3e26320b5358aeb9ca7bb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d95a5ceb20653b15ef098a19d39b0fa"><td class="memTemplParams" colspan="2"><a id="a2d95a5ceb20653b15ef098a19d39b0fa"></a>
+<tr class="memitem:a1720362f5258a9b5d6c17c76432c233b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T b, typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:a1720362f5258a9b5d6c17c76432c233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0703c1e73377d21129a7e476fb25be"><td class="memTemplParams" colspan="2"><a id="add0703c1e73377d21129a7e476fb25be"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2d95a5ceb20653b15ef098a19d39b0fa"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T i, typename enable_if&lt; is_integral&lt; T &gt;::value &amp;&amp;!is_same&lt; T, bool &gt;::value &gt;::type *=0)</td></tr>
-<tr class="separator:a2d95a5ceb20653b15ef098a19d39b0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c8afc61b39523463eeb1494ba1f83d7"><td class="memTemplParams" colspan="2"><a id="a3c8afc61b39523463eeb1494ba1f83d7"></a>
+<tr class="memitem:add0703c1e73377d21129a7e476fb25be"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T i, typename std::enable_if&lt; std::is_integral&lt; T &gt;::value &amp;&amp;!std::is_same&lt; T, bool &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:add0703c1e73377d21129a7e476fb25be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3270e52e60465ae56ac0d04e4a97e1d4"><td class="memTemplParams" colspan="2"><a id="a3270e52e60465ae56ac0d04e4a97e1d4"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3c8afc61b39523463eeb1494ba1f83d7"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T f, typename enable_if&lt; is_floating_point&lt; T &gt;::value &gt;::type *=0)</td></tr>
-<tr class="separator:a3c8afc61b39523463eeb1494ba1f83d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad70a88622fcb761c47bb66ca449a460f"><td class="memTemplParams" colspan="2"><a id="ad70a88622fcb761c47bb66ca449a460f"></a>
+<tr class="memitem:a3270e52e60465ae56ac0d04e4a97e1d4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T f, typename std::enable_if&lt; std::is_floating_point&lt; T &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:a3270e52e60465ae56ac0d04e4a97e1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd32bd81e86297382748e9487b8cee75"><td class="memTemplParams" colspan="2"><a id="abd32bd81e86297382748e9487b8cee75"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad70a88622fcb761c47bb66ca449a460f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T s, typename enable_if&lt; is_convertible&lt; T, string &gt;::value &gt;::type *=0)</td></tr>
-<tr class="separator:ad70a88622fcb761c47bb66ca449a460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd32bd81e86297382748e9487b8cee75"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>JSON</b> (T s, typename std::enable_if&lt; std::is_convertible&lt; T, std::string &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:abd32bd81e86297382748e9487b8cee75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335e3d8cc749b83096e0a1a7b8992554"><td class="memItemLeft" align="right" valign="top"><a id="a335e3d8cc749b83096e0a1a7b8992554"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>JSON</b> (std::nullptr_t)</td></tr>
 <tr class="separator:a335e3d8cc749b83096e0a1a7b8992554"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,40 +192,40 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a17acd3a9f8c118353ccf318598e9c6dc"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... U&gt; </td></tr>
 <tr class="memitem:a17acd3a9f8c118353ccf318598e9c6dc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a17acd3a9f8c118353ccf318598e9c6dc">append</a> (T arg, U... args)</td></tr>
 <tr class="separator:a17acd3a9f8c118353ccf318598e9c6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a8cb67eb4ad644526b663f83ff0f8d"><td class="memTemplParams" colspan="2"><a id="a70a8cb67eb4ad644526b663f83ff0f8d"></a>
+<tr class="memitem:ac08ed9576fe58bf980f8544f2dd4bfcd"><td class="memTemplParams" colspan="2"><a id="ac08ed9576fe58bf980f8544f2dd4bfcd"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a70a8cb67eb4ad644526b663f83ff0f8d"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_same&lt; T, bool &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T b)</td></tr>
-<tr class="separator:a70a8cb67eb4ad644526b663f83ff0f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83eee6b736afe70bb751cc89b9249c12"><td class="memTemplParams" colspan="2"><a id="a83eee6b736afe70bb751cc89b9249c12"></a>
+<tr class="memitem:ac08ed9576fe58bf980f8544f2dd4bfcd"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T b)</td></tr>
+<tr class="separator:ac08ed9576fe58bf980f8544f2dd4bfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48230a9065286701145ebd5092d4f61"><td class="memTemplParams" colspan="2"><a id="aa48230a9065286701145ebd5092d4f61"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a83eee6b736afe70bb751cc89b9249c12"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_integral&lt; T &gt;::value &amp;&amp;!is_same&lt; T, bool &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T i)</td></tr>
-<tr class="separator:a83eee6b736afe70bb751cc89b9249c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1abcd8ed5c72c33df2663985ef835fe"><td class="memTemplParams" colspan="2"><a id="af1abcd8ed5c72c33df2663985ef835fe"></a>
+<tr class="memitem:aa48230a9065286701145ebd5092d4f61"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_integral&lt; T &gt;::value &amp;&amp;!std::is_same&lt; T, bool &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T i)</td></tr>
+<tr class="separator:aa48230a9065286701145ebd5092d4f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b9eaf1da4b114a2b6ad4be73da8f27"><td class="memTemplParams" colspan="2"><a id="a84b9eaf1da4b114a2b6ad4be73da8f27"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af1abcd8ed5c72c33df2663985ef835fe"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_floating_point&lt; T &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T f)</td></tr>
-<tr class="separator:af1abcd8ed5c72c33df2663985ef835fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7b3b4e0e30ac4943e8e7b20ea240fe7"><td class="memTemplParams" colspan="2"><a id="ae7b3b4e0e30ac4943e8e7b20ea240fe7"></a>
+<tr class="memitem:a84b9eaf1da4b114a2b6ad4be73da8f27"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T f)</td></tr>
+<tr class="separator:a84b9eaf1da4b114a2b6ad4be73da8f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84ab880358eb7b6e607df613978ba4a"><td class="memTemplParams" colspan="2"><a id="ac84ab880358eb7b6e607df613978ba4a"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae7b3b4e0e30ac4943e8e7b20ea240fe7"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_convertible&lt; T, string &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T s)</td></tr>
-<tr class="separator:ae7b3b4e0e30ac4943e8e7b20ea240fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47678cac302063e111c3852621305163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a47678cac302063e111c3852621305163">operator[]</a> (const string &amp;key)</td></tr>
-<tr class="separator:a47678cac302063e111c3852621305163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84ab880358eb7b6e607df613978ba4a"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_convertible&lt; T, std::string &gt;::value, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T s)</td></tr>
+<tr class="separator:ac84ab880358eb7b6e607df613978ba4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae969b490e39aefd5dc08a4dae62bc930"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ae969b490e39aefd5dc08a4dae62bc930">operator[]</a> (const std::string &amp;key)</td></tr>
+<tr class="separator:ae969b490e39aefd5dc08a4dae62bc930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba299ee5bb474fdee1d62807cc83f5de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aba299ee5bb474fdee1d62807cc83f5de">operator[]</a> (unsigned index)</td></tr>
 <tr class="separator:aba299ee5bb474fdee1d62807cc83f5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ef02ffac3795493ceaa34877d71668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a29ef02ffac3795493ceaa34877d71668">at</a> (const string &amp;key)</td></tr>
-<tr class="separator:a29ef02ffac3795493ceaa34877d71668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac69a550977325becc8880de0e3ef6fa9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ac69a550977325becc8880de0e3ef6fa9">at</a> (const string &amp;key) const</td></tr>
-<tr class="separator:ac69a550977325becc8880de0e3ef6fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1d0eafdd31271420f887ba30d223df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a5d1d0eafdd31271420f887ba30d223df">at</a> (const std::string &amp;key)</td></tr>
+<tr class="separator:a5d1d0eafdd31271420f887ba30d223df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7d68a9a0b3408904f3ae1897dc75c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a3f7d68a9a0b3408904f3ae1897dc75c0">at</a> (const std::string &amp;key) const</td></tr>
+<tr class="separator:a3f7d68a9a0b3408904f3ae1897dc75c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03dd1eaf75e161cc502544b48d18f142"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a03dd1eaf75e161cc502544b48d18f142">at</a> (unsigned index)</td></tr>
 <tr class="separator:a03dd1eaf75e161cc502544b48d18f142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2a403181cb1a80bd15dd764ed54a64a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa2a403181cb1a80bd15dd764ed54a64a">at</a> (unsigned index) const</td></tr>
 <tr class="separator:aa2a403181cb1a80bd15dd764ed54a64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d406d66805c647317c1503232c580a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a6d406d66805c647317c1503232c580a6">length</a> () const</td></tr>
-<tr class="separator:a6d406d66805c647317c1503232c580a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a141dbddbfb1e88f0c6ece645cb5d29b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a141dbddbfb1e88f0c6ece645cb5d29b9">hasKey</a> (const string &amp;key) const</td></tr>
-<tr class="separator:a141dbddbfb1e88f0c6ece645cb5d29b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a888d673859be2b133d9de7d489af86b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a888d673859be2b133d9de7d489af86b8">size</a> () const</td></tr>
-<tr class="separator:a888d673859be2b133d9de7d489af86b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5458284bac914b16f0bba69959a6346"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa5458284bac914b16f0bba69959a6346">length</a> () const</td></tr>
+<tr class="separator:aa5458284bac914b16f0bba69959a6346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17131a7a7a0bd04e32816f24baae7a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa17131a7a7a0bd04e32816f24baae7a9">hasKey</a> (const std::string &amp;key) const</td></tr>
+<tr class="separator:aa17131a7a7a0bd04e32816f24baae7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ec9421f58e270d79d3b390950cd0e4"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#af8ec9421f58e270d79d3b390950cd0e4">size</a> () const</td></tr>
+<tr class="separator:af8ec9421f58e270d79d3b390950cd0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbcb5b782856da18cdce960e7996abb3"><td class="memItemLeft" align="right" valign="top">Class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#abbcb5b782856da18cdce960e7996abb3">JSONType</a> () const</td></tr>
 <tr class="separator:abbcb5b782856da18cdce960e7996abb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f6859c473ef7b77df79bd5bdbe39642"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a7f6859c473ef7b77df79bd5bdbe39642">IsNull</a> () const</td></tr>
@@ -242,47 +242,47 @@ template&lt;typename T &gt; </td></tr>
 <tr class="separator:a0fe89e8853d28f589ff35436e52a8b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0644e215cc1da0d4a5dad2e1db42a555"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a0644e215cc1da0d4a5dad2e1db42a555">IsObject</a> () const</td></tr>
 <tr class="separator:a0644e215cc1da0d4a5dad2e1db42a555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a066fceb412237c86433265c9afae363e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a066fceb412237c86433265c9afae363e">ToString</a> () const</td></tr>
-<tr class="separator:a066fceb412237c86433265c9afae363e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8af486d29797ef973b3ce447a9a990e7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a8af486d29797ef973b3ce447a9a990e7">ToString</a> (bool &amp;ok) const</td></tr>
-<tr class="separator:a8af486d29797ef973b3ce447a9a990e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4317271fd8f42c9590f5ec8804b3c772"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a4317271fd8f42c9590f5ec8804b3c772">ToUnescapedString</a> () const</td></tr>
-<tr class="separator:a4317271fd8f42c9590f5ec8804b3c772"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1376bcd31770d23f23221f0856a2972"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa1376bcd31770d23f23221f0856a2972">ToUnescapedString</a> (bool &amp;ok) const</td></tr>
-<tr class="separator:aa1376bcd31770d23f23221f0856a2972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1835fbd26b29711f80c632c085ded54c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a1835fbd26b29711f80c632c085ded54c">ToString</a> () const</td></tr>
+<tr class="separator:a1835fbd26b29711f80c632c085ded54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6f2b1f07c5f8127fe7118afe82abc5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#afc6f2b1f07c5f8127fe7118afe82abc5">ToString</a> (std::error_code &amp;ec) const noexcept</td></tr>
+<tr class="separator:afc6f2b1f07c5f8127fe7118afe82abc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d0637b694afde8cb06cffd914eead9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ae4d0637b694afde8cb06cffd914eead9">ToUnescapedString</a> () const</td></tr>
+<tr class="separator:ae4d0637b694afde8cb06cffd914eead9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be0f603e3e027718961aa3c3eec9e85"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a0be0f603e3e027718961aa3c3eec9e85">ToUnescapedString</a> (std::error_code &amp;ec) const noexcept</td></tr>
+<tr class="separator:a0be0f603e3e027718961aa3c3eec9e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7f30c1ed4faceefcd506ce695cfa4f7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ac7f30c1ed4faceefcd506ce695cfa4f7">ToFloat</a> () const</td></tr>
 <tr class="separator:ac7f30c1ed4faceefcd506ce695cfa4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44e6c0be976d7aaa9c0e44afc36b6b13"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a44e6c0be976d7aaa9c0e44afc36b6b13">ToFloat</a> (bool &amp;ok) const</td></tr>
-<tr class="separator:a44e6c0be976d7aaa9c0e44afc36b6b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1620968f9d15ab1e85aa82a93a41467"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ae1620968f9d15ab1e85aa82a93a41467">ToFloat</a> (std::error_code &amp;ec) const noexcept</td></tr>
+<tr class="separator:ae1620968f9d15ab1e85aa82a93a41467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeca9852f3aa7996d2e818e4d13526b3"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#abeca9852f3aa7996d2e818e4d13526b3">ToInt</a> () const</td></tr>
 <tr class="separator:abeca9852f3aa7996d2e818e4d13526b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0af157062741aae824f7e52dbdc3b0"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a2b0af157062741aae824f7e52dbdc3b0">ToInt</a> (bool &amp;ok) const</td></tr>
-<tr class="separator:a2b0af157062741aae824f7e52dbdc3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464ecd7c92a8d6e01a6a79dfd61406bd"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a464ecd7c92a8d6e01a6a79dfd61406bd">ToInt</a> (std::error_code &amp;ec) const noexcept</td></tr>
+<tr class="separator:a464ecd7c92a8d6e01a6a79dfd61406bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5608ae099e2373d1212150d7811d885d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a5608ae099e2373d1212150d7811d885d">ToBool</a> () const</td></tr>
 <tr class="separator:a5608ae099e2373d1212150d7811d885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af247caeff6a8109cc3d2f52f98411db6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#af247caeff6a8109cc3d2f52f98411db6">ToBool</a> (bool &amp;ok) const</td></tr>
-<tr class="separator:af247caeff6a8109cc3d2f52f98411db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83202b660480b7d28da38448dac8fb41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt; map&lt; string, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a83202b660480b7d28da38448dac8fb41">ObjectRange</a> ()</td></tr>
-<tr class="separator:a83202b660480b7d28da38448dac8fb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df17b310ef3dedb672a27417986c558"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt; deque&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a0df17b310ef3dedb672a27417986c558">ArrayRange</a> ()</td></tr>
-<tr class="separator:a0df17b310ef3dedb672a27417986c558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a668c95b7429662a68886c5e4fb8068f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt; map&lt; string, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a668c95b7429662a68886c5e4fb8068f5">ObjectRange</a> () const</td></tr>
-<tr class="separator:a668c95b7429662a68886c5e4fb8068f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0b48750a4493c49e3214a935981f8c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt; deque&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ac0b48750a4493c49e3214a935981f8c8">ArrayRange</a> () const</td></tr>
-<tr class="separator:ac0b48750a4493c49e3214a935981f8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840192a52257da25c08d296fd01b4c83"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a840192a52257da25c08d296fd01b4c83">dump</a> (int depth=1, string tab=&quot;  &quot;) const</td></tr>
-<tr class="separator:a840192a52257da25c08d296fd01b4c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63a42199dada43b9a76394ed9188164e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a63a42199dada43b9a76394ed9188164e">dumpMinified</a> () const</td></tr>
-<tr class="separator:a63a42199dada43b9a76394ed9188164e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443941bf0c6866a0dc8db70cf72ddfe5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a443941bf0c6866a0dc8db70cf72ddfe5">ToBool</a> (std::error_code &amp;ec) const noexcept</td></tr>
+<tr class="separator:a443941bf0c6866a0dc8db70cf72ddfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1410e4e1a25853020c3a8a2e988a631"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt; std::map&lt; std::string, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa1410e4e1a25853020c3a8a2e988a631">ObjectRange</a> ()</td></tr>
+<tr class="separator:aa1410e4e1a25853020c3a8a2e988a631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9048296c30c27f0a42751ccf3aa6668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt; std::deque&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#aa9048296c30c27f0a42751ccf3aa6668">ArrayRange</a> ()</td></tr>
+<tr class="separator:aa9048296c30c27f0a42751ccf3aa6668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56a91c5cdbddeb733ee42934becd230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt; std::map&lt; std::string, <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ae56a91c5cdbddeb733ee42934becd230">ObjectRange</a> () const</td></tr>
+<tr class="separator:ae56a91c5cdbddeb733ee42934becd230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb8ca4dba2e133c50aaa1f78d7a0603"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt; std::deque&lt; <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a4eb8ca4dba2e133c50aaa1f78d7a0603">ArrayRange</a> () const</td></tr>
+<tr class="separator:a4eb8ca4dba2e133c50aaa1f78d7a0603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71e29149d0483e5f538a6b8648effba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#ae71e29149d0483e5f538a6b8648effba">dump</a> (int depth=1, std::string tab=&quot;  &quot;) const</td></tr>
+<tr class="separator:ae71e29149d0483e5f538a6b8648effba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c84d84f7e00a40e765ebafae75cbcb6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a2c84d84f7e00a40e765ebafae75cbcb6">dumpMinified</a> () const</td></tr>
+<tr class="separator:a2c84d84f7e00a40e765ebafae75cbcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abaa5eecc619f3ac4cc5fed0065a1d48f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f">Make</a> (Class type)</td></tr>
 <tr class="separator:abaa5eecc619f3ac4cc5fed0065a1d48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e43db8f978da3ef8a378e499dfc8f49"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">Load</a> (const string &amp;)</td></tr>
-<tr class="separator:a0e43db8f978da3ef8a378e499dfc8f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f993a0057dd1f9ca38c1a9aadf7578b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a6f993a0057dd1f9ca38c1a9aadf7578b">Load</a> (const string &amp;, bool &amp;)</td></tr>
-<tr class="separator:a6f993a0057dd1f9ca38c1a9aadf7578b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74591d77f8b966267f10ce3d2ea0f13e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">Load</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:a74591d77f8b966267f10ce3d2ea0f13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172175713e6539c27537bc7bebf076ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html#a172175713e6539c27537bc7bebf076ec">Load</a> (const std::string &amp;str, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:a172175713e6539c27537bc7bebf076ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -291,21 +291,21 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <tr class="separator:a5513ab67f2660e88d73c75fc83b6945c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> objects. </p>
+<div class="textblock"><p>Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> objects. Class may throw exceptions of type std::error_code on error. </p>
 <h2>Example Usage: </h2>
 <h3>Array Example</h3>
 <p>Example to show how to use Arrays.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON array;</div><div class="line"></div><div class="line">    array[2] = <span class="stringliteral">&quot;Test2&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[1] = <span class="stringliteral">&quot;Test1&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[0] = <span class="stringliteral">&quot;Test0&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[3] = <span class="stringliteral">&quot;Test4&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="comment">// Arrays can be nested:</span></div><div class="line">    JSON Array2;</div><div class="line"></div><div class="line">    Array2[2][0][1] = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    cout &lt;&lt; Array2 &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Initialization Example</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON array;</div><div class="line"></div><div class="line">    array[2] = <span class="stringliteral">&quot;Test2&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[1] = <span class="stringliteral">&quot;Test1&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[0] = <span class="stringliteral">&quot;Test0&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line">    array[3] = <span class="stringliteral">&quot;Test4&quot;</span>;</div><div class="line">    cout &lt;&lt; array &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="comment">// Arrays can be nested:</span></div><div class="line">    JSON Array2;</div><div class="line"></div><div class="line">    Array2[2][0][1] = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    cout &lt;&lt; Array2 &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Initialization Example</h3>
 <p>Simple example which shows how to directly load an object.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cstddef&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON obj( {</div><div class="line">        <span class="stringliteral">&quot;Key&quot;</span>, 1,</div><div class="line">        <span class="stringliteral">&quot;Key3&quot;</span>, <span class="keyword">true</span>,</div><div class="line">        <span class="stringliteral">&quot;Key4&quot;</span>, <span class="keyword">nullptr</span>,</div><div class="line">        <span class="stringliteral">&quot;Key2&quot;</span>, {</div><div class="line">            <span class="stringliteral">&quot;Key4&quot;</span>, <span class="stringliteral">&quot;VALUE&quot;</span>,</div><div class="line">            <span class="stringliteral">&quot;Arr&quot;</span>, json::Array( 1, <span class="stringliteral">&quot;Str&quot;</span>, <span class="keyword">false</span> )</div><div class="line">        }</div><div class="line">    } );</div><div class="line"></div><div class="line">    cout &lt;&lt; obj &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Iterator Example</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cstddef&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON obj( {</div><div class="line">        <span class="stringliteral">&quot;Key&quot;</span>, 1,</div><div class="line">        <span class="stringliteral">&quot;Key3&quot;</span>, <span class="keyword">true</span>,</div><div class="line">        <span class="stringliteral">&quot;Key4&quot;</span>, <span class="keyword">nullptr</span>,</div><div class="line">        <span class="stringliteral">&quot;Key2&quot;</span>, {</div><div class="line">            <span class="stringliteral">&quot;Key4&quot;</span>, <span class="stringliteral">&quot;VALUE&quot;</span>,</div><div class="line">            <span class="stringliteral">&quot;Arr&quot;</span>, json::Array( 1, <span class="stringliteral">&quot;Str&quot;</span>, <span class="keyword">false</span> )</div><div class="line">        }</div><div class="line">    } );</div><div class="line"></div><div class="line">    cout &lt;&lt; obj &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Iterator Example</h3>
 <p>This example shows how to iterate over stored arrays and objects.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpArrayConst( <span class="keyword">const</span> JSON &amp;array ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : array.ArrayRange() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpArray( JSON &amp;array ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : array.ArrayRange() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpObjectConst( <span class="keyword">const</span> JSON &amp;<span class="keywordtype">object</span> ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : <span class="keywordtype">object</span>.<a class="code" href="classgiri_1_1json_1_1JSON.html#a83202b660480b7d28da38448dac8fb41">ObjectRange</a>() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Object[ &quot;</span> &lt;&lt; j.first &lt;&lt; <span class="stringliteral">&quot; ] = &quot;</span> &lt;&lt; j.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpObject( JSON &amp;<span class="keywordtype">object</span> ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : <span class="keywordtype">object</span>.<a class="code" href="classgiri_1_1json_1_1JSON.html#a83202b660480b7d28da38448dac8fb41">ObjectRange</a>() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Object[ &quot;</span> &lt;&lt; j.first &lt;&lt; <span class="stringliteral">&quot; ] = &quot;</span> &lt;&lt; j.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON array = <a class="code" href="classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f">JSON::Make</a>( JSON::Class::Array );</div><div class="line">    JSON obj   = <a class="code" href="classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f">JSON::Make</a>( JSON::Class::Object );</div><div class="line"></div><div class="line">    array[0] = <span class="stringliteral">&quot;Test0&quot;</span>;</div><div class="line">    array[1] = <span class="stringliteral">&quot;Test1&quot;</span>;</div><div class="line">    array[2] = <span class="stringliteral">&quot;Test2&quot;</span>;</div><div class="line">    array[3] = <span class="stringliteral">&quot;Test3&quot;</span>;</div><div class="line"></div><div class="line">    obj[ <span class="stringliteral">&quot;Key0&quot;</span> ] = <span class="stringliteral">&quot;Value1&quot;</span>;</div><div class="line">    obj[ <span class="stringliteral">&quot;Key1&quot;</span> ] = array;</div><div class="line">    obj[ <span class="stringliteral">&quot;Key2&quot;</span> ] = 123;</div><div class="line"></div><div class="line"></div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;=============== tests ================\n&quot;</span>;</div><div class="line">    dumpArray( array );</div><div class="line">    dumpObject( obj );</div><div class="line"></div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;============ const tests =============\n&quot;</span>;</div><div class="line">    dumpArrayConst( array );</div><div class="line">    dumpObjectConst( obj );</div><div class="line">}</div></div><!-- fragment --><h3>Datatypes Example</h3>
-<p>In this example it is shown, how to store all supported datatypes within an <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    <span class="comment">// Example of creating each type</span></div><div class="line">    <span class="comment">// You can also do JSON::Make( JSON::Class )</span></div><div class="line">    JSON null;</div><div class="line">    JSON Bool( <span class="keyword">true</span> );</div><div class="line">    JSON Str( <span class="stringliteral">&quot;RawString&quot;</span> );</div><div class="line">    JSON Str2( <span class="keywordtype">string</span>( <span class="stringliteral">&quot;C++String&quot;</span> ) );</div><div class="line">    JSON Int( 1 );</div><div class="line">    JSON Float( 1.2 );</div><div class="line">    JSON Arr = json::Array();</div><div class="line">    JSON Obj = json::Object();</div><div class="line"></div><div class="line">    <span class="comment">// Types can be overwritten by assigning</span></div><div class="line">    <span class="comment">// to the object again.</span></div><div class="line">    Bool = <span class="keyword">false</span>;</div><div class="line">    Bool = <span class="stringliteral">&quot;rtew&quot;</span>;</div><div class="line">    Bool = 1;</div><div class="line">    Bool = 1.1;</div><div class="line">    Bool = string( <span class="stringliteral">&quot;asd&quot;</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Append to Arrays, appending to a non-array</span></div><div class="line">    <span class="comment">// will turn the object into an array with the</span></div><div class="line">    <span class="comment">// first element being the value that&#39;s being</span></div><div class="line">    <span class="comment">// appended.</span></div><div class="line">    Arr.append( 1 );</div><div class="line">    Arr.append( <span class="stringliteral">&quot;test&quot;</span> );</div><div class="line">    Arr.append( <span class="keyword">false</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Access Array elements with operator[]( unsigned ).</span></div><div class="line">    <span class="comment">// Note that this does not do bounds checking, and </span></div><div class="line">    <span class="comment">// returns a reference to a JSON object.</span></div><div class="line">    JSON&amp; val = Arr[0];</div><div class="line"></div><div class="line">    <span class="comment">// Arrays can be intialized with any elements and</span></div><div class="line">    <span class="comment">// they are turned into JSON objects. Variadic </span></div><div class="line">    <span class="comment">// Templates are pretty cool.</span></div><div class="line">    JSON Arr2 = json::Array( 2, <span class="stringliteral">&quot;Test&quot;</span>, <span class="keyword">true</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Objects are accessed using operator[]( string ).</span></div><div class="line">    <span class="comment">// Will create new pairs on the fly, just as std::map</span></div><div class="line">    <span class="comment">// would.</span></div><div class="line">    Obj[<span class="stringliteral">&quot;Key1&quot;</span>] = 1.0;</div><div class="line">    Obj[<span class="stringliteral">&quot;Key2&quot;</span>] = <span class="stringliteral">&quot;Value&quot;</span>;</div><div class="line"></div><div class="line">    JSON Obj2 = json::Object();</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key3&quot;</span>] = 1;</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key4&quot;</span>] = Arr;</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key5&quot;</span>] = Arr2;</div><div class="line">    </div><div class="line">    <span class="comment">// Nested Object</span></div><div class="line">    Obj[<span class="stringliteral">&quot;Key6&quot;</span>] = Obj2;</div><div class="line"></div><div class="line">    <span class="comment">// Dump Obj to a string.</span></div><div class="line">    cout &lt;&lt; Obj &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="comment">// We can also use a more JSON-like syntax to create </span></div><div class="line">    <span class="comment">// JSON Objects.</span></div><div class="line">    JSON Obj3 = {</div><div class="line">        <span class="stringliteral">&quot;Key1&quot;</span>, <span class="stringliteral">&quot;Value&quot;</span>,</div><div class="line">        <span class="stringliteral">&quot;Key2&quot;</span>, <span class="keyword">true</span>,</div><div class="line">        <span class="stringliteral">&quot;Key3&quot;</span>, {</div><div class="line">            <span class="stringliteral">&quot;Key4&quot;</span>, json::Array( <span class="stringliteral">&quot;This&quot;</span>, <span class="stringliteral">&quot;Is&quot;</span>, <span class="stringliteral">&quot;An&quot;</span>, <span class="stringliteral">&quot;Array&quot;</span> ),</div><div class="line">            <span class="stringliteral">&quot;Key5&quot;</span>, {</div><div class="line">                <span class="stringliteral">&quot;BooleanValue&quot;</span>, <span class="keyword">true</span></div><div class="line">            }</div><div class="line">        }</div><div class="line">    };</div><div class="line"></div><div class="line">    cout &lt;&lt; Obj3 &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Load string Example</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpArrayConst( <span class="keyword">const</span> JSON &amp;array ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : array.ArrayRange() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpArray( JSON &amp;array ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : array.ArrayRange() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpObjectConst( <span class="keyword">const</span> JSON &amp;<span class="keywordtype">object</span> ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : <span class="keywordtype">object</span>.<a class="code" href="classgiri_1_1json_1_1JSON.html#aa1410e4e1a25853020c3a8a2e988a631">ObjectRange</a>() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Object[ &quot;</span> &lt;&lt; j.first &lt;&lt; <span class="stringliteral">&quot; ] = &quot;</span> &lt;&lt; j.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> dumpObject( JSON &amp;<span class="keywordtype">object</span> ) {</div><div class="line">    <span class="keywordflow">for</span>( <span class="keyword">auto</span> &amp;j : <span class="keywordtype">object</span>.<a class="code" href="classgiri_1_1json_1_1JSON.html#aa1410e4e1a25853020c3a8a2e988a631">ObjectRange</a>() )</div><div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Object[ &quot;</span> &lt;&lt; j.first &lt;&lt; <span class="stringliteral">&quot; ] = &quot;</span> &lt;&lt; j.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON array = <a class="code" href="classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f">JSON::Make</a>( JSON::Class::Array );</div><div class="line">    JSON obj   = <a class="code" href="classgiri_1_1json_1_1JSON.html#abaa5eecc619f3ac4cc5fed0065a1d48f">JSON::Make</a>( JSON::Class::Object );</div><div class="line"></div><div class="line">    array[0] = <span class="stringliteral">&quot;Test0&quot;</span>;</div><div class="line">    array[1] = <span class="stringliteral">&quot;Test1&quot;</span>;</div><div class="line">    array[2] = <span class="stringliteral">&quot;Test2&quot;</span>;</div><div class="line">    array[3] = <span class="stringliteral">&quot;Test3&quot;</span>;</div><div class="line"></div><div class="line">    obj[ <span class="stringliteral">&quot;Key0&quot;</span> ] = <span class="stringliteral">&quot;Value1&quot;</span>;</div><div class="line">    obj[ <span class="stringliteral">&quot;Key1&quot;</span> ] = array;</div><div class="line">    obj[ <span class="stringliteral">&quot;Key2&quot;</span> ] = 123;</div><div class="line"></div><div class="line"></div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;=============== tests ================\n&quot;</span>;</div><div class="line">    dumpArray( array );</div><div class="line">    dumpObject( obj );</div><div class="line"></div><div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;============ const tests =============\n&quot;</span>;</div><div class="line">    dumpArrayConst( array );</div><div class="line">    dumpObjectConst( obj );</div><div class="line">}</div></div><!-- fragment --><h3>Datatypes Example</h3>
+<p>In this example it is shown, how to store all supported datatypes within an <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    <span class="comment">// Example of creating each type</span></div><div class="line">    <span class="comment">// You can also do JSON::Make( JSON::Class )</span></div><div class="line">    JSON null;</div><div class="line">    JSON Bool( <span class="keyword">true</span> );</div><div class="line">    JSON Str( <span class="stringliteral">&quot;RawString&quot;</span> );</div><div class="line">    JSON Str2( <span class="keywordtype">string</span>( <span class="stringliteral">&quot;C++String&quot;</span> ) );</div><div class="line">    JSON Int( 1 );</div><div class="line">    JSON Float( 1.2 );</div><div class="line">    JSON Arr = json::Array();</div><div class="line">    JSON Obj = json::Object();</div><div class="line"></div><div class="line">    <span class="comment">// Types can be overwritten by assigning</span></div><div class="line">    <span class="comment">// to the object again.</span></div><div class="line">    Bool = <span class="keyword">false</span>;</div><div class="line">    Bool = <span class="stringliteral">&quot;rtew&quot;</span>;</div><div class="line">    Bool = 1;</div><div class="line">    Bool = 1.1;</div><div class="line">    Bool = string( <span class="stringliteral">&quot;asd&quot;</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Append to Arrays, appending to a non-array</span></div><div class="line">    <span class="comment">// will turn the object into an array with the</span></div><div class="line">    <span class="comment">// first element being the value that&#39;s being</span></div><div class="line">    <span class="comment">// appended.</span></div><div class="line">    Arr.append( 1 );</div><div class="line">    Arr.append( <span class="stringliteral">&quot;test&quot;</span> );</div><div class="line">    Arr.append( <span class="keyword">false</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Access Array elements with operator[]( unsigned ).</span></div><div class="line">    <span class="comment">// Note that this does not do bounds checking, and </span></div><div class="line">    <span class="comment">// returns a reference to a JSON object.</span></div><div class="line">    JSON&amp; val = Arr[0];</div><div class="line"></div><div class="line">    <span class="comment">// Arrays can be intialized with any elements and</span></div><div class="line">    <span class="comment">// they are turned into JSON objects. Variadic </span></div><div class="line">    <span class="comment">// Templates are pretty cool.</span></div><div class="line">    JSON Arr2 = json::Array( 2, <span class="stringliteral">&quot;Test&quot;</span>, <span class="keyword">true</span> );</div><div class="line"></div><div class="line">    <span class="comment">// Objects are accessed using operator[]( string ).</span></div><div class="line">    <span class="comment">// Will create new pairs on the fly, just as std::map</span></div><div class="line">    <span class="comment">// would.</span></div><div class="line">    Obj[<span class="stringliteral">&quot;Key1&quot;</span>] = 1.0;</div><div class="line">    Obj[<span class="stringliteral">&quot;Key2&quot;</span>] = <span class="stringliteral">&quot;Value&quot;</span>;</div><div class="line"></div><div class="line">    JSON Obj2 = json::Object();</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key3&quot;</span>] = 1;</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key4&quot;</span>] = Arr;</div><div class="line">    Obj2[<span class="stringliteral">&quot;Key5&quot;</span>] = Arr2;</div><div class="line">    </div><div class="line">    <span class="comment">// Nested Object</span></div><div class="line">    Obj[<span class="stringliteral">&quot;Key6&quot;</span>] = Obj2;</div><div class="line"></div><div class="line">    <span class="comment">// Dump Obj to a string.</span></div><div class="line">    cout &lt;&lt; Obj &lt;&lt; endl;</div><div class="line"></div><div class="line">    <span class="comment">// We can also use a more JSON-like syntax to create </span></div><div class="line">    <span class="comment">// JSON Objects.</span></div><div class="line">    JSON Obj3 = {</div><div class="line">        <span class="stringliteral">&quot;Key1&quot;</span>, <span class="stringliteral">&quot;Value&quot;</span>,</div><div class="line">        <span class="stringliteral">&quot;Key2&quot;</span>, <span class="keyword">true</span>,</div><div class="line">        <span class="stringliteral">&quot;Key3&quot;</span>, {</div><div class="line">            <span class="stringliteral">&quot;Key4&quot;</span>, json::Array( <span class="stringliteral">&quot;This&quot;</span>, <span class="stringliteral">&quot;Is&quot;</span>, <span class="stringliteral">&quot;An&quot;</span>, <span class="stringliteral">&quot;Array&quot;</span> ),</div><div class="line">            <span class="stringliteral">&quot;Key5&quot;</span>, {</div><div class="line">                <span class="stringliteral">&quot;BooleanValue&quot;</span>, <span class="keyword">true</span></div><div class="line">            }</div><div class="line">        }</div><div class="line">    };</div><div class="line"></div><div class="line">    cout &lt;&lt; Obj3 &lt;&lt; endl;</div><div class="line">}</div></div><!-- fragment --><h3>Load string Example</h3>
 <p>This example shows how to load an object from string.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> giri::namespace std;</div><div class="line"><span class="keyword">using</span> json::JSON;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON Int = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot; 123 &quot;</span> );</div><div class="line">    JSON Float = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot; 123.234 &quot;</span> );</div><div class="line">    JSON Str = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot;\&quot;String\&quot;&quot;</span> );</div><div class="line">    JSON EscStr = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot;\&quot; \\\&quot;Some\\/thing\\\&quot; \&quot;&quot;</span> );</div><div class="line">    JSON Arr = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot;[1,2, true, false,\&quot;STRING\&quot;, 1.5]&quot;</span> );</div><div class="line">    JSON Obj = <a class="code" href="classgiri_1_1json_1_1JSON.html#a0e43db8f978da3ef8a378e499dfc8f49">JSON::Load</a>( <span class="stringliteral">&quot;{ \&quot;Key\&quot; : \&quot;StringValue\&quot;,&quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key2\&quot; : true, &quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key3\&quot; : 1234, &quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key4\&quot; : null }&quot;</span> );</div><div class="line">    </div><div class="line">    cout &lt;&lt; Int &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Float &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Str &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; EscStr &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Arr &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Obj &lt;&lt; endl;</div><div class="line"></div><div class="line">}</div></div><!-- fragment --><h3>Assignment of primitives Example</h3>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON Int = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot; 123 &quot;</span> );</div><div class="line">    JSON Float = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot; 123.234 &quot;</span> );</div><div class="line">    JSON Str = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot;\&quot;String\&quot;&quot;</span> );</div><div class="line">    JSON EscStr = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot;\&quot; \\\&quot;Some\\/thing\\\&quot; \&quot;&quot;</span> );</div><div class="line">    JSON Arr = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot;[1,2, true, false,\&quot;STRING\&quot;, 1.5]&quot;</span> );</div><div class="line">    JSON Obj = <a class="code" href="classgiri_1_1json_1_1JSON.html#a74591d77f8b966267f10ce3d2ea0f13e">JSON::Load</a>( <span class="stringliteral">&quot;{ \&quot;Key\&quot; : \&quot;StringValue\&quot;,&quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key2\&quot; : true, &quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key3\&quot; : 1234, &quot;</span></div><div class="line">                           <span class="stringliteral">&quot;   \&quot;Key4\&quot; : null }&quot;</span> );</div><div class="line">    </div><div class="line">    cout &lt;&lt; Int &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Float &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Str &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; EscStr &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Arr &lt;&lt; endl;</div><div class="line">    cout &lt;&lt; Obj &lt;&lt; endl;</div><div class="line"></div><div class="line">}</div></div><!-- fragment --><h3>Assignment of primitives Example</h3>
 <p>Assign and print primitives.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;ios&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON obj;</div><div class="line"></div><div class="line">    obj = <span class="keyword">true</span>;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; boolalpha &lt;&lt; obj.<a class="code" href="classgiri_1_1json_1_1JSON.html#a5608ae099e2373d1212150d7811d885d">ToBool</a>() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = <span class="stringliteral">&quot;Test String&quot;</span>;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToString() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = 2.2;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToFloat() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = 3;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToInt() &lt;&lt; endl;</div><div class="line">    </div><div class="line">}</div></div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="JSON_8h.html">JSON.h</a>&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;ios&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <a class="code" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a>;</div><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    JSON obj;</div><div class="line"></div><div class="line">    obj = <span class="keyword">true</span>;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; boolalpha &lt;&lt; obj.ToBool() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = <span class="stringliteral">&quot;Test String&quot;</span>;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToString() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = 2.2;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToFloat() &lt;&lt; endl;</div><div class="line"></div><div class="line">    obj = 3;</div><div class="line">    cout &lt;&lt; <span class="stringliteral">&quot;Value: &quot;</span> &lt;&lt; obj.ToInt() &lt;&lt; endl;</div><div class="line">    </div><div class="line">}</div></div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9c292c1d358c6a768b7893a36c6fb0b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c292c1d358c6a768b7893a36c6fb0b6">&#9670;&nbsp;</a></span>append() <span class="overload">[1/2]</span></h2>
 
@@ -385,8 +385,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a0df17b310ef3dedb672a27417986c558"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0df17b310ef3dedb672a27417986c558">&#9670;&nbsp;</a></span>ArrayRange() <span class="overload">[1/2]</span></h2>
+<a id="aa9048296c30c27f0a42751ccf3aa6668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9048296c30c27f0a42751ccf3aa6668">&#9670;&nbsp;</a></span>ArrayRange() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +395,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt;deque&lt;<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ArrayRange </td>
+          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt;std::deque&lt;<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ArrayRange </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -411,8 +411,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="ac0b48750a4493c49e3214a935981f8c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0b48750a4493c49e3214a935981f8c8">&#9670;&nbsp;</a></span>ArrayRange() <span class="overload">[2/2]</span></h2>
+<a id="a4eb8ca4dba2e133c50aaa1f78d7a0603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb8ca4dba2e133c50aaa1f78d7a0603">&#9670;&nbsp;</a></span>ArrayRange() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -421,7 +421,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt;deque&lt;<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ArrayRange </td>
+          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt;std::deque&lt;<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ArrayRange </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -437,8 +437,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a29ef02ffac3795493ceaa34877d71668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29ef02ffac3795493ceaa34877d71668">&#9670;&nbsp;</a></span>at() <span class="overload">[1/4]</span></h2>
+<a id="a5d1d0eafdd31271420f887ba30d223df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1d0eafdd31271420f887ba30d223df">&#9670;&nbsp;</a></span>at() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,7 +449,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&amp; giri::json::JSON::at </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -470,8 +470,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="ac69a550977325becc8880de0e3ef6fa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac69a550977325becc8880de0e3ef6fa9">&#9670;&nbsp;</a></span>at() <span class="overload">[2/4]</span></h2>
+<a id="a3f7d68a9a0b3408904f3ae1897dc75c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7d68a9a0b3408904f3ae1897dc75c0">&#9670;&nbsp;</a></span>at() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +482,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname">const <a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&amp; giri::json::JSON::at </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -569,8 +569,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a840192a52257da25c08d296fd01b4c83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840192a52257da25c08d296fd01b4c83">&#9670;&nbsp;</a></span>dump()</h2>
+<a id="ae71e29149d0483e5f538a6b8648effba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71e29149d0483e5f538a6b8648effba">&#9670;&nbsp;</a></span>dump()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -579,7 +579,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::dump </td>
+          <td class="memname">std::string giri::json::JSON::dump </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>depth</em> = <code>1</code>, </td>
@@ -587,7 +587,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>tab</em> = <code>&quot;&#160;&#160;&quot;</code>&#160;</td>
         </tr>
         <tr>
@@ -613,8 +613,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a63a42199dada43b9a76394ed9188164e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63a42199dada43b9a76394ed9188164e">&#9670;&nbsp;</a></span>dumpMinified()</h2>
+<a id="a2c84d84f7e00a40e765ebafae75cbcb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c84d84f7e00a40e765ebafae75cbcb6">&#9670;&nbsp;</a></span>dumpMinified()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -623,7 +623,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::dumpMinified </td>
+          <td class="memname">std::string giri::json::JSON::dumpMinified </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -639,8 +639,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a141dbddbfb1e88f0c6ece645cb5d29b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a141dbddbfb1e88f0c6ece645cb5d29b9">&#9670;&nbsp;</a></span>hasKey()</h2>
+<a id="aa17131a7a7a0bd04e32816f24baae7a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa17131a7a7a0bd04e32816f24baae7a9">&#9670;&nbsp;</a></span>hasKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +651,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname">bool giri::json::JSON::hasKey </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -880,8 +880,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a6d406d66805c647317c1503232c580a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d406d66805c647317c1503232c580a6">&#9670;&nbsp;</a></span>length()</h2>
+<a id="aa5458284bac914b16f0bba69959a6346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5458284bac914b16f0bba69959a6346">&#9670;&nbsp;</a></span>length()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -890,7 +890,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int giri::json::JSON::length </td>
+          <td class="memname">std::size_t giri::json::JSON::length </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -906,8 +906,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a0e43db8f978da3ef8a378e499dfc8f49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e43db8f978da3ef8a378e499dfc8f49">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/2]</span></h2>
+<a id="a74591d77f8b966267f10ce3d2ea0f13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74591d77f8b966267f10ce3d2ea0f13e">&#9670;&nbsp;</a></span>Load() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -918,7 +918,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> giri::json::JSON::Load </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
@@ -929,18 +929,18 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create a <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object from string. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Create a <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object from string, throws std::error_code on error. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> string to parse and load. </td></tr>
+    <tr><td class="paramname">str</td><td><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> string to parse and load. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object representing the json defined by the parsed string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object representing the json defined by the parsed string. </dd></dl>
 
 </div>
 </div>
-<a id="a6f993a0057dd1f9ca38c1a9aadf7578b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f993a0057dd1f9ca38c1a9aadf7578b">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/2]</span></h2>
+<a id="a172175713e6539c27537bc7bebf076ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172175713e6539c27537bc7bebf076ec">&#9670;&nbsp;</a></span>Load() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,14 +951,14 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a> giri::json::JSON::Load </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em>&#160;</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -968,18 +968,18 @@ template&lt;typename T , typename... U&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create a <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object from string. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Create a <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object from string. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> string to parse and load. </td></tr>
-    <tr><td class="paramname">ok</td><td>[OUT] Output parameter giving feedback if parsing was successful. true on success, false otherwise. </td></tr>
+    <tr><td class="paramname">str</td><td><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> string to parse and load. </td></tr>
+    <tr><td class="paramname">ec</td><td>[OUT] Output parameter giving feedback if parsing was successful. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object representing the json defined by the parsed string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object representing the json defined by the parsed string. </dd></dl>
 
 </div>
 </div>
@@ -1006,18 +1006,18 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates a new <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates a new <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td>Class type to create. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> object of given class type. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> object of given class type. </dd></dl>
 
 </div>
 </div>
-<a id="a83202b660480b7d28da38448dac8fb41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83202b660480b7d28da38448dac8fb41">&#9670;&nbsp;</a></span>ObjectRange() <span class="overload">[1/2]</span></h2>
+<a id="aa1410e4e1a25853020c3a8a2e988a631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1410e4e1a25853020c3a8a2e988a631">&#9670;&nbsp;</a></span>ObjectRange() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1026,7 +1026,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt;map&lt;string,<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ObjectRange </td>
+          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">JSONWrapper</a>&lt;std::map&lt;std::string,<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ObjectRange </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1042,8 +1042,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a668c95b7429662a68886c5e4fb8068f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a668c95b7429662a68886c5e4fb8068f5">&#9670;&nbsp;</a></span>ObjectRange() <span class="overload">[2/2]</span></h2>
+<a id="ae56a91c5cdbddeb733ee42934becd230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56a91c5cdbddeb733ee42934becd230">&#9670;&nbsp;</a></span>ObjectRange() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1052,7 +1052,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt;map&lt;string,<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ObjectRange </td>
+          <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONConstWrapper.html">JSONConstWrapper</a>&lt;std::map&lt;std::string,<a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&gt; &gt; giri::json::JSON::ObjectRange </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1068,8 +1068,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a47678cac302063e111c3852621305163"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47678cac302063e111c3852621305163">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="ae969b490e39aefd5dc08a4dae62bc930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae969b490e39aefd5dc08a4dae62bc930">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1080,7 +1080,7 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classgiri_1_1json_1_1JSON.html">JSON</a>&amp; giri::json::JSON::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1134,8 +1134,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a888d673859be2b133d9de7d489af86b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a888d673859be2b133d9de7d489af86b8">&#9670;&nbsp;</a></span>size()</h2>
+<a id="af8ec9421f58e270d79d3b390950cd0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ec9421f58e270d79d3b390950cd0e4">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1144,7 +1144,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int giri::json::JSON::size </td>
+          <td class="memname">std::size_t giri::json::JSON::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1182,12 +1182,12 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. false otherwise or on conversion error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. Throws std::error_code on conversion error. </dd></dl>
 
 </div>
 </div>
-<a id="af247caeff6a8109cc3d2f52f98411db6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af247caeff6a8109cc3d2f52f98411db6">&#9670;&nbsp;</a></span>ToBool() <span class="overload">[2/2]</span></h2>
+<a id="a443941bf0c6866a0dc8db70cf72ddfe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443941bf0c6866a0dc8db70cf72ddfe5">&#9670;&nbsp;</a></span>ToBool() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1198,14 +1198,14 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname">bool giri::json::JSON::ToBool </td>
           <td>(</td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1241,12 +1241,12 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. 0.0 otherwise or on conversion error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. Throws std::error_code on conversion error. </dd></dl>
 
 </div>
 </div>
-<a id="a44e6c0be976d7aaa9c0e44afc36b6b13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44e6c0be976d7aaa9c0e44afc36b6b13">&#9670;&nbsp;</a></span>ToFloat() <span class="overload">[2/2]</span></h2>
+<a id="ae1620968f9d15ab1e85aa82a93a41467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1620968f9d15ab1e85aa82a93a41467">&#9670;&nbsp;</a></span>ToFloat() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1257,20 +1257,20 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname">double giri::json::JSON::ToFloat </td>
           <td>(</td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ok</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
+    <tr><td class="paramname">ec</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1300,12 +1300,12 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. 0 otherwise or on conversion error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If class type is Integral, Floating or Boolean, the stored value. If the class type is String, an conversion will be tried. Throws std::error_code on conversion error. </dd></dl>
 
 </div>
 </div>
-<a id="a2b0af157062741aae824f7e52dbdc3b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0af157062741aae824f7e52dbdc3b0">&#9670;&nbsp;</a></span>ToInt() <span class="overload">[2/2]</span></h2>
+<a id="a464ecd7c92a8d6e01a6a79dfd61406bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464ecd7c92a8d6e01a6a79dfd61406bd">&#9670;&nbsp;</a></span>ToInt() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1316,20 +1316,20 @@ template&lt;typename T , typename... U&gt; </div>
         <tr>
           <td class="memname">long long giri::json::JSON::ToInt </td>
           <td>(</td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ok</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
+    <tr><td class="paramname">ec</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1337,8 +1337,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a066fceb412237c86433265c9afae363e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a066fceb412237c86433265c9afae363e">&#9670;&nbsp;</a></span>ToString() <span class="overload">[1/2]</span></h2>
+<a id="a1835fbd26b29711f80c632c085ded54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1835fbd26b29711f80c632c085ded54c">&#9670;&nbsp;</a></span>ToString() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1347,7 +1347,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::ToString </td>
+          <td class="memname">std::string giri::json::JSON::ToString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1359,12 +1359,12 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>If class type is String, the stored value. If class type is Null, <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise or on conversion error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If class type is String, the stored value. If class type is Null, <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>, Array, Boolean, Floating or Integral a conversion will be tried. Throws std::error_code on conversion error. </dd></dl>
 
 </div>
 </div>
-<a id="a8af486d29797ef973b3ce447a9a990e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8af486d29797ef973b3ce447a9a990e7">&#9670;&nbsp;</a></span>ToString() <span class="overload">[2/2]</span></h2>
+<a id="afc6f2b1f07c5f8127fe7118afe82abc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6f2b1f07c5f8127fe7118afe82abc5">&#9670;&nbsp;</a></span>ToString() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1373,22 +1373,22 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::ToString </td>
+          <td class="memname">std::string giri::json::JSON::ToString </td>
           <td>(</td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ok</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
+    <tr><td class="paramname">ec</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1396,8 +1396,8 @@ template&lt;typename T , typename... U&gt; </div>
 
 </div>
 </div>
-<a id="a4317271fd8f42c9590f5ec8804b3c772"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4317271fd8f42c9590f5ec8804b3c772">&#9670;&nbsp;</a></span>ToUnescapedString() <span class="overload">[1/2]</span></h2>
+<a id="ae4d0637b694afde8cb06cffd914eead9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d0637b694afde8cb06cffd914eead9">&#9670;&nbsp;</a></span>ToUnescapedString() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1406,7 +1406,7 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::ToUnescapedString </td>
+          <td class="memname">std::string giri::json::JSON::ToUnescapedString </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1418,12 +1418,12 @@ template&lt;typename T , typename... U&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Useful if json objects are stored within the json as string. </p><dl class="section return"><dt>Returns</dt><dd>If class type is String, the stored value without escaping. If class type is Null, <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise or on conversion error. </dd></dl>
+<p>Useful if json objects are stored within the json as string. </p><dl class="section return"><dt>Returns</dt><dd>If class type is String, the stored value without escaping. If class type is Null, <a class="el" href="classgiri_1_1Object.html" title="Base Class of all classes. ">Object</a>, Array, Boolean, Floating or Integral a conversion will be tried. Throws std::error_code on conversion error. </dd></dl>
 
 </div>
 </div>
-<a id="aa1376bcd31770d23f23221f0856a2972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1376bcd31770d23f23221f0856a2972">&#9670;&nbsp;</a></span>ToUnescapedString() <span class="overload">[2/2]</span></h2>
+<a id="a0be0f603e3e027718961aa3c3eec9e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be0f603e3e027718961aa3c3eec9e85">&#9670;&nbsp;</a></span>ToUnescapedString() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1432,22 +1432,22 @@ template&lt;typename T , typename... U&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string giri::json::JSON::ToUnescapedString </td>
+          <td class="memname">std::string giri::json::JSON::ToUnescapedString </td>
           <td>(</td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>ok</em></td><td>)</td>
+          <td class="paramtype">std::error_code &amp;&#160;</td>
+          <td class="paramname"><em>ec</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Useful if json objects are stored within the json as string. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ok</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
+    <tr><td class="paramname">ec</td><td>[OUT] Output parameter giving feedback if the conversion was successful. </td></tr>
   </table>
   </dd>
 </dl>

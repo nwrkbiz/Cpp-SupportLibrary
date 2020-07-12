@@ -83,7 +83,9 @@ $(document).ready(function(){initNavTree('JSON_8h.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">JSON.h File Reference</div>  </div>
 </div><!--header-->
@@ -100,7 +102,6 @@ $(document).ready(function(){initNavTree('JSON_8h.html','');});
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;initializer_list&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;charconv&gt;</code><br />
 <code>#include &quot;<a class="el" href="Object_8h_source.html">Object.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -108,7 +109,7 @@ Include dependency graph for JSON.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="JSON_8h__incl.png" border="0" usemap="#JSON_8h" alt=""/></div>
 <map name="JSON_8h" id="JSON_8h">
-<area shape="rect" id="node13" href="Object_8h.html" title="Base class of all classes. " alt="" coords="1009,80,1079,107"/>
+<area shape="rect" id="node12" href="Object_8h.html" title="Base class of all classes. " alt="" coords="913,80,983,107"/>
 </map>
 </div>
 </div>
@@ -116,8 +117,13 @@ Include dependency graph for JSON.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgiri_1_1json_1_1error__category.html">giri::json::error_category</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error category object used to convert the error code to a understandable message via std::error_code.  <a href="structgiri_1_1json_1_1error__category.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1is__error__code__enum_3_01giri_1_1json_1_1error_01_4.html">std::is_error_code_enum&lt; giri::json::error &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON.html">giri::json::JSON</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> objects.  <a href="classgiri_1_1json_1_1JSON.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to represent and use <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> objects. Class may throw exceptions of type std::error_code on error.  <a href="classgiri_1_1json_1_1JSON.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html">giri::json::JSON::JSONWrapper&lt; Container &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides iterators to iterate over objects/arrays.  <a href="classgiri_1_1json_1_1JSON_1_1JSONWrapper.html#details">More...</a><br /></td></tr>
@@ -132,11 +138,50 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacegiri"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for giri's C++ support library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacegiri_1_1json"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json.html">giri::json</a></td></tr>
-<tr class="memdesc:namespacegiri_1_1json"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. ">JSON</a> related stuff. <br /></td></tr>
+<tr class="memdesc:namespacegiri_1_1json"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace containing all <a class="el" href="classgiri_1_1json_1_1JSON.html" title="Class to represent and use JSON objects. Class may throw exceptions of type std::error_code on error...">JSON</a> related stuff. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacegiri_1_1json_1_1utility"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1utility.html">giri::json::utility</a></td></tr>
+<tr class="memdesc:namespacegiri_1_1json_1_1utility"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of helper functions and objects. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacegiri_1_1json_1_1parsers"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1parsers.html">giri::json::parsers</a></td></tr>
+<tr class="memdesc:namespacegiri_1_1json_1_1parsers"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of functions used to parse json strings and json substrings. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ae2230ef58baeb6055b5435a22ad6b52e"><td class="memItemLeft" align="right" valign="top"><a id="ae2230ef58baeb6055b5435a22ad6b52e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json.html#ae2230ef58baeb6055b5435a22ad6b52e">giri::json::error</a> { <br />
+&#160;&#160;<b>float_conversion_failed_invalid_arg</b> = 42, 
+<b>float_conversion_failed_out_of_range</b>, 
+<b>float_conversion_failed</b>, 
+<b>object_missing_colon</b>, 
+<br />
+&#160;&#160;<b>object_missing_comma</b>, 
+<b>array_missing_comma_or_bracket</b>, 
+<b>string_missing_hex_char</b>, 
+<b>string_conversion_failed</b>, 
+<br />
+&#160;&#160;<b>string_unescaped_conversion_failed</b>, 
+<b>number_missing_exponent</b>, 
+<b>number_unexpected_char</b>, 
+<b>number_conversion_failed</b>, 
+<br />
+&#160;&#160;<b>bool_wrong_text</b>, 
+<b>bool_conversion_failed</b>, 
+<b>null_wrong_text</b>, 
+<b>unknown_starting_char</b>
+<br />
+ }<tr class="memdesc:ae2230ef58baeb6055b5435a22ad6b52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum class to identify parsing and conversion errors. <br /></td></tr>
+</td></tr>
+<tr class="separator:ae2230ef58baeb6055b5435a22ad6b52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a847dabea51bc0f87851e4dea2407e9a4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1utility.html#a847dabea51bc0f87851e4dea2407e9a4">giri::json::utility::json_escape</a> (const std::string &amp;str)</td></tr>
+<tr class="separator:a847dabea51bc0f87851e4dea2407e9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8670b0377373b2078d08ba1ac9a2d92f"><td class="memItemLeft" align="right" valign="top">std::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json.html#a8670b0377373b2078d08ba1ac9a2d92f">giri::json::make_error_code</a> (json::error e) noexcept</td></tr>
+<tr class="separator:a8670b0377373b2078d08ba1ac9a2d92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3da5344af22d9b3d0a2008c9df386785"><td class="memItemLeft" align="right" valign="top"><a id="a3da5344af22d9b3d0a2008c9df386785"></a>
 JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::Array</b> ()</td></tr>
 <tr class="separator:a3da5344af22d9b3d0a2008c9df386785"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +195,35 @@ JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::Object</b
 <tr class="memitem:a4e569c1ac0acba4423c1547721acf671"><td class="memItemLeft" align="right" valign="top"><a id="a4e569c1ac0acba4423c1547721acf671"></a>
 std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::operator&lt;&lt;</b> (std::ostream &amp;os, const JSON &amp;json)</td></tr>
 <tr class="separator:a4e569c1ac0acba4423c1547721acf671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e22961e84ea6388250cbbdd521bb6f"><td class="memItemLeft" align="right" valign="top"><a id="aa0e22961e84ea6388250cbbdd521bb6f"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_next</b> (const std::string &amp;, size_t &amp;, std::error_code &amp;) noexcept</td></tr>
+<tr class="separator:aa0e22961e84ea6388250cbbdd521bb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d281169a891dc8ded3059ce2f5852d"><td class="memItemLeft" align="right" valign="top"><a id="a53d281169a891dc8ded3059ce2f5852d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::consume_ws</b> (const std::string &amp;str, size_t &amp;offset)</td></tr>
+<tr class="separator:a53d281169a891dc8ded3059ce2f5852d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1d62035ec421dca92195f1b4195ffb"><td class="memItemLeft" align="right" valign="top"><a id="a5a1d62035ec421dca92195f1b4195ffb"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_object</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:a5a1d62035ec421dca92195f1b4195ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5389f3d19ab081d3e2821e5b6349b6"><td class="memItemLeft" align="right" valign="top"><a id="a4b5389f3d19ab081d3e2821e5b6349b6"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_array</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:a4b5389f3d19ab081d3e2821e5b6349b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0373079be3a3c1667d35d30756d182d7"><td class="memItemLeft" align="right" valign="top"><a id="a0373079be3a3c1667d35d30756d182d7"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_string</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:a0373079be3a3c1667d35d30756d182d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2acc62bff14a8cc08d49702b50fd196"><td class="memItemLeft" align="right" valign="top"><a id="af2acc62bff14a8cc08d49702b50fd196"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_number</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:af2acc62bff14a8cc08d49702b50fd196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2c6fc4e8638c08c878ed31a946debc"><td class="memItemLeft" align="right" valign="top"><a id="afc2c6fc4e8638c08c878ed31a946debc"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_bool</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:afc2c6fc4e8638c08c878ed31a946debc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8285ddc5f4d8d87a7ab03b9a42b3c40c"><td class="memItemLeft" align="right" valign="top"><a id="a8285ddc5f4d8d87a7ab03b9a42b3c40c"></a>
+JSON&#160;</td><td class="memItemRight" valign="bottom"><b>giri::json::parsers::parse_null</b> (const std::string &amp;str, size_t &amp;offset, std::error_code &amp;ec) noexcept</td></tr>
+<tr class="separator:a8285ddc5f4d8d87a7ab03b9a42b3c40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a95285b93939a3ce27377f619d7e8d136"><td class="memItemLeft" align="right" valign="top">const json::error_category&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegiri_1_1json_1_1utility.html#a95285b93939a3ce27377f619d7e8d136">giri::json::utility::json_error_category</a></td></tr>
+<tr class="separator:a95285b93939a3ce27377f619d7e8d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lightweight JSON library for exporting/importing data in JSON format from/to C++. </p>

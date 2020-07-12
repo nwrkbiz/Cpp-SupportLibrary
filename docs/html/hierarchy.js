@@ -18,6 +18,9 @@ var hierarchy =
         [ "giri::WebSocketSession", "classgiri_1_1WebSocketSession.html", null ]
       ] ]
     ] ],
+    [ "error_category", null, [
+      [ "giri::json::error_category", "structgiri_1_1json_1_1error__category.html", null ]
+    ] ],
     [ "exception", null, [
       [ "giri::ExceptionBase", "classgiri_1_1ExceptionBase.html", [
         [ "giri::FileSystem::FileSystemException", "classgiri_1_1FileSystem_1_1FileSystemException.html", null ],
@@ -66,6 +69,9 @@ var hierarchy =
     ] ],
     [ "giri::Object< Observer< U > >", "classgiri_1_1Object.html", [
       [ "giri::Observer< U >", "classgiri_1_1Observer.html", null ]
+    ] ],
+    [ "true_type", null, [
+      [ "std::is_error_code_enum< giri::json::error >", "structstd_1_1is__error__code__enum_3_01giri_1_1json_1_1error_01_4.html", null ]
     ] ],
     [ "vector", null, [
       [ "giri::Blob", "classgiri_1_1Blob.html", null ]

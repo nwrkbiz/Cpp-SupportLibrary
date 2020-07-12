@@ -11,6 +11,6 @@ var searchData=
   ['setssl',['setSSL',['../classgiri_1_1HTTPClient.html#a288583544ac4a92b18ee055f31d963ba',1,'giri::HTTPClient']]],
   ['setuseragentstring',['setUserAgentString',['../classgiri_1_1HTTPClient.html#a3e66ae53456c35238ad9bbe381e95a9c',1,'giri::HTTPClient']]],
   ['setversion',['setVersion',['../classgiri_1_1HTTPClient.html#aa04c57606fc10afc8f6c28bf1a02e1b9',1,'giri::HTTPClient']]],
-  ['size',['size',['../classgiri_1_1json_1_1JSON.html#a888d673859be2b133d9de7d489af86b8',1,'giri::json::JSON']]],
+  ['size',['size',['../classgiri_1_1json_1_1JSON.html#af8ec9421f58e270d79d3b390950cd0e4',1,'giri::json::JSON']]],
   ['subscribe',['subscribe',['../classgiri_1_1Observable.html#a40a54f74ef39fc100f3891c022b22661',1,'giri::Observable']]]
 ];

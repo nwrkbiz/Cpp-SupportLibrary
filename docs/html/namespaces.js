@@ -1,4 +1,5 @@
 var namespaces =
 [
-    [ "giri", "namespacegiri.html", "namespacegiri" ]
+    [ "giri", "namespacegiri.html", "namespacegiri" ],
+    [ "std", "namespacestd.html", null ]
 ];
