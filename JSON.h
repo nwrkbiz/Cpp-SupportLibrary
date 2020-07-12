@@ -30,30 +30,111 @@
 #include <type_traits>
 #include <initializer_list>
 #include <ostream>
-#include <iostream>
 #include <charconv>
 
 #include "Object.h"
 
 namespace giri {
+
     /**
      * @brief Namespace containing all JSON related stuff.
      */
     namespace json {
 
-        using std::map;
-        using std::deque;
-        using std::string;
-        using std::enable_if;
-        using std::initializer_list;
-        using std::is_same;
-        using std::is_convertible;
-        using std::is_integral;
-        using std::is_floating_point;
+        /**
+         * @brief Enum class to identify parsing and conversion errors.
+         */
+        enum class error
+        {
+            float_conversion_failed_invalid_arg = 42,
+            float_conversion_failed_out_of_range,
+            float_conversion_failed,
+            object_missing_colon,
+            object_missing_comma,
+            array_missing_comma_or_bracket,
+            string_missing_hex_char,
+            string_conversion_failed,
+            string_unescaped_conversion_failed,
+            number_missing_exponent,
+            number_unexpected_char,
+            number_conversion_failed,
+            bool_wrong_text,
+            bool_conversion_failed,
+            null_wrong_text,
+            unknown_starting_char
+        };
 
-        namespace {
-            string json_escape( const string &str ) {
-                string output;
+        /**
+         * @brief Error category object used to convert the error code to a understandable message
+         * via std::error_code.
+         */
+        struct error_category : std::error_category
+        {
+            const char* name() const noexcept override{
+                return "JSON";
+            }
+            std::string message(int ev) const override{
+                switch (static_cast<json::error>(ev))
+                {
+                case json::error::float_conversion_failed_invalid_arg:
+                    return "Failed to convert the value to float: Invalid argument!";
+                case json::error::float_conversion_failed_out_of_range:
+                    return "Failed to convert the value to float: Out of range!";
+                case json::error::float_conversion_failed:
+                    return "Failed to convert the value to float!";
+                case json::error::object_missing_colon:
+                    return "Parsing Object failed: Expected colon not found!";
+                case json::error::object_missing_comma:
+                    return "Parsing Object failed: Expected comma not found!";
+                case json::error::array_missing_comma_or_bracket:
+                    return "Parsing Array failed: Expected ',' or ']' not found!";
+                case json::error::string_missing_hex_char:
+                    return "Parsing String failed: Expected hex character in unicode escape not found!";
+                case json::error::string_conversion_failed:
+                    return "Failed to convert the value to string!";
+                case json::error::string_unescaped_conversion_failed:
+                    return "Failed to convert the value to a unescaped string!";
+                case json::error::number_missing_exponent:
+                    return "Parsing Number failed: Expected number for exponent not found!";
+                case json::error::number_unexpected_char:
+                    return "Parsing Number failed: Unexpected character!";
+                case json::error::number_conversion_failed:
+                    return "Failed to convert the value to int!";
+                case json::error::bool_wrong_text:
+                    return "Parsing Bool failed: Expected 'true' or 'false' not found!";
+                case json::error::bool_conversion_failed:
+                    return "Failed to convert the value to boolean!";
+                case json::error::null_wrong_text:
+                    return "Parsing Null failed: Expected 'null' not found!";
+                case json::error::unknown_starting_char:
+                    return "Parsing failed: Unknown starting character!";
+                default:
+                    return "Unrecognized error occured...";
+                }
+            }
+        };
+    }
+}
+
+/** Overload to detect giri::json::error as valid std::error_code. */
+namespace std {
+    template <> struct is_error_code_enum<giri::json::error> : true_type {};
+}
+
+namespace giri {
+    namespace json {
+
+        /**
+         * @brief Collection of helper functions and objects.
+         */
+        namespace utility {
+
+            /**
+             * @param str String to escape
+             * @returns A escaped version of the given string.
+             */
+            std::string json_escape( const std::string &str ) {
+                std::string output;
                 for( unsigned i = 0; i < str.length(); ++i )
                     switch( str[i] ) {
                         case '\"': output += "\\\""; break;
@@ -67,10 +148,23 @@ namespace giri {
                     }
                 return output;
             }
+
+            /** Instance of json::error_category, can be reused, no need to create multiple instances */
+            const json::error_category json_error_category;
         }
 
         /**
-         * @brief Class to represent and use JSON objects.
+         * This overload makes giri::json::error assignable to std::error_code
+         * @param e giri::json::error to construct a std::error_code for.
+         * @returns std::error_code constructed from giri::json::error
+         */
+        std::error_code make_error_code(json::error e) noexcept { 
+            return {static_cast<int>(e), utility::json_error_category}; 
+        };
+
+        /**
+         * @brief Class to represent and use JSON objects. Class may throw exceptions of type 
+         * std::error_code on error.
          * 
          * Example Usage:
          * --------------
@@ -284,8 +378,8 @@ namespace giri {
          * #include <JSON.h>
          * #include <iostream>
          * 
-         * using giri::namespace std;
-         * using json::JSON;
+         * using giri::json::JSON;
+         * using namespace std;
          * 
          * int main()
          * {
@@ -346,15 +440,15 @@ namespace giri {
                 BackingData( double d ) : Float( d ){}
                 BackingData( long long   l ) : Int( l ){}
                 BackingData( bool   b ) : Bool( b ){}
-                BackingData( string s ) : String( new string( s ) ){}
+                BackingData( std::string s ) : String( new std::string( s ) ){}
                 BackingData()           : Int( 0 ){}
 
-                deque<JSON>        *List;
-                map<string,JSON>   *Map;
-                string             *String;
-                double              Float;
-                long long           Int;
-                bool                Bool;
+                std::deque<JSON>             *List;
+                std::map<std::string,JSON>   *Map;
+                std::string                  *String;
+                double                       Float;
+                long long                    Int;
+                bool                         Bool;
             } Internal;
 
             public:
@@ -402,7 +496,7 @@ namespace giri {
 
                 explicit JSON(Class type): JSON() { SetType( type ); }
 
-                JSON( initializer_list<JSON> list ) 
+                JSON( std::initializer_list<JSON> list ) 
                     : JSON() 
                 {
                     SetType( Class::Object );
@@ -428,17 +522,17 @@ namespace giri {
                     switch( other.Type ) {
                     case Class::Object:
                         Internal.Map = 
-                            new map<string,JSON>( other.Internal.Map->begin(),
-                                                other.Internal.Map->end() );
+                            new std::map<std::string,JSON>( other.Internal.Map->begin(),
+                                                            other.Internal.Map->end() );
                         break;
                     case Class::Array:
                         Internal.List = 
-                            new deque<JSON>( other.Internal.List->begin(),
-                                            other.Internal.List->end() );
+                            new std::deque<JSON>( other.Internal.List->begin(),
+                                                  other.Internal.List->end() );
                         break;
                     case Class::String:
                         Internal.String = 
-                            new string( *other.Internal.String );
+                            new std::string( *other.Internal.String );
                         break;
                     default:
                         Internal = other.Internal;
@@ -452,17 +546,17 @@ namespace giri {
                     switch( other.Type ) {
                     case Class::Object:
                         Internal.Map = 
-                            new map<string,JSON>( other.Internal.Map->begin(),
-                                                other.Internal.Map->end() );
+                            new std::map<std::string,JSON>( other.Internal.Map->begin(),
+                                                            other.Internal.Map->end() );
                         break;
                     case Class::Array:
                         Internal.List = 
-                            new deque<JSON>( other.Internal.List->begin(),
-                                            other.Internal.List->end() );
+                            new std::deque<JSON>( other.Internal.List->begin(),
+                                                  other.Internal.List->end() );
                         break;
                     case Class::String:
                         Internal.String = 
-                            new string( *other.Internal.String );
+                            new std::string( *other.Internal.String );
                         break;
                     default:
                         Internal = other.Internal;
@@ -487,16 +581,16 @@ namespace giri {
                 }
 
                 template <typename T>
-                JSON( T b, typename enable_if<is_same<T,bool>::value>::type* = 0 ) : Internal( b ), Type( Class::Boolean ){}
+                JSON( T b, typename std::enable_if<std::is_same<T,bool>::value>::type* = 0 ) : Internal( b ), Type( Class::Boolean ){}
 
                 template <typename T>
-                JSON( T i, typename enable_if<is_integral<T>::value && !is_same<T,bool>::value>::type* = 0 ) : Internal( (long long)i ), Type( Class::Integral ){}
+                JSON( T i, typename std::enable_if<std::is_integral<T>::value && !std::is_same<T,bool>::value>::type* = 0 ) : Internal( (long long)i ), Type( Class::Integral ){}
 
                 template <typename T>
-                JSON( T f, typename enable_if<is_floating_point<T>::value>::type* = 0 ) : Internal( (double)f ), Type( Class::Floating ){}
+                JSON( T f, typename std::enable_if<std::is_floating_point<T>::value>::type* = 0 ) : Internal( (double)f ), Type( Class::Floating ){}
 
                 template <typename T>
-                JSON( T s, typename enable_if<is_convertible<T,string>::value>::type* = 0 ) : Internal( string( s ) ), Type( Class::String ){}
+                JSON( T s, typename std::enable_if<std::is_convertible<T,std::string>::value>::type* = 0 ) : Internal( std::string( s ) ), Type( Class::String ){}
 
                 JSON( std::nullptr_t ) : Internal(), Type( Class::Null ){}
 
@@ -510,20 +604,19 @@ namespace giri {
                 }
 
                 /**
-                 * Create a JSON object from string.
+                 * Create a JSON object from string, throws std::error_code on error.
                  * @param str JSON string to parse and load.
                  * @returns New JSON object representing the json defined by the parsed string.
                  */
-                static JSON Load( const string & );
+                static JSON Load( const std::string &str);
 
                 /**
                  * Create a JSON object from string.
                  * @param str JSON string to parse and load.
-                 * @param ok [OUT] Output parameter giving feedback if parsing was successful.
-                 * true on success, false otherwise.
+                 * @param ec [OUT] Output parameter giving feedback if parsing was successful.
                  * @returns New JSON object representing the json defined by the parsed string.
                  */
-                static JSON Load( const string & , bool &);
+                static JSON Load( const std::string &str, std::error_code &ec) noexcept;
 
                 /**
                  * Allows appending items to array. Appending to a non-array will turn the object into an array with the
@@ -547,22 +640,22 @@ namespace giri {
                 }
 
                 template <typename T>
-                    typename enable_if<is_same<T,bool>::value, JSON&>::type operator=( T b ) {
+                    typename std::enable_if<std::is_same<T,bool>::value, JSON&>::type operator=( T b ) {
                         SetType( Class::Boolean ); Internal.Bool = b; return *this;
                     }
 
                 template <typename T>
-                    typename enable_if<is_integral<T>::value && !is_same<T,bool>::value, JSON&>::type operator=( T i ) {
+                    typename std::enable_if<std::is_integral<T>::value && !std::is_same<T,bool>::value, JSON&>::type operator=( T i ) {
                         SetType( Class::Integral ); Internal.Int = i; return *this;
                     }
 
                 template <typename T>
-                    typename enable_if<is_floating_point<T>::value, JSON&>::type operator=( T f ) {
+                    typename std::enable_if<std::is_floating_point<T>::value, JSON&>::type operator=( T f ) {
                         SetType( Class::Floating ); Internal.Float = f; return *this;
                     }
 
                 template <typename T>
-                    typename enable_if<is_convertible<T,string>::value, JSON&>::type operator=( T s ) {
+                    typename std::enable_if<std::is_convertible<T,std::string>::value, JSON&>::type operator=( T s ) {
                         SetType( Class::String ); *Internal.String = string( s ); return *this;
                     }
 
@@ -571,7 +664,7 @@ namespace giri {
                  * @param key Key to access, will be created if not existent.
                  * @returns The object stored at key.
                  */
-                JSON& operator[]( const string &key ) {
+                JSON& operator[]( const std::string &key ) {
                     SetType( Class::Object ); return Internal.Map->operator[]( key );
                 }
 
@@ -591,7 +684,7 @@ namespace giri {
                  * @param key Key to access.
                  * @returns object entry by key.
                  */
-                JSON &at( const string &key ) {
+                JSON &at( const std::string &key ) {
                     return operator[]( key );
                 }
 
@@ -600,7 +693,7 @@ namespace giri {
                  * @param key Key to access.
                  * @returns object entry by key.
                  */
-                const JSON &at( const string &key ) const {
+                const JSON &at( const std::string &key ) const {
                     return Internal.Map->at( key );
                 }
 
@@ -626,9 +719,9 @@ namespace giri {
                  * @returns The number of items stored within an Array. -1 if 
                  * class type is not Array.
                  */
-                int length() const {
+                std::size_t length() const {
                     if( Type == Class::Array )
-                        return static_cast<int>(Internal.List->size());
+                        return Internal.List->size();
                     else
                         return -1;
                 }
@@ -637,7 +730,7 @@ namespace giri {
                  * @param key Key to check.
                  * @returns true if the object holds a item with the given key, false otherwise.
                  */
-                bool hasKey( const string &key ) const {
+                bool hasKey( const std::string &key ) const {
                     if( Type == Class::Object )
                         return Internal.Map->find( key ) != Internal.Map->end();
                     return false;
@@ -647,11 +740,11 @@ namespace giri {
                  * @returns The number of items stored within an array or object. -1 if 
                  * class type is neither array nor object.
                  */
-                int size() const {
+                std::size_t size() const {
                     if( Type == Class::Object )
-                        return static_cast<int>(Internal.Map->size());
+                        return Internal.Map->size();
                     else if( Type == Class::Array )
-                        return static_cast<int>(Internal.List->size());
+                        return Internal.List->size();
                     else
                         return -1;
                 }
@@ -699,205 +792,181 @@ namespace giri {
 
                 /**
                  * @returns If class type is String, the stored value. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
-                 * or on conversion error.
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Throws std::error_code
+                 * on conversion error.
                  */
-                string ToString() const { bool b; return ToString( b ); }
+                std::string ToString() const { std::error_code ec; return ToString( ec ); if(ec) throw ec; }
 
                 /**
-                 * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
+                 * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value. If class type is
                  * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
                  * or on conversion error.
                  */
-                string ToString( bool &ok ) const {
-                    ok = (Type == Class::String);
-                    if(ok)
-                        return json_escape( *Internal.String );
+                std::string ToString( std::error_code &ec ) const noexcept {
+                    if(Type == Class::String)
+                        return utility::json_escape( *Internal.String );
 
-                    ok = (Type == Class::Object);
-                    if(ok)
+                    if(Type == Class::Object)
                         return dumpMinified();
 
-                    ok = (Type == Class::Array);
-                    if(ok)
+                    if(Type == Class::Array)
                         return dumpMinified();
 
-                    ok = (Type == Class::Boolean);
-                    if(ok)
-                        return Internal.Bool ? string("true") : string("false");
+                    if(Type == Class::Boolean)
+                        return Internal.Bool ? std::string("true") : std::string("false");
                     
-                    ok = (Type == Class::Floating);
-                    if(ok)
+                    if(Type == Class::Floating)
                         return std::to_string(Internal.Float);
 
-                    ok = (Type == Class::Integral);
-                    if(ok)
+                    if(Type == Class::Integral)
                         return std::to_string(Internal.Int);
 
-                    ok = (Type == Class::Null);
-                    if(ok)
-                        return string("null");
+                    if(Type == Class::Null)
+                        return std::string("null");
 
-                    return string("");
+                    ec = error::string_conversion_failed;
+                    return std::string("");
                 }
 
                 /**
                  * Useful if json objects are stored within the json as string.
                  * @returns If class type is String, the stored value without escaping. If class type is
-                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
-                 * or on conversion error.
+                 * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Throws 
+                 * std::error_code on conversion error.
                  */
-                string ToUnescapedString() const { bool b; return ToUnescapedString( b ); }
+                std::string ToUnescapedString() const { std::error_code ec; return ToUnescapedString( ec ); if(ec) throw ec; }
 
                 /**
                  * Useful if json objects are stored within the json as string.
-                 * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
+                 * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is String, the stored value without escaping. If class type is
                  * Null, Object, Array, Boolean, Floating or Integral a conversion will be tried. Empty string otherwise
                  * or on conversion error.
                  */
-                string ToUnescapedString( bool &ok ) const {
-                    ok = (Type == Class::String);
-                    if(ok)
+                std::string ToUnescapedString( std::error_code &ec ) const noexcept {
+                    if(Type == Class::String)
                         return std::string( *Internal.String );
                     
-                    ok = (Type == Class::Object);
-                    if(ok)
+                    if(Type == Class::Object)
                         return dumpMinified();
 
-                    ok = (Type == Class::Array);
-                    if(ok)
+                    if(Type == Class::Array)
                         return dumpMinified();
 
-                    ok = (Type == Class::Boolean);
-                    if(ok)
-                        return Internal.Bool ? string("true") : string("false");
+                    if(Type == Class::Boolean)
+                        return Internal.Bool ? std::string("true") : std::string("false");
                     
-                    ok = (Type == Class::Floating);
-                    if(ok)
+                    if(Type == Class::Floating)
                         return std::to_string(Internal.Float);
 
-                    ok = (Type == Class::Integral);
-                    if(ok)
+                    if(Type == Class::Integral)
                         return std::to_string(Internal.Int);
 
-                    ok = (Type == Class::Null);
-                    if(ok)
-                        return string("null");
+                    if(Type == Class::Null)
+                        return std::string("null");
 
-                    return string("");
+                    ec = error::string_unescaped_conversion_failed;
+                    return std::string("");
                 }
 
                 /**
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
-                 * String, an conversion will be tried. 0.0 otherwise or on conversion error.
+                 * String, an conversion will be tried. Throws std::error_code on conversion error.
                  */
-                double ToFloat() const { bool b; return ToFloat( b ); }
+                double ToFloat() const { std::error_code ec; return ToFloat( ec ); if(ec) throw ec; }
 
 
                 /**
-                 * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
+                 * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
                  * String, an conversion will be tried. 0.0 otherwise or on conversion error.
                  */
-                double ToFloat( bool &ok ) const {
-                    ok = (Type == Class::Floating);
-                    if (ok)
+                double ToFloat( std::error_code &ec ) const noexcept {
+                    if (Type == Class::Floating)
                         return Internal.Float;
 
-                    ok = (Type == Class::Boolean);
-                    if(ok) 
+                    if(Type == Class::Boolean) 
                         return Internal.Bool;
                     
-                    ok = (Type == Class::Integral);
-                    if (ok)
+                    if (Type == Class::Integral)
                         return Internal.Int;
 
-                    ok = (Type == Class::String);
-                    if (ok)
+                    if (Type == Class::String)
                     {
                         double parsed;
                         try {
                             parsed = std::stod(*Internal.String);
                         }
                         catch(const std::invalid_argument &e) {
-                            std::cerr << "Error: Parsing float failed: " << e.what() << std::endl;
-                            ok = false;
+                            ec = error::float_conversion_failed_invalid_arg;
                         }
                         catch(const std::out_of_range &e) {
-                            std::cerr << "Error: Parsing float failed: " << e.what() << std::endl;
-                            ok = false;
+                            ec = error::float_conversion_failed_out_of_range;
                         }
-                        if(ok)
+                        if(!ec)
                             return parsed;
                     }
+
+                    ec = error::float_conversion_failed;
                     return 0.0;
                 }
 
                 /**
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
-                 * String, an conversion will be tried. 0 otherwise or on conversion error.
+                 * String, an conversion will be tried. Throws std::error_code on conversion error.
                  */
-                long long ToInt() const { bool b; return ToInt( b ); }
+                long long ToInt() const { std::error_code ec; return ToInt( ec ); if(ec) throw ec; }
 
                 /**
-                 * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
+                 * @param ec [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
                  * String, an conversion will be tried. 0 otherwise or on conversion error.
                  */
-                long long ToInt( bool &ok ) const {
-                    ok = (Type == Class::Integral);
-                    if (ok)
+                long long ToInt( std::error_code &ec ) const noexcept {
+                    if (Type == Class::Integral)
                         return Internal.Int;
 
-                    ok = (Type == Class::Boolean);
-                    if(ok) 
+                    if(Type == Class::Boolean) 
                         return Internal.Bool;
                         
-                    ok = (Type == Class::Floating);
-                    if (ok)
+                    if (Type == Class::Floating)
                         return Internal.Float;
 
-                    ok = (Type == Class::String);
-                    if (ok)
+                    if (Type == Class::String)
                     {
                         long long parsed;
                         std::from_chars_result result = std::from_chars(Internal.String->data(), Internal.String->data() + Internal.String->size(), parsed);
                         if(!(bool)result.ec)
                             return parsed;
-                        ok = false;
                     }
 
+                    ec = error::number_conversion_failed;
                     return 0;
                 }
 
                 /**
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
-                 * String, an conversion will be tried. false otherwise or on conversion error.
+                 * String, an conversion will be tried. Throws std::error_code on conversion error.
                  */
-                bool ToBool() const { bool b; return ToBool( b ); }
+                bool ToBool() const { std::error_code ec; return ToBool( ec ); if(ec) throw ec; }
 
                 /**
                  * @param ok [OUT] Output parameter giving feedback if the conversion was successful.
                  * @returns If class type is Integral, Floating or Boolean, the stored value. If the class type is
                  * String, an conversion will be tried. false otherwise or on conversion error.
                  */
-                bool ToBool( bool &ok ) const {
-                    ok = (Type == Class::Boolean);
-                    if(ok) 
+                bool ToBool( std::error_code &ec ) const noexcept {
+                    if(Type == Class::Boolean) 
                         return Internal.Bool;
                     
-                    ok = (Type == Class::Integral);
-                    if (ok)
+                    if (Type == Class::Integral)
                         return Internal.Int;
 
-                    ok = (Type == Class::Floating);
-                    if (ok)
+                    if (Type == Class::Floating)
                         return Internal.Float;
 
-                    ok = (Type == Class::String);
-                    if (ok)
+                    if (Type == Class::String)
                     {
                         if(Internal.String->find("true")!=std::string::npos)
                             return true;
@@ -907,9 +976,9 @@ namespace giri {
                         std::from_chars_result result = std::from_chars(Internal.String->data(), Internal.String->data() + Internal.String->size(), parsed);
                         if(!(bool)result.ec)
                             return parsed;
-                        ok = false;
                     }
 
+                    ec = error::bool_conversion_failed;
                     return false;
                 }
 
@@ -917,40 +986,40 @@ namespace giri {
                  * Returns Object range which allows iterating over the object items.
                  * @returns Object range which allows iterating over the object items.
                  */
-                JSONWrapper<map<string,JSON>> ObjectRange() {
+                JSONWrapper<std::map<std::string,JSON>> ObjectRange() {
                     if( Type == Class::Object )
-                        return JSONWrapper<map<string,JSON>>( Internal.Map );
-                    return JSONWrapper<map<string,JSON>>( nullptr );
+                        return JSONWrapper<std::map<std::string,JSON>>( Internal.Map );
+                    return JSONWrapper<std::map<std::string,JSON>>( nullptr );
                 }
 
                 /**
                  * Returns Array range which allows iterating over the array items.
                  * @returns Array range which allows iterating over the array items.
                  */
-                JSONWrapper<deque<JSON>> ArrayRange() {
+                JSONWrapper<std::deque<JSON>> ArrayRange() {
                     if( Type == Class::Array )
-                        return JSONWrapper<deque<JSON>>( Internal.List );
-                    return JSONWrapper<deque<JSON>>( nullptr );
+                        return JSONWrapper<std::deque<JSON>>( Internal.List );
+                    return JSONWrapper<std::deque<JSON>>( nullptr );
                 }
 
                 /**
                  * Returns Object range which allows iterating over the object items.
                  * @returns Object range which allows iterating over the object items.
                  */
-                JSONConstWrapper<map<string,JSON>> ObjectRange() const {
+                JSONConstWrapper<std::map<std::string,JSON>> ObjectRange() const {
                     if( Type == Class::Object )
-                        return JSONConstWrapper<map<string,JSON>>( Internal.Map );
-                    return JSONConstWrapper<map<string,JSON>>( nullptr );
+                        return JSONConstWrapper<std::map<std::string,JSON>>( Internal.Map );
+                    return JSONConstWrapper<std::map<std::string,JSON>>( nullptr );
                 }
 
                 /**
                  * Returns Array range which allows iterating over the array items.
                  * @returns Array range which allows iterating over the array items.
                  */
-                JSONConstWrapper<deque<JSON>> ArrayRange() const { 
+                JSONConstWrapper<std::deque<JSON>> ArrayRange() const { 
                     if( Type == Class::Array )
-                        return JSONConstWrapper<deque<JSON>>( Internal.List );
-                    return JSONConstWrapper<deque<JSON>>( nullptr );
+                        return JSONConstWrapper<std::deque<JSON>>( Internal.List );
+                    return JSONConstWrapper<std::deque<JSON>>( nullptr );
                 }
 
                 /**
@@ -959,14 +1028,14 @@ namespace giri {
                  * @param tab indentation character(s) (defaults to two spaces)
                  * @returns json object as formatted string.
                  */ 
-                string dump( int depth = 1, string tab = "  ") const {
+                std::string dump( int depth = 1, std::string tab = "  ") const {
                     switch( Type ) {
                         case Class::Null:
                             return "null";
                         case Class::Object: {
-                            string pad = "";
+                            std::string pad = "";
                             for( int i = 0; i < depth; ++i, pad += tab );
-                            string s = "{\n";
+                            std::string s = "{\n";
                             bool skip = true;
                             for( auto &p : *Internal.Map ) {
                                 if( !skip ) s += ",\n";
@@ -977,7 +1046,7 @@ namespace giri {
                             return s;
                         }
                         case Class::Array: {
-                            string s = "[";
+                            std::string s = "[";
                             bool skip = true;
                             for( auto &p : *Internal.List ) {
                                 if( !skip ) s += ", ";
@@ -988,7 +1057,7 @@ namespace giri {
                             return s;
                         }
                         case Class::String:
-                            return "\"" + json_escape( *Internal.String ) + "\"";
+                            return "\"" + utility::json_escape( *Internal.String ) + "\"";
                         case Class::Floating:
                             return std::to_string( Internal.Float );
                         case Class::Integral:
@@ -1005,12 +1074,12 @@ namespace giri {
                  * Returns the whole json object as minified string.
                  * @returns json object as minified string.
                  */
-                string dumpMinified() const {
+                std::string dumpMinified() const {
                     switch( Type ) {
                         case Class::Null:
                             return "null";
                         case Class::Object: {
-                            string s = "{";
+                            std::string s = "{";
                             bool skip = true;
                             for( auto &p : *Internal.Map ) {
                                 if( !skip ) s += ",";
@@ -1021,7 +1090,7 @@ namespace giri {
                             return s;
                         }
                         case Class::Array: {
-                            string s = "[";
+                            std::string s = "[";
                             bool skip = true;
                             for( auto &p : *Internal.List ) {
                                 if( !skip ) s += ",";
@@ -1032,7 +1101,7 @@ namespace giri {
                             return s;
                         }
                         case Class::String:
-                            return "\"" + json_escape( *Internal.String ) + "\"";
+                            return "\"" + utility::json_escape( *Internal.String ) + "\"";
                         case Class::Floating:
                             return std::to_string( Internal.Float );
                         case Class::Integral:
@@ -1056,9 +1125,9 @@ namespace giri {
                 
                     switch( type ) {
                     case Class::Null:      Internal.Map    = nullptr;                break;
-                    case Class::Object:    Internal.Map    = new map<string,JSON>(); break;
-                    case Class::Array:     Internal.List   = new deque<JSON>();      break;
-                    case Class::String:    Internal.String = new string();           break;
+                    case Class::Object:    Internal.Map    = new std::map<std::string,JSON>(); break;
+                    case Class::Array:     Internal.List   = new std::deque<JSON>();      break;
+                    case Class::String:    Internal.String = new std::string();           break;
                     case Class::Floating:  Internal.Float  = 0.0;                    break;
                     case Class::Integral:  Internal.Int    = 0;                      break;
                     case Class::Boolean:   Internal.Bool   = false;                  break;
@@ -1106,14 +1175,17 @@ namespace giri {
             return os;
         }
 
-        namespace {
-            JSON parse_next( const string &, size_t &, bool& );
+        /**
+         * @brief Collection of functions used to parse json strings and json substrings.
+         */
+        namespace parsers {
+            JSON parse_next( const std::string &, size_t &, std::error_code& ) noexcept;
 
-            void consume_ws( const string &str, size_t &offset ) {
+            void consume_ws( const std::string &str, size_t &offset ) {
                 while( isspace( str[offset] ) ) ++offset;
             }
 
-            JSON parse_object( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_object( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Object = JSON::Make( JSON::Class::Object );
 
                 ++offset;
@@ -1123,15 +1195,14 @@ namespace giri {
                 }
 
                 while( true ) {
-                    JSON Key = parse_next( str, offset, ok );
+                    JSON Key = parse_next( str, offset, ec );
                     consume_ws( str, offset );
                     if( str[offset] != ':' ) {
-                        std::cerr << "Error: Object: Expected colon, found '" << str[offset] << "'";
-                        ok = false;
+                        ec = error::object_missing_colon;
                         break;
                     }
                     consume_ws( str, ++offset );
-                    JSON Value = parse_next( str, offset, ok );
+                    JSON Value = parse_next( str, offset, ec );
                     Object[Key.ToString()] = Value;
                     
                     consume_ws( str, offset );
@@ -1142,15 +1213,14 @@ namespace giri {
                         ++offset; break;
                     }
                     else {
-                        std::cerr << "Error: Object: Expected comma, found '" << str[offset] << "'";
-                        ok = false;
+                        ec = error::object_missing_comma;
                         break;
                     }
                 }
                 return Object;
             }
 
-            JSON parse_array( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_array( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Array = JSON::Make( JSON::Class::Array );
                 unsigned index = 0;
                 
@@ -1161,7 +1231,7 @@ namespace giri {
                 }
 
                 while( true ) {
-                    Array[index++] = parse_next( str, offset, ok );
+                    Array[index++] = parse_next( str, offset, ec );
                     consume_ws( str, offset );
 
                     if( str[offset] == ',' ) {
@@ -1171,16 +1241,15 @@ namespace giri {
                         ++offset; break;
                     }
                     else {
-                        std::cerr << "Error: Array: Expected ',' or ']', found '" << str[offset] << "'";
-                        ok = false;
+                        ec = error::array_missing_comma_or_bracket;
                         return JSON::Make( JSON::Class::Array );
                     }
                 }
                 return Array;
             }
 
-            JSON parse_string( const string &str, size_t &offset, bool &ok ) {
-                string val;
+            JSON parse_string( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+                std::string val;
                 for( char c = str[++offset]; c != '\"' ; c = str[++offset] ) {
                     if( c == '\\' ) {
                         switch( str[ ++offset ] ) {
@@ -1199,8 +1268,7 @@ namespace giri {
                                 if( (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F') )
                                     val += c;
                                 else {
-                                    std::cerr << "Error: String: Expected hex character in unicode escape, found '" << c << "'";
-                                    ok = false;
+                                    ec = error::string_missing_hex_char;
                                     return JSON::Make( JSON::Class::String );
                                 }
                             }
@@ -1216,9 +1284,9 @@ namespace giri {
                 return JSON(val);
             }
 
-            JSON parse_number( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_number( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Number;
-                string val, exp_str;
+                std::string val, exp_str;
                 char c;
                 bool isDouble = false;
                 long long exp = 0;
@@ -1242,8 +1310,7 @@ namespace giri {
                         if( c >= '0' && c <= '9' )
                             exp_str += c;
                         else if( !isspace( c ) && c != ',' && c != ']' && c != '}' ) {
-                            std::cerr << "Error: Number: Expected a number for exponent, found '" << c << "'\n";
-                            ok = false;
+                            ec = error::number_missing_exponent;
                             return JSON::Make( JSON::Class::Null );
                         }
                         else
@@ -1252,8 +1319,7 @@ namespace giri {
                     exp = std::stol( exp_str );
                 }
                 else if( !isspace( c ) && c != ',' && c != ']' && c != '}' ) {
-                    std::cerr << "Error: Number: unexpected character '" << c << "'\n";
-                    ok = false;
+                    ec = error::number_unexpected_char;
                     return JSON::Make( JSON::Class::Null );
                 }
                 --offset;
@@ -1269,59 +1335,60 @@ namespace giri {
                 return Number;
             }
 
-            JSON parse_bool( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_bool( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Bool;
                 if( str.substr( offset, 4 ) == "true" )
                     Bool = true;
                 else if( str.substr( offset, 5 ) == "false" )
                     Bool = false;
                 else {
-                    std::cerr << "Error: Bool: Expected 'true' or 'false', found '" << str.substr( offset, 5 ) << "'\n";
-                    ok = false;
+                    ec = error::bool_wrong_text;
                     return JSON::Make( JSON::Class::Null );
                 }
                 offset += (Bool.ToBool() ? 4 : 5);
                 return Bool;
             }
 
-            JSON parse_null( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_null( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 if( str.substr( offset, 4 ) != "null" ) {
-                    std::cerr << "Error: Null: Expected 'null', found '" << str.substr( offset, 4 ) << "'\n";
-                    ok = false;
+                    ec = error::null_wrong_text;
                     return JSON::Make( JSON::Class::Null );
                 }
                 offset += 4;
                 return JSON();
             }
 
-            JSON parse_next( const string &str, size_t &offset, bool &ok ) {
+            JSON parse_next( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 char value;
                 consume_ws( str, offset );
                 value = str[offset];
                 switch( value ) {
-                    case '[' : return parse_array( str, offset, ok);
-                    case '{' : return parse_object( str, offset, ok);
-                    case '\"': return parse_string( str, offset, ok);
+                    case '[' : return parse_array( str, offset, ec );
+                    case '{' : return parse_object( str, offset, ec );
+                    case '\"': return parse_string( str, offset, ec );
                     case 't' :
-                    case 'f' : return parse_bool( str, offset, ok);
-                    case 'n' : return parse_null( str, offset, ok);
+                    case 'f' : return parse_bool( str, offset, ec );
+                    case 'n' : return parse_null( str, offset, ec );
                     default  : if( ( value <= '9' && value >= '0' ) || value == '-' )
-                                return parse_number( str, offset, ok );
+                                return parse_number( str, offset, ec );
                 }
-                std::cerr << "Error: Parse: Unknown starting character '" << value << "'\n";
-                ok = false;
+                ec = error::unknown_starting_char;
                 return JSON();
             }
         }
-        inline JSON JSON::Load( const string &str, bool &ok ) {
+
+        inline JSON JSON::Load( const std::string &str, std::error_code &ec ) noexcept {
             size_t offset = 0;
-            ok = true;
-            return parse_next( str, offset, ok );
+            return parsers::parse_next( str, offset, ec );
         }
-        inline JSON JSON::Load( const string &str ) {
+
+        inline JSON JSON::Load( const std::string &str ) {
             size_t offset = 0;
-            bool ok = true;
-            return parse_next( str, offset, ok );
+            std::error_code ec;
+            JSON obj = parsers::parse_next( str, offset, ec );
+            if(ec)
+                throw ec;
+            return obj;
         }
     } // End Namespace json
 }
