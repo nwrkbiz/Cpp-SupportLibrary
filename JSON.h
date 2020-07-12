@@ -136,7 +136,7 @@ namespace giri {
              * @param str String to escape
              * @returns A escaped version of the given string.
              */
-            std::string json_escape( const std::string &str ) {
+            inline std::string json_escape( const std::string &str ) {
                 std::string output;
                 for( unsigned i = 0; i < str.length(); ++i )
                     switch( str[i] ) {
@@ -153,7 +153,7 @@ namespace giri {
             }
 
             /** Instance of json::error_category, can be reused, no need to create multiple instances */
-            const json::error_category json_error_category;
+            inline const json::error_category json_error_category;
         }
 
         /**
@@ -161,7 +161,7 @@ namespace giri {
          * @param e giri::json::error to construct a std::error_code for.
          * @returns std::error_code constructed from giri::json::error
          */
-        std::error_code make_error_code(json::error e) noexcept { 
+        inline std::error_code make_error_code(json::error e) noexcept { 
             return {static_cast<int>(e), utility::json_error_category}; 
         };
 
@@ -1170,7 +1170,6 @@ namespace giri {
                     case Class::Integral:  Internal.Int    = 0;                      break;
                     case Class::Boolean:   Internal.Bool   = false;                  break;
                     }
-
                     Type = type;
                 }
 
@@ -1189,7 +1188,6 @@ namespace giri {
             }
 
             private:
-
                 Class Type = Class::Null;
         };
 
@@ -1217,13 +1215,13 @@ namespace giri {
          * @brief Collection of functions used to parse json strings and json substrings.
          */
         namespace parsers {
-            JSON parse_next( const std::string &, size_t &, std::error_code& ) noexcept;
+            inline JSON parse_next( const std::string &, size_t &, std::error_code& ) noexcept;
 
-            void consume_ws( const std::string &str, size_t &offset ) {
+            inline void consume_ws( const std::string &str, size_t &offset ) {
                 while( isspace( str[offset] ) ) ++offset;
             }
 
-            JSON parse_object( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_object( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Object = JSON::Make( JSON::Class::Object );
 
                 ++offset;
@@ -1258,7 +1256,7 @@ namespace giri {
                 return Object;
             }
 
-            JSON parse_array( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_array( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Array = JSON::Make( JSON::Class::Array );
                 unsigned index = 0;
                 
@@ -1286,7 +1284,7 @@ namespace giri {
                 return Array;
             }
 
-            JSON parse_string( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_string( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 std::string val;
                 for( char c = str[++offset]; c != '\"' ; c = str[++offset] ) {
                     if( c == '\\' ) {
@@ -1322,7 +1320,7 @@ namespace giri {
                 return JSON(val);
             }
 
-            JSON parse_number( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_number( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Number;
                 std::string val, exp_str;
                 char c;
@@ -1373,7 +1371,7 @@ namespace giri {
                 return Number;
             }
 
-            JSON parse_bool( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_bool( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 JSON Bool;
                 if( str.substr( offset, 4 ) == "true" )
                     Bool = true;
@@ -1387,7 +1385,7 @@ namespace giri {
                 return Bool;
             }
 
-            JSON parse_null( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_null( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 if( str.substr( offset, 4 ) != "null" ) {
                     ec = error::null_wrong_text;
                     return JSON::Make( JSON::Class::Null );
@@ -1396,7 +1394,7 @@ namespace giri {
                 return JSON();
             }
 
-            JSON parse_next( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
+            inline JSON parse_next( const std::string &str, size_t &offset, std::error_code &ec ) noexcept {
                 char value;
                 consume_ws( str, offset );
                 value = str[offset];
