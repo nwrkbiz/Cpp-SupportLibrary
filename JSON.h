@@ -222,7 +222,7 @@ namespace giri {
          *         "Key4", nullptr,
          *         "Key2", {
          *             "Key4", "VALUE",
-         *             "Arr", json::Array( 1, "Str", false )
+         *             "Arr", giri::json::Array( 1, "Str", false )
          *         }
          *     } );
          * 
@@ -307,8 +307,8 @@ namespace giri {
          *     JSON Str2( string( "C++String" ) );
          *     JSON Int( 1 );
          *     JSON Float( 1.2 );
-         *     JSON Arr = json::Array();
-         *     JSON Obj = json::Object();
+         *     JSON Arr = giri::json::Array();
+         *     JSON Obj = giri::json::Object();
          * 
          *     // Types can be overwritten by assigning
          *     // to the object again.
@@ -334,7 +334,7 @@ namespace giri {
          *     // Arrays can be intialized with any elements and
          *     // they are turned into JSON objects. Variadic 
          *     // Templates are pretty cool.
-         *     JSON Arr2 = json::Array( 2, "Test", true );
+         *     JSON Arr2 = giri::json::Array( 2, "Test", true );
          * 
          *     // Objects are accessed using operator[]( string ).
          *     // Will create new pairs on the fly, just as std::map
@@ -342,7 +342,7 @@ namespace giri {
          *     Obj["Key1"] = 1.0;
          *     Obj["Key2"] = "Value";
          * 
-         *     JSON Obj2 = json::Object();
+         *     JSON Obj2 = giri::json::Object();
          *     Obj2["Key3"] = 1;
          *     Obj2["Key4"] = Arr;
          *     Obj2["Key5"] = Arr2;
@@ -359,7 +359,7 @@ namespace giri {
          *         "Key1", "Value",
          *         "Key2", true,
          *         "Key3", {
-         *             "Key4", json::Array( "This", "Is", "An", "Array" ),
+         *             "Key4", giri::json::Array( "This", "Is", "An", "Array" ),
          *             "Key5", {
          *                 "BooleanValue", true
          *             }
@@ -656,7 +656,7 @@ namespace giri {
 
                 template <typename T>
                     typename std::enable_if<std::is_convertible<T,std::string>::value, JSON&>::type operator=( T s ) {
-                        SetType( Class::String ); *Internal.String = string( s ); return *this;
+                        SetType( Class::String ); *Internal.String = std::string( s ); return *this;
                     }
 
                 /**
@@ -786,7 +786,7 @@ namespace giri {
                 bool IsString() const { return Type == Class::String; }
 
                 /**
-                 * @returns true if the object is Object, false otherwise.
+                 * @returns true if the object is a JSONObject, false otherwise.
                  */
                 bool IsObject() const { return Type == Class::Object; }
 
