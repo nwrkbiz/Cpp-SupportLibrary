@@ -60,10 +60,12 @@ namespace giri {
          * @param ssl true if ssl should be enabled, false otherwise.
          * @param cert If ssl is true, path to certificate file in *.pem format.
          * @param key If ssl is true path to private key file in *pem format.
+         * @param ioc I/O context which should be used.
          */
-        explicit WebSocketSession(tcp::socket socket, bool ssl, const std::filesystem::path& cert, const std::filesystem::path& key) :
+        explicit WebSocketSession(tcp::socket socket, bool ssl, const std::filesystem::path& cert, const std::filesystem::path& key, boost::asio::io_context& ioc) :
             m_Socket(std::move(socket)),
-            m_SSL(ssl)
+            m_SSL(ssl),
+            m_Strand(boost::asio::make_strand(ioc))
         {
             if(m_SSL)
             { 
@@ -76,13 +78,11 @@ namespace giri {
                 m_Ctx.use_private_key_file(key.string(), boost::asio::ssl::context::file_format::pem);
                 m_Wss = std::make_shared<websocket::stream<ssl::stream<tcp::socket&> >>(m_Socket, m_Ctx);
                 m_Wss->next_layer().set_verify_mode(ssl::verify_none);
-                m_Strand = std::make_shared<boost::asio::strand<boost::asio::io_context::executor_type> >(m_Wss->get_executor());
                 m_Wss->text(true);
             }
             else
             {
                 m_Ws = std::make_shared<websocket::stream<tcp::socket&>>(m_Socket);
-                m_Strand = std::make_shared<boost::asio::strand<boost::asio::io_context::executor_type> >(m_Ws->get_executor());
                 m_Ws->text(true);
             }
         }
@@ -92,9 +92,9 @@ namespace giri {
          */
         void run() {
             if(m_SSL)
-                m_Wss->next_layer().async_handshake(ssl::stream_base::server,boost::asio::bind_executor(*m_Strand,std::bind(&WebSocketSession::on_handshake,this->shared_from_this(),std::placeholders::_1)));
+                m_Wss->next_layer().async_handshake(ssl::stream_base::server,boost::asio::bind_executor(m_Strand,std::bind(&WebSocketSession::on_handshake,this->shared_from_this(),std::placeholders::_1)));
             else
-                m_Ws->async_accept(boost::asio::bind_executor(*m_Strand, std::bind(&WebSocketSession::on_accept, this->shared_from_this(), std::placeholders::_1)));
+                m_Ws->async_accept(boost::asio::bind_executor(m_Strand, std::bind(&WebSocketSession::on_accept, this->shared_from_this(), std::placeholders::_1)));
         }
         /**
          * Send a message to the client, this session is associated with. 
@@ -158,9 +158,7 @@ namespace giri {
             m_Ec = ec;
             if(!ec)
             {
-                std::ostringstream ostr;
-                ostr << boost::beast::buffers(m_Buffer.data());
-                m_Message = ostr.str();
+                m_Message = boost::beast::buffers_to_string(m_Buffer.data());
             }
             m_Buffer.consume(m_Buffer.size()); // clear buffer
             notify(); // notify all subscribed observers
@@ -174,20 +172,20 @@ namespace giri {
         }
         void do_read() {
             if(m_SSL)
-                {if(m_Wss->is_open()){m_Wss->async_read(m_Buffer, boost::asio::bind_executor(*m_Strand, std::bind(&WebSocketSession::on_read, this->shared_from_this(), std::placeholders::_1, std::placeholders::_2)));}}
+                {if(m_Wss->is_open()){m_Wss->async_read(m_Buffer, boost::asio::bind_executor(m_Strand, std::bind(&WebSocketSession::on_read, this->shared_from_this(), std::placeholders::_1, std::placeholders::_2)));}}
             else
-                {if(m_Ws->is_open()){m_Ws->async_read(m_Buffer, boost::asio::bind_executor(*m_Strand, std::bind(&WebSocketSession::on_read, this->shared_from_this(), std::placeholders::_1, std::placeholders::_2)));}}
+                {if(m_Ws->is_open()){m_Ws->async_read(m_Buffer, boost::asio::bind_executor(m_Strand, std::bind(&WebSocketSession::on_read, this->shared_from_this(), std::placeholders::_1, std::placeholders::_2)));}}
         }
         void on_handshake(boost::system::error_code ec) {
             if(ec)
                 throw WebSocketServerException("Handshake: " + ec.message());
-            m_Wss->async_accept(boost::asio::bind_executor(*m_Strand, std::bind( &WebSocketSession::on_accept, this->shared_from_this(), std::placeholders::_1)));
+            m_Wss->async_accept(boost::asio::bind_executor(m_Strand, std::bind( &WebSocketSession::on_accept, this->shared_from_this(), std::placeholders::_1)));
         }
         tcp::socket m_Socket;
         bool m_SSL;
         std::shared_ptr< websocket::stream<tcp::socket&> > m_Ws;
         std::shared_ptr< websocket::stream<ssl::stream<tcp::socket&> > > m_Wss;
-        std::shared_ptr< boost::asio::strand<boost::asio::io_context::executor_type> > m_Strand;
+        boost::asio::strand<boost::asio::io_context::executor_type> m_Strand;
         boost::beast::multi_buffer m_Buffer;
         std::string m_Message;
         ssl::context m_Ctx{ssl::context::sslv23};
@@ -328,7 +326,7 @@ namespace giri {
         void on_accept(boost::system::error_code ec) {
             if(ec)
                 throw WebSocketServerException("Accept: " + ec.message());
-            m_NewSession = std::make_shared<WebSocketSession>(std::move(m_Socket), m_SSL, m_Cert, m_Key);
+            m_NewSession = std::make_shared<WebSocketSession>(std::move(m_Socket), m_SSL, m_Cert, m_Key, m_Ioc);
             m_NewSession->run();
             notify(); // notify all subscribed observers
             do_accept(); // Accept another connection
