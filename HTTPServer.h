@@ -29,6 +29,7 @@
 #include <string>
 #include <thread>
 #include <vector>
+#include <map>
 
 namespace giri {
     using tcp = boost::asio::ip::tcp;
@@ -66,15 +67,16 @@ namespace giri {
          * @param ssl true if ssl should be enabled, false otherwise.
          * @param cert If ssl is true, path to certificate file in *.pem format.
          * @param key If ssl is true path to private key file in *pem format.
+         * @param ioc I/O context which should be used.
          */
-        explicit HTTPSession(tcp::socket socket, const std::filesystem::path& docRoot, const std::map<std::string, std::string>& mimeTypes, const std::string& indexFile, const std::string& serverString, bool ssl, const std::filesystem::path& cert, const std::filesystem::path& key) :
+        explicit HTTPSession(tcp::socket socket, const std::filesystem::path& docRoot, const std::map<std::string, std::string>& mimeTypes, const std::string& indexFile, const std::string& serverString, bool ssl, const std::filesystem::path& cert, const std::filesystem::path& key, boost::asio::io_context& ioc) :
             m_Socket(std::move(socket)),
             m_DocRoot(docRoot),
             m_MimeTypes(mimeTypes),
             m_IndexFile(indexFile),
             m_ServerString(serverString),
             m_SSL(ssl),
-            m_Strand(m_Socket.get_executor())
+            m_Strand(boost::asio::make_strand(ioc))
         {
             if(m_SSL)
             { 
@@ -605,7 +607,7 @@ namespace giri {
         void on_accept(boost::system::error_code ec) {
             if(ec)
                 throw HTTPServerException("Accept: " + ec.message());
-            m_NewSession = std::make_shared<HTTPSession>(std::move(m_Socket), m_DocRoot, m_MimeTypes, m_IndexFile, m_ServerString, m_SSL, m_Cert, m_Key);
+            m_NewSession = std::make_shared<HTTPSession>(std::move(m_Socket), m_DocRoot, m_MimeTypes, m_IndexFile, m_ServerString, m_SSL, m_Cert, m_Key, m_Ioc);
             m_NewSession->run();
             notify(); // notify all subscribed observers
             do_accept(); // Accept another connection
