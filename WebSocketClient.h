@@ -185,9 +185,7 @@ namespace giri {
                     {if(m_Wss.is_open()){m_Wss.read(m_Buffer);}}
                 else
                     {if(m_Ws.is_open()){m_Ws.read(m_Buffer);}}
-            std::ostringstream ostr;
-            ostr << boost::beast::buffers(m_Buffer.data());
-            m_Message = ostr.str();
+            m_Message = boost::beast::buffers_to_string(m_Buffer.data());
             return m_Message;
         }
         /**
@@ -207,9 +205,7 @@ namespace giri {
             m_Ec = ec;
             m_Message.clear();
             if(!ec){
-                std::ostringstream ostr;
-                ostr << boost::beast::buffers(m_Buffer.data());
-                m_Message = ostr.str();
+                m_Message = boost::beast::buffers_to_string(m_Buffer.data());
             }
             m_Buffer.consume(m_Buffer.size()); // clear buffer
             notify(); // notify all subscribed observers
