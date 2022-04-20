@@ -238,7 +238,7 @@ namespace giri {
             std::vector<char> dat;
             dat.reserve(data.size());
             dat.assign(data.begin(), data.end());
-            HTTPPost(host, port, target, dat);
+            return HTTPPost(host, port, target, dat);
         }
 
         /**
@@ -282,7 +282,7 @@ namespace giri {
             std::vector<char> dat;
             dat.reserve(data.size());
             dat.assign(data.begin(), data.end());
-            HTTPPut(host, port, target, dat);
+            return HTTPPut(host, port, target, dat);
         }
 
     private:
