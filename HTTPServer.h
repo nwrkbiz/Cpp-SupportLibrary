@@ -236,7 +236,7 @@ namespace giri {
                 else {
                     std::error_code fEc;
                     std::filesystem::path path = m_DocRoot;
-                    path += m_Request.target().to_string();
+                    path += std::string{m_Request.target()};
                     if(m_Request.target().back() == '/')
                         path.append(m_IndexFile);
                     else if((m_Request.target().back() != '/') && std::filesystem::is_directory(path, fEc)) {
@@ -248,7 +248,7 @@ namespace giri {
                         m_Result.set(http::field::server, m_ServerString);
                         m_Result.set(http::field::content_type, "text/html");
                         m_Result.keep_alive(m_Request.keep_alive());
-                        std::string msg = "The resource '" + m_Request.target().to_string() + "' was not found.";
+                        std::string msg = "The resource '" + std::string{m_Request.target()} + "' was not found.";
                         m_Result.body().assign(msg.begin(), msg.end());
                         m_Result.prepare_payload();
                     }
@@ -397,11 +397,11 @@ namespace giri {
      *              serv->getSession()->subscribe(this->shared_from_this());
      *          }
      *          void update(HTTPSession::SPtr sess){
-     *              std::cout << "Server session requested: " << sess->getRequest().target().to_string() << std::endl;
+     *              std::cout << "Server session requested: " << sess->getRequest().target() << std::endl;
      *  
      *              // manipulate result here if needed, set custom result as shown here:
      *              // (Body data is stored as std::vector<char>, can be set using a Blob object)
-     *              if(sess->getRequest().target().to_string() == "/sayhi") {
+     *              if(sess->getRequest().target() == "/sayhi") {
      *                  http::response<http::vector_body<char>> myCustomResult;
      *                  Blob data;
      *                  data.loadString("Hello World :)");

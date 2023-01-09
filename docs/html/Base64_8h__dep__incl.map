@@ -1,4 +1,5 @@
 <map id="Base64.h" name="Base64.h">
-<area shape="rect" id="node2" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;. " alt="" coords="27,80,86,107"/>
-<area shape="rect" id="node3" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation. " alt="" coords="5,155,108,181"/>
+<area shape="rect" id="node1" title="Contains Base64 encoding/decoding algorithms." alt="" coords="17,5,100,32"/>
+<area shape="rect" id="node2" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;." alt="" coords="27,80,90,107"/>
+<area shape="rect" id="node3" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation." alt="" coords="5,155,112,181"/>
 </map>

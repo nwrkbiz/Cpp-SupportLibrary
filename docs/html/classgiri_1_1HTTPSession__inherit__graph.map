@@ -1,4 +1,6 @@
 <map id="giri::HTTPSession" name="giri::HTTPSession">
-<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; HTTPSession \&gt;" alt="" coords="243,46,461,73"/>
-<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; HTTPSession \&gt; \&gt;" alt="" coords="19,5,181,47"/>
+<area shape="rect" id="node1" title="Class representing one session/connection." alt="" coords="99,169,234,196"/>
+<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title=" " alt="" coords="47,95,286,121"/>
+<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="Base Class of all classes." alt="" coords="5,13,136,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="160,5,365,47"/>
 </map>

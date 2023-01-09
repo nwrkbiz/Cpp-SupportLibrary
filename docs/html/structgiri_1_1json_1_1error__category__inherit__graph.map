@@ -1,2 +1,4 @@
 <map id="giri::json::error_category" name="giri::json::error_category">
+<area shape="rect" id="node1" title="Error category object used to convert the error code to a understandable message via std::error_code." alt="" coords="5,80,187,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="23,5,169,32"/>
 </map>

@@ -1,12 +1,13 @@
 <map id="Object.h" name="Object.h">
-<area shape="rect" id="node2" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;. " alt="" coords="61,229,119,256"/>
-<area shape="rect" id="node3" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation. " alt="" coords="5,304,108,331"/>
-<area shape="rect" id="node4" href="$Exception_8h.html" title="Base exception to inherit custom exceptions from. " alt="" coords="285,80,375,107"/>
-<area shape="rect" id="node6" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation. " alt="" coords="219,229,326,256"/>
-<area shape="rect" id="node9" href="$Observer_8h.html" title="Observer/Obersvable Pattern implementation. " alt="" coords="400,80,487,107"/>
-<area shape="rect" id="node10" href="$PassKey_8h.html" title="Passkey idiom implementation. " alt="" coords="511,80,597,107"/>
-<area shape="rect" id="node11" href="$Singleton_8h.html" title="Singleton Pattern implementation. " alt="" coords="621,80,708,107"/>
-<area shape="rect" id="node5" href="$FileSystem_8h.html" title="Contains FileSystem I/O functions. " alt="" coords="111,155,210,181"/>
-<area shape="rect" id="node7" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation. " alt="" coords="499,155,633,181"/>
-<area shape="rect" id="node8" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation. " alt="" coords="335,155,474,181"/>
+<area shape="rect" id="node1" title="Base class of all classes." alt="" coords="305,5,381,32"/>
+<area shape="rect" id="node2" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;." alt="" coords="62,229,125,256"/>
+<area shape="rect" id="node3" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation." alt="" coords="5,304,112,331"/>
+<area shape="rect" id="node4" href="$Exception_8h.html" title="Base exception to inherit custom exceptions from." alt="" coords="293,80,392,107"/>
+<area shape="rect" id="node6" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation." alt="" coords="226,229,337,256"/>
+<area shape="rect" id="node9" href="$Observer_8h.html" title="Observer/Obersvable Pattern implementation." alt="" coords="416,80,509,107"/>
+<area shape="rect" id="node10" href="$PassKey_8h.html" title="Passkey idiom implementation." alt="" coords="534,80,621,107"/>
+<area shape="rect" id="node11" href="$Singleton_8h.html" title="Singleton Pattern implementation." alt="" coords="645,80,739,107"/>
+<area shape="rect" id="node5" href="$FileSystem_8h.html" title="Contains FileSystem I/O functions." alt="" coords="113,155,218,181"/>
+<area shape="rect" id="node7" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation." alt="" coords="517,155,661,181"/>
+<area shape="rect" id="node8" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation." alt="" coords="345,155,493,181"/>
 </map>

@@ -1,4 +1,13 @@
 <map id="FileSystem.h" name="FileSystem.h">
-<area shape="rect" id="node2" href="$Exception_8h.html" title="Base exception to inherit custom exceptions from. " alt="" coords="90,80,181,107"/>
-<area shape="rect" id="node5" href="$Object_8h.html" title="Base class of all classes. " alt="" coords="187,155,257,181"/>
+<area shape="rect" id="node1" title="Contains FileSystem I/O functions." alt="" coords="344,5,449,32"/>
+<area shape="rect" id="node2" href="$Exception_8h.html" title="Base exception to inherit custom exceptions from." alt="" coords="97,80,195,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="220,80,283,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="307,80,380,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="405,80,495,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="519,80,581,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="605,80,685,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="117,155,175,181"/>
+<area shape="rect" id="node5" href="$Object_8h.html" title="Base class of all classes." alt="" coords="200,155,276,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="199,229,277,256"/>
 </map>

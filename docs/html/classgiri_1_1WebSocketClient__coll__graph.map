@@ -1,4 +1,6 @@
 <map id="giri::WebSocketClient" name="giri::WebSocketClient">
-<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; WebSocket\lClient \&gt;" alt="" coords="263,39,456,80"/>
-<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; WebSocketClient \&gt; \&gt;" alt="" coords="29,5,191,47"/>
+<area shape="rect" id="node1" title="Simple Websocket Client." alt="" coords="93,184,254,211"/>
+<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title=" " alt="" coords="67,95,279,136"/>
+<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="Base Class of all classes." alt="" coords="5,13,136,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="161,5,391,47"/>
 </map>

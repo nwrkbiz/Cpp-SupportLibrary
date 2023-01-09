@@ -1,4 +1,6 @@
 <map id="giri::HTTPServer" name="giri::HTTPServer">
-<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title="giri::Observable\&lt; HTTPServer \&gt;" alt="" coords="233,46,444,73"/>
-<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="giri::Object\&lt; Observable\l\&lt; HTTPServer \&gt; \&gt;" alt="" coords="14,5,177,47"/>
+<area shape="rect" id="node1" title="Class representing a HTTP Server." alt="" coords="101,169,227,196"/>
+<area shape="rect" id="node2" href="$classgiri_1_1Observable.html" title=" " alt="" coords="49,95,279,121"/>
+<area shape="rect" id="node3" href="$classgiri_1_1Object.html" title="Base Class of all classes." alt="" coords="5,13,136,39"/>
+<area shape="rect" id="node4" title=" " alt="" coords="160,5,357,47"/>
 </map>

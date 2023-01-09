@@ -3,7 +3,7 @@ var classgiri_1_1WebSocketSession =
     [ "SPtr", "classgiri_1_1WebSocketSession.html#a2c3858752ebab01f616f39149a575cf4", null ],
     [ "UPtr", "classgiri_1_1WebSocketSession.html#ac392bc043ff531c28f6436ed8c70c15b", null ],
     [ "WPtr", "classgiri_1_1WebSocketSession.html#ab55df73989d3d266b378785ab095ae9e", null ],
-    [ "WebSocketSession", "classgiri_1_1WebSocketSession.html#ae9523adf3fe39498c49c3c68abeeb634", null ],
+    [ "WebSocketSession", "classgiri_1_1WebSocketSession.html#a998eccaea82db79883b6feb02204dedc", null ],
     [ "close", "classgiri_1_1WebSocketSession.html#a125fb6ee233108cd0d4eb73b56efa631", null ],
     [ "getClientIP", "classgiri_1_1WebSocketSession.html#a9486504680c0c65da16947fb0dab43e1", null ],
     [ "getClientPort", "classgiri_1_1WebSocketSession.html#a940e8e9aed87ea708a90a895fc8b37f6", null ],

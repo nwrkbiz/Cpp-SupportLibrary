@@ -1,5 +1,6 @@
 <map id="Observer.h" name="Observer.h">
-<area shape="rect" id="node2" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation. " alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation. " alt="" coords="137,80,271,107"/>
-<area shape="rect" id="node4" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation. " alt="" coords="296,80,435,107"/>
+<area shape="rect" id="node1" title="Observer/Obersvable Pattern implementation." alt="" coords="166,5,259,32"/>
+<area shape="rect" id="node2" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation." alt="" coords="141,80,285,107"/>
+<area shape="rect" id="node4" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation." alt="" coords="309,80,457,107"/>
 </map>

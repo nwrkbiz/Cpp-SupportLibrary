@@ -1,7 +1,9 @@
 <map id="giri::ExceptionBase" name="giri::ExceptionBase">
-<area shape="rect" id="node4" href="$classgiri_1_1FileSystem_1_1FileSystemException.html" title="Exception to be thrown on FileSystem errors. " alt="" coords="445,5,632,47"/>
-<area shape="rect" id="node5" href="$classgiri_1_1HTTPServerException.html" title="Exception to be thrown on http server errors. " alt="" coords="449,71,628,98"/>
-<area shape="rect" id="node6" href="$classgiri_1_1WebSocketClientException.html" title="Exception to be thrown on websocket client errors. " alt="" coords="435,122,642,149"/>
-<area shape="rect" id="node7" href="$classgiri_1_1WebSocketServerException.html" title="Exception to be thrown on websocket server errors. " alt="" coords="433,173,644,199"/>
-<area shape="rect" id="node2" href="$classgiri_1_1Object.html" title="giri::Object\&lt; ExceptionBase \&gt;" alt="" coords="5,71,203,98"/>
+<area shape="rect" id="node1" title="Base exception to inherit custom exceptions from." alt="" coords="272,97,419,123"/>
+<area shape="rect" id="node4" href="$classgiri_1_1FileSystem_1_1FileSystemException.html" title="Exception to be thrown on FileSystem errors." alt="" coords="481,5,682,47"/>
+<area shape="rect" id="node5" href="$classgiri_1_1HTTPServerException.html" title="Exception to be thrown on http server errors." alt="" coords="486,71,677,98"/>
+<area shape="rect" id="node6" href="$classgiri_1_1WebSocketClientException.html" title="Exception to be thrown on websocket client errors." alt="" coords="469,122,694,149"/>
+<area shape="rect" id="node7" href="$classgiri_1_1WebSocketServerException.html" title="Exception to be thrown on websocket server errors." alt="" coords="467,173,696,199"/>
+<area shape="rect" id="node2" href="$classgiri_1_1Object.html" title=" " alt="" coords="5,71,224,98"/>
+<area shape="rect" id="node3" title=" " alt="" coords="57,122,172,149"/>
 </map>

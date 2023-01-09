@@ -3,7 +3,7 @@ var classgiri_1_1HTTPSession =
     [ "SPtr", "classgiri_1_1HTTPSession.html#a0bd85aa631caec697a4207359a62c278", null ],
     [ "UPtr", "classgiri_1_1HTTPSession.html#ae7a7ca7c2305189eea9968d25bd7e617", null ],
     [ "WPtr", "classgiri_1_1HTTPSession.html#a1ed349cfe6f7fdd8a4c8088bb9b7a65a", null ],
-    [ "HTTPSession", "classgiri_1_1HTTPSession.html#ad8f9ab4f8abee02d26f33ab7a7a48fab", null ],
+    [ "HTTPSession", "classgiri_1_1HTTPSession.html#ad7f0a52b6d5098d46830864a8ea1175d", null ],
     [ "addMimeTypes", "classgiri_1_1HTTPSession.html#a6899795964cfdae0ef19566d6b4f4e49", null ],
     [ "close", "classgiri_1_1HTTPSession.html#ad9274a150958f451ec8e2b1ced7c5500", null ],
     [ "getClientIP", "classgiri_1_1HTTPSession.html#a52cc623f639a085728da1b2449b1f2ec", null ],

@@ -1,8 +1,9 @@
 <map id="Exception.h" name="Exception.h">
-<area shape="rect" id="node2" href="$FileSystem_8h.html" title="Contains FileSystem I/O functions. " alt="" coords="27,80,126,107"/>
-<area shape="rect" id="node5" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation. " alt="" coords="110,155,217,181"/>
-<area shape="rect" id="node6" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation. " alt="" coords="201,80,336,107"/>
-<area shape="rect" id="node7" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation. " alt="" coords="361,80,499,107"/>
-<area shape="rect" id="node3" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;. " alt="" coords="27,155,86,181"/>
-<area shape="rect" id="node4" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation. " alt="" coords="5,229,108,256"/>
+<area shape="rect" id="node1" title="Base exception to inherit custom exceptions from." alt="" coords="175,5,273,32"/>
+<area shape="rect" id="node2" href="$FileSystem_8h.html" title="Contains FileSystem I/O functions." alt="" coords="26,80,131,107"/>
+<area shape="rect" id="node5" href="$HTTPServer_8h.html" title="Simple HTTP Server implementation." alt="" coords="114,155,225,181"/>
+<area shape="rect" id="node6" href="$WebSocketClient_8h.html" title="Simple Websocket Client implementation." alt="" coords="207,80,351,107"/>
+<area shape="rect" id="node7" href="$WebSocketServer_8h.html" title="Simple Websocket Server implementation." alt="" coords="375,80,523,107"/>
+<area shape="rect" id="node3" href="$Blob_8h.html" title="Binary large object implementation using std::vector&lt;char&gt;." alt="" coords="27,155,90,181"/>
+<area shape="rect" id="node4" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation." alt="" coords="5,229,112,256"/>
 </map>

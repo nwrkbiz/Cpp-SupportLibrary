@@ -1,3 +1,4 @@
 <map id="Blob.h" name="Blob.h">
-<area shape="rect" id="node2" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation. " alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node1" title="Binary large object implementation using std::vector&lt;char&gt;." alt="" coords="27,5,90,32"/>
+<area shape="rect" id="node2" href="$HTTPClient_8h.html" title="Simple HTTP Client implementation." alt="" coords="5,80,112,107"/>
 </map>

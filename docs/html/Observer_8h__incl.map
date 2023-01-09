@@ -1,3 +1,7 @@
 <map id="Observer.h" name="Observer.h">
-<area shape="rect" id="node2" href="$Object_8h.html" title="Base class of all classes. " alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node1" title="Observer/Obersvable Pattern implementation." alt="" coords="91,5,184,32"/>
+<area shape="rect" id="node2" href="$Object_8h.html" title="Base class of all classes." alt="" coords="6,80,82,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="106,80,169,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="193,80,279,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,83,181"/>
 </map>
