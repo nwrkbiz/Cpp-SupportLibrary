@@ -904,7 +904,7 @@ namespace giri {
                         return Internal.Bool;
                     
                     if (Type == Class::Integral)
-                        return Internal.Int;
+                        return static_cast<double>(Internal.Int);
 
                     if (Type == Class::String)
                     {
@@ -913,9 +913,11 @@ namespace giri {
                             parsed = std::stod(*Internal.String);
                         }
                         catch(const std::invalid_argument &e) {
+                            (void)e;
                             ec = error::float_conversion_failed_invalid_arg;
                         }
                         catch(const std::out_of_range &e) {
+                            (void)e;
                             ec = error::float_conversion_failed_out_of_range;
                         }
                         if(!ec)
@@ -951,7 +953,7 @@ namespace giri {
                         return Internal.Bool;
                         
                     if (Type == Class::Floating)
-                        return Internal.Float;
+                        return static_cast<long long>(Internal.Float);
 
                     if (Type == Class::String)
                     {
