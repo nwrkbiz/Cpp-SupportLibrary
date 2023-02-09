@@ -32,18 +32,18 @@ namespace giri {
      * 
      *   // Can only be called from this class, because only
      *   // MyClass can create Key<MyClass> Objects. 
-     *   void Locked(giri::Key<MyClass>&){
+     *   void Locked(giri::Key<MyClass> l){
      *      std::cout<<"Secret, Hello World. \n";
      *   };
      * 
      *   virtual void SayHiAndDoWork() final {
      *      std::cout << "Hi!\n";
-     *      DoWork(m_Key); // Can only be called within tis class
+     *      DoWork(m_Key); // Can only be called within this class
      *   }
      * 
      *  protected:
      *    // inherit to implement
-     *    virtual void DoWork(giri::Key<MyClass>&) = 0;
+     *    virtual void DoWork(giri::Key<MyClass> l) = 0;
      *  private:
      *      giri::Key<MyClass> m_Key;
      *  };
@@ -58,7 +58,7 @@ namespace giri {
      *          SayHiAndDoWork(); // can be called
      *      }
      *  protected:
-     *      virtual void DoWork(giri::Key<MyClass>&) override
+     *      virtual void DoWork(giri::Key<MyClass> l) override
      *      {
      *          std::cout << "Doing hard work\n";
      *      }

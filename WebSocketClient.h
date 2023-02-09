@@ -67,7 +67,7 @@ namespace giri {
      *  
      *  int main() {
      *      // Create client and async observer
-     *      WebSocketClient::SPtr wsc = std::make_shared<WebSocketClient>("echo.websocket.org", "80");
+     *      WebSocketClient::SPtr wsc = std::make_shared<WebSocketClient>("echo.websocket.org", "80", false, 1);
      *      WSCObserver::SPtr obs = std::make_shared<WSCObserver>();
      *  
      *      // -- asynchronous write and read --
@@ -96,10 +96,10 @@ namespace giri {
          * @param host Websocket server host.
          * @param port Websocket server port.
          * @param ssl Enables or disables ssl (defaults to false).
-         * @param numThreads Number of threads to be used (defaults to 1).
+         * @param numThreads Number of threads to be used (defaults to 0, see poll).
          * @param resource Resource where websocket server is bound to (defaults to "/").
          */
-        WebSocketClient(const std::string& host, const std::string& port, bool ssl = false, const size_t numThreads = 1, const std::string& resource = "/") : 
+        WebSocketClient(const std::string& host, const std::string& port, bool ssl = false, const size_t numThreads = 0, const std::string& resource = "/") : 
             m_Host(host), 
             m_Port(port), 
             m_Resource(resource),
@@ -197,6 +197,12 @@ namespace giri {
                     {if(m_Wss.is_open()){m_Wss.close(websocket::close_code::normal);}}
                 else
                     {if(m_Ws.is_open()){m_Ws.close(websocket::close_code::normal);}}
+        }
+        /**
+         * When no execution threads are used you can call this function constatly to handle ready executors.
+         */
+        void poll() {
+            m_Ioc.poll_one();
         }
         using SPtr = std::shared_ptr<WebSocketClient>;
         using UPtr = std::unique_ptr<WebSocketClient>;

@@ -231,7 +231,7 @@ namespace giri {
      *  
      *  int main()
      *  {
-     *      WebSocketServer::SPtr srv = std::make_shared<WebSocketServer>("0.0.0.0", "1204");
+     *      WebSocketServer::SPtr srv = std::make_shared<WebSocketServer>("0.0.0.0", "1204", false, 1);
      *      WebSocketServerObserver::SPtr obs = std::make_shared<WebSocketServerObserver>();
      *      srv->subscribe(obs);
      *      srv->run();
@@ -250,11 +250,11 @@ namespace giri {
          * @param address Adress to bind this server to (defaults to 0.0.0.0 for any).
          * @param port Port to listen on (defaults to 80).
          * @param ssl Enable or disable ssl encryption (defaults to false).
-         * @param numThreads Number of worker threads (defaults to 1).
+         * @param numThreads Number of worker threads (defaults to 0, see poll).
          * @param cert If ssl is true path to certificate *.pem file needs to be passed.
          * @param key If ssl is true path to private key *.pem file needs to be passed.
          */
-        WebSocketServer(const std::string& address = "0.0.0.0", const std::string& port = "80", bool ssl = false, const size_t numThreads = 1, const std::filesystem::path& cert = "", const std::filesystem::path& key = "") : 
+        WebSocketServer(const std::string& address = "0.0.0.0", const std::string& port = "80", bool ssl = false, const size_t numThreads = 0, const std::filesystem::path& cert = "", const std::filesystem::path& key = "") : 
             m_Endpoint(boost::asio::ip::make_address(address), 
                        std::atoi(port.c_str())),
             m_SSL(ssl),
@@ -291,6 +291,12 @@ namespace giri {
             m_Threads.reserve(m_NumThreads);
             for(auto i = m_NumThreads; i > 0; --i)
                 m_Threads.emplace_back([this]{ m_Ioc.run();});
+        }
+        /**
+         * When no execution threads are used you can call this function constatly to handle ready executors.
+         */
+        void poll() {
+            m_Ioc.poll_one();
         }
         /**
          * @returns last created session.

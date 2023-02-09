@@ -57,7 +57,7 @@ namespace giri {
     {
     public:
         /**
-         * WebSocketSession constructor
+         * HTTPSession constructor
          * 
          * @param socket Socket to use.
          * @param docRoot Folder to serve via http (defaults to "./")
@@ -420,7 +420,7 @@ namespace giri {
      *  };
      *  int main()
      *  {
-     *      HTTPServer::SPtr sptr = std::make_shared<HTTPServer>("0.0.0.0", "8808", "/home/giri");
+     *      HTTPServer::SPtr sptr = std::make_shared<HTTPServer>("0.0.0.0", "8808", "/home/giri", 1);
      *      HTTPServerObserver::SPtr obs = std::make_shared<HTTPServerObserver>();
      *      sptr->subscribe(obs);
      *      sptr->run();
@@ -438,7 +438,7 @@ namespace giri {
          * @param address Adress to bind this server to (defaults to 0.0.0.0 for any).
          * @param port Port to listen on (defaults to 80).
          * @param docRoot Folder to serve via http (defaults to "./").
-         * @param numThreads Number of worker threads (defaults to 1).
+         * @param numThreads Number of worker threads (defaults to 0, see poll).
          * @param ssl Enable or disable ssl encryption (defaults to false).
          * @param cert If ssl is true path to certificate *.pem file needs to be passed.
          * @param key If ssl is true path to private key *.pem file needs to be passed.
@@ -446,7 +446,7 @@ namespace giri {
          * @param indexFile Index file to use if no file was provided by request. (defaults to "index.html")
          * @param serverString Server string to be added to the http answers. (defaults to "giris_supportlib_http_server")
          */
-        HTTPServer(const std::string& address = "0.0.0.0", const std::string& port = "80", const std::filesystem::path& docRoot = "./", const size_t numThreads = 1, bool ssl = false, const std::filesystem::path& cert = "", const std::filesystem::path& key = "", const std::map<std::string, std::string>& mimeTypes = {}, const std::string& indexFile = "index.html", const std::string& serverString = "giris_supportlib_http_server") : 
+        HTTPServer(const std::string& address = "0.0.0.0", const std::string& port = "80", const std::filesystem::path& docRoot = "./", const size_t numThreads = 0, bool ssl = false, const std::filesystem::path& cert = "", const std::filesystem::path& key = "", const std::map<std::string, std::string>& mimeTypes = {}, const std::string& indexFile = "index.html", const std::string& serverString = "giris_supportlib_http_server") : 
             m_Endpoint(boost::asio::ip::make_address(address), 
                        std::atoi(port.c_str())),
             m_DocRoot(docRoot),
@@ -520,6 +520,12 @@ namespace giri {
             m_Threads.reserve(m_NumThreads);
             for(auto i = m_NumThreads; i > 0; --i)
                 m_Threads.emplace_back([this]{ m_Ioc.run();});
+        }
+        /**
+         * When no execution threads are used you can call this functioun constatly to handle ready executors.
+         */
+        void poll() {
+            m_Ioc.poll_one();
         }
         /**
          * @returns last created session.
